@@ -1,0 +1,39 @@
+#HomeSlideImage-insert form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+   
+}
+#HomeSlideImage-insert h3{
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 2%;
+    color: red;
+    font-size: 2rem;
+}
+#HomeSlideImage-insert form button,#HomeSlideImage-insert form label,#HomeSlideImage-insert form input{
+    width: 20rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+#HomeSlideImage-insert form>*{
+    margin-bottom: 1%;
+}
+#HomeSlideImage-insert form button{
+    background-color: white;
+    color: red;
+    padding: 0.3%;
+    border-radius: 5px;
+    width: 15rem;
+}
+#HomeSlideImage-insert form input[type="file"]{
+    border: 2px solid  gold;
+    padding: 0.5%;
+}
+#HomeSlideImage-insert form button:hover{
+    color: white;
+    background-color: red;
+    box-shadow: 2px 2px 6px black;
+}

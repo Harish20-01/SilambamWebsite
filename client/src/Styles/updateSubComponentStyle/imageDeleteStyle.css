@@ -1,0 +1,69 @@
+#ImageDelete-Container{
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+}
+#ImageDelete-Container div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distribute space between rows */
+    gap: 1%;
+    width: 100%;
+    padding: 1%;
+    margin: 1%;
+    list-style: none;
+    padding-left: 0;
+}
+#ImageDelete-Container div li{
+    width: 30%;
+    height: 30vh;
+    margin-bottom: 1%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#ImageDelete-Container div li img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover contain;
+}
+#ImageDelete-Container h2{
+    color: red;
+    text-align: center;
+    margin: 1%;
+}
+#ImageDelete-Container h3{
+    text-align: center;
+}
+#ImageDelete-Container button{
+    width: 20vw;
+    padding: 1%;
+    color: red;
+    background-color: white;
+    border-radius: 5px;
+}
+#ImageDelete-Container input{
+    accent-color: red;
+}
+.ImageDelete-Submit-Button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#ImageDelete-Container button:hover{
+    color:white;
+    background-color: red;
+    box-shadow: 2px 2px 10px black;
+}
+@media(max-width:768px){
+    #ImageDelete-Container div li{
+        width: 100%;
+        height: 30vh;
+        margin-bottom: 5%;
+    }
+    #ImageDelete-Container button{
+        width: 50vw;
+    }
+}

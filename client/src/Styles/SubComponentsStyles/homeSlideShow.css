@@ -1,0 +1,62 @@
+/* Style the slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 15px;
+  }
+  
+  /* Style for each individual slide */
+  .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  /* Style for the images */
+  .slide-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: For rounded corners */
+    transition: opacity 1s ease-in-out;
+  }
+  
+  /* Navigation buttons */
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .slide img{
+    width: 90%;
+    height:90vh;
+  }
+
+  @media (max-width:768px){
+    .slide img{
+      width: 100%;
+      height:50vh;
+    }
+  }

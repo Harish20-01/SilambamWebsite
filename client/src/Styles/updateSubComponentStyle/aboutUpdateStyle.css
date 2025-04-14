@@ -1,0 +1,10 @@
+#About-Update-Container nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(252, 215, 120);
+    position: relative;
+    z-index: 0;
+}
+
+

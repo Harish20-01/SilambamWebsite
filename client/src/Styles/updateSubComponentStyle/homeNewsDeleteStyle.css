@@ -1,0 +1,44 @@
+#HomeNewsDelete-Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#HomeNewsDelete-Container h2{
+    color: red;
+    margin: 2%;
+}
+#HomeNewsDelete-Container form{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    overflow-y: scroll;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+#HomeNewsDelete-Container form input{
+    accent-color: red;
+    border: 5px solid;
+}
+#HomeNewsDelete-Container form div{
+    border:2px solid gold;
+    width: 45vw;
+    display: flex;
+    padding:2%;
+    align-items: center;
+    margin: 1%;
+    box-sizing: border-box;
+}
+#HomeNewsDelete-Container  button{
+    margin: 1%;
+    padding: 0.5%;
+    color:red;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+#HomeNewsDelete-Container  button:hover{
+    color:aliceblue;
+    background-color: red;
+    box-shadow: 2px 2px 6px black;
+
+}

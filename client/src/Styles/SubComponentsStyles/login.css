@@ -1,0 +1,63 @@
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    flex-direction: column;
+    width: 30%;
+    font-family:Arial, Helvetica, sans-serif;
+    border: 2px solid rgb(245, 220, 223);
+    background-color: #eee8e8;
+    padding: 1%;
+    margin: 10%;
+    margin-left: 35%;
+    border-radius: 2%;
+    box-shadow: 20px 20px 30px rgb(85, 34, 34);
+}
+#Login-Form-Container{
+    
+}
+.login-form  h2{
+    margin-bottom: 30px;
+    color: red;
+    text-shadow: 5px 5px 5px rgb(85, 34, 34);
+}
+.login-form form div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+}
+.login-form form div label{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+.login-form form div button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:300px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: rgb(191, 231, 233);
+}
+.login-form form div input{
+    width:300px;
+    height: 40px;
+    border: 1px solid grey;
+
+}
+.login-form form div input:focus{
+    border:3px solid rgb(126, 170, 126);
+}
+@media(max-width:768px){
+    .login-form{
+        height: 100%;
+        width: 100%;
+        padding: 1%;
+        margin: 2%;
+        margin-left: 0%;
+        border-radius: 2%;
+    }
+}

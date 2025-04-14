@@ -1,0 +1,80 @@
+#Footer-Container{
+    display: flex;
+    background-color: black;
+    color: white;
+}
+
+#About-Footer div{
+    text-align: center;
+}
+
+#About-Footer,#Quick-Links,#Contact-details{
+    width: 33%;
+}
+
+#Quick-Links{
+        align-items: center;
+}
+
+#About-Footer,#Quick-Links,#Contact-details div{
+    display: flex;
+    flex-direction: column;   
+}
+#About-Footer h3,#Quick-Links h3,#Contact-details h3{
+    text-align: left;
+    margin-bottom: 10px;
+    padding:10px;
+    width: 100%;
+}
+#Quick-Links h3{
+    margin-left: 20%;
+}
+li a{
+    list-style-type: none;
+    font-weight: bolder;
+    text-decoration: none;
+   
+    line-height: 10xp;
+}
+#Footer-Container .fa{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#Contact{
+    display: flex;
+    align-items: self-start;
+    margin-left: 10%;
+}
+
+#Contact li a ,#Quick-Links div li a{
+    color:aquamarine
+}
+@media (max-width:768px){
+
+    #About-Footer,#Contact-details{
+        width: 100%;
+        text-align: center;
+    }
+    #Quick-Links{
+        text-align: left;
+    }
+    #QuicK-Links div{
+        display: none;
+    }
+    #Footer-Container{
+        flex-direction: column;
+        padding: 10px;
+    }
+    #About-Footer h3,#Quick-Links h3,#Contact-details h3{
+        text-align: left;
+        margin-bottom: 5px;
+        padding:5px;
+        width: 100%;
+    }
+    #Contact{
+        
+        margin-left: 5%;
+    }
+
+}

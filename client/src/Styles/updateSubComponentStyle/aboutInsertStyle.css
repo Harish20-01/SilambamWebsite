@@ -1,0 +1,71 @@
+#AboutInsert-Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#AboutInsert-Container h2{
+    color: red;
+    margin: 2%;
+}
+#AboutInsert-Container form{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin: 2%;
+    padding: 1%;
+    height: 50vh;
+    border: 1px solid red;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px rgb(0,0,0,0.7);
+}
+#Aboutinsert-Submit-Button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+}
+#AboutInsert-Container form button{
+    color: red;
+    padding: 1%;
+    border-radius: 5px;
+    margin-top: 2%;
+    width: 50%;
+    background-color: white;
+}
+#AboutInsert-Container form label,#AboutInsert-Container form input,#AboutInsert-Container form textarea{
+    width: 100%;
+    margin-bottom: 0%;
+    height: 5vh;
+    border-radius: 5px;
+}
+#AboutInsert-Container form textarea{
+    height: 10vh;
+    border:1px solid ;
+}
+#AboutInsert-Container form input{
+    border:1px solid;
+}
+#AboutInsert-Container form  input[type="file"]
+{
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 5vh;
+    cursor: pointer;
+}
+#AboutInsert-Container label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#AboutInsert-Container form input:focus,#AboutInsert-Container form textarea:focus{
+    border: 2px solid red !important;
+}
+@media(max-width:768px){
+    #AboutInsert-Container form{
+        width: 60vw;
+    }
+}

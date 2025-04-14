@@ -1,0 +1,69 @@
+#HomeNewsInsert-Container h3{
+    text-align: center;
+    margin: 1%;
+    color:red;
+    font-size: 1.5rem;
+}
+#HomeNewsInsert-Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#HomeNewsInsert-Container form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width:40vw;
+    height: 50vh;
+    border: 2px solid;
+    padding: 2%;
+    margin-bottom: 2%;
+}
+#HomeNewsInsert-Container label,#HomeNewsInsert-Container input,#HomeNewsInsert-Container textarea{
+    width: 100%;
+    margin-bottom: 0%;
+    height: 5vh;
+    justify-content: center;
+}
+#HomeNewsInsert-Container input:focus,#HomeNewsInsert-Container textarea:focus{
+    border: 3px solid red;
+}
+#HomeNewsInsert-Container textarea{
+    height: 10vh;
+}
+#HomeNewsInsert-Container label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#HomeNewsInsert-Container input[type="file"]
+{
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 5vh;
+    cursor: pointer;
+}
+form #HomeNewsInsert-Submit-Button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 4%;
+    width: 100%;
+}
+#HomeNewsInsert-Submit-Button button{
+    width: 50%;
+    padding: 2%;
+    border-radius: 5px;
+    color: red;
+}
+@media(max-width:768px){
+    #HomeNewsInsert-Container form{
+        width:60vw
+    }
+}

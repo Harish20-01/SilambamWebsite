@@ -1,0 +1,14 @@
+#HomeSlideImage-update{
+    display: flex;
+    flex-direction: column;
+}
+.homeSlideimage-header h3{
+    text-align: center;
+    margin-bottom: 1%;
+}
+#HomeSlideImage-update ul{
+    background-color: aqua;
+    display: flex;
+    justify-content: space-around;
+}
+

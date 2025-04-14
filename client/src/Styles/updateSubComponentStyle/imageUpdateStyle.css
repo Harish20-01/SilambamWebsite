@@ -1,0 +1,10 @@
+#ImageUpdate-Container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: aquamarine;
+    padding: 1%;
+}
+#ImageUpdate-Container a{
+    text-decoration: none;
+}

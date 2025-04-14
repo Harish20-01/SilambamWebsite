@@ -1,0 +1,82 @@
+.Contact-Container{
+    
+}
+
+#Contact-Location{
+    display: flex;
+    flex-direction: column;
+}
+
+#Contact-Location iframe{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+    height: 70vh;
+}
+#Contact-Location h2{
+    margin-top: 10px;
+    text-align: center;
+    color: red;
+}
+
+#Message-Container{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 40px;
+    border:3px solid rgb(224, 210, 210);
+    box-shadow: 10px 10px 6px rgb(153, 76, 76);
+    background-color: rgb(0,0,0,0.2);
+    border-radius: 1%;
+}
+#Message-Container form{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+#Message-Container form label{
+    margin-top: 15px;
+    color: rgb(153, 76, 76);
+    font-weight: bold;
+}
+#Message-Container form input {
+    height: 30px;
+}
+#Message-Container form textarea{
+    height:60px;
+}
+#Message-Container form button{
+    width:60%;
+    height: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 3%;
+    color: red;
+    font-weight: bold;
+}
+#Message-Container form textarea:focus,#Message-Container form input:focus{
+    outline: none;
+    border: 2px solid rgb(184, 97, 97);
+}
+
+@media (max-width:768px){
+    #Message-Container{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 10%;
+        padding: 2px;
+    }
+    #Contact-Location iframe{
+        width: 80%;
+        margin: 10%;
+        height: 60vh;
+    }
+}
