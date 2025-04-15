@@ -10,7 +10,7 @@ const ImageGallery = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/gallery/');
+        const response = await axios.get('https://silambamwebsite.onrender.com/gallery/');
         setImages(response.data); 
         setLoading(false);
       } catch (error) {

@@ -17,7 +17,7 @@ const HomeSlideImageInsert = () => {
       const data=new FormData()
       data.append("image",file);
       console.log(sessionStorage.getItem('authToken'));
-      const response=await axios.post("http://localhost:3000/homeSlide/upload",data,{
+      const response=await axios.post("https://silambamwebsite.onrender.com/homeSlide/upload",data,{
         headers:{
           "Content-Type":"multipart/form-data",
           "Authorization": `Bearers ${sessionStorage.getItem('authToken')}`, 

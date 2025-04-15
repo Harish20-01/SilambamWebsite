@@ -12,7 +12,7 @@ const HomeNewsDelete = () => {
   useEffect(()=>{
     const fetchData=async()=>{
       try{
-    const response=await axios.get('http://localhost:3000/news');
+    const response=await axios.get('https://silambamwebsite.onrender.com/news');
     console.log(response.data);
     if(response.status==200){
       setData(response.data);

@@ -18,7 +18,7 @@ const Login = ({ setIsLoggedIn }) => {
     setIsPreocessing(true);
 
     try {
-      const response = await axios.post('http://localhost:3000/api/login', {
+      const response = await axios.post('https://silambamwebsite.onrender.com/api/login', {
         username,
         password
       });

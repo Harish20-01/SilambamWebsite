@@ -13,7 +13,7 @@ const HomeSlideImageDelete = () => {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/homeSlide/images');
+        const response = await axios.get('https://silambamwebsite.onrender.com/homeSlide/images');
         if (response.status === 200) {
           setImages(response.data);
           console.log(response);
@@ -55,7 +55,7 @@ const HomeSlideImageDelete = () => {
     try {
       const data = { public_ids: selectedImages };
       console.log(data,sessionStorage.getItem('authToken'));
-      const response = await axios.delete('http://localhost:3000/homeSlide', {
+      const response = await axios.delete('https://silambamwebsite.onrender.com/homeSlide', {
         headers:{
           "Authorization":`Bearer ${sessionStorage.getItem('authToken')}`, 
         },

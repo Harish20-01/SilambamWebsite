@@ -20,7 +20,7 @@ const AboutInsertComponent = () => {
             data.append("image",file);
             
         try{
-            const response= await axios.post("http://localhost:3000/about",data,{
+            const response= await axios.post("https://silambamwebsite.onrender.com/about",data,{
                 headers:{
                     "Content-Type":"multipart/form-data",
                     "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 

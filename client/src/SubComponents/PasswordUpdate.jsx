@@ -24,7 +24,7 @@ const PasswordUpdate = () => {
     const token = sessionStorage.getItem('authToken');
 
     try {
-      const response = await axios.post('http://localhost:3000/api/change-password', {
+      const response = await axios.post('https://silambamwebsite.onrender.com/api/change-password', {
         username,
         oldPassword,
         newPassword,

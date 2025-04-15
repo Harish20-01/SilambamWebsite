@@ -12,7 +12,7 @@ const AboutDeleteComponent = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/about");
+        const response = await axios.get("https://silambamwebsite.onrender.com");
         setImages(response.data); 
       } catch (error) {
         console.error('Error fetching images:', error);
@@ -41,7 +41,7 @@ const AboutDeleteComponent = () => {
     setIsPreocessing(true);
     try {
         const data={public_ids:selectedImages};
-        const response=await axios.delete("http://localhost:3000/about/",{
+        const response=await axios.delete("https://silambamwebsite.onrender.com/about/",{
           headers:{
             "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 
           },

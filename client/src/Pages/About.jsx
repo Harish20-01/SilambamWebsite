@@ -10,7 +10,7 @@ const About = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/about");
+        const response = await axios.get("https://silambamwebsite.onrender.com/about");
         console.log(response.data); // Check if data is coming from the API
         setData(response.data); 
       } catch (error) {

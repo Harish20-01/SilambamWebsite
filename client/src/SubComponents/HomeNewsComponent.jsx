@@ -9,7 +9,7 @@ const HomeNewsComponent = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/news');
+        const response = await axios.get('https://silambamwebsite.onrender.com/news');
         setNews(response.data); // Set the news data
         setLoading(false); // Set loading to false once data is fetched
       } catch (error) {

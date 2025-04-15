@@ -20,7 +20,7 @@ const HomeSlideShow = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/homeSlide/images");
+        const response = await axios.get("https://silambamwebsite.onrender.com/homeSlide/images");
         setImages(response.data); // Set the fetched images
         setLoading(false); // Set loading to false after data is fetched
       } catch (error) {

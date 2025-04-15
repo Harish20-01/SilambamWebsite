@@ -23,7 +23,7 @@ const HomeNewsInsert = () => {
         data.append('description',description);
         data.append('image',image);
         try{
-            const response=await axios.post('http://localhost:3000/news',data,{
+            const response=await axios.post('https://silambamwebsite.onrender.com/news',data,{
                 headers:{
                     'Content-type':'mutlipart/form-data',
                     "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 

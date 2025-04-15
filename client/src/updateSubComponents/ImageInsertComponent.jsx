@@ -34,7 +34,7 @@ const handleImageUpload = async () => {
       formData.append('images', file);
     });
     
-    const response = await axios.post('http://localhost:3000/gallery/upload', formData, {
+    const response = await axios.post('https://silambamwebsite.onrender.com/gallery/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
         "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 
