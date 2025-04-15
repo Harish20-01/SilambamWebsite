@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 dotenv.config();
 
 const corsOptions = {
-  origin:'http://localhost:5173',  
+  origin:['https://silambamwebsite-1.onrender.com','http://localhost:5173'],  
   credentials: true,  
   methods: ['GET', 'POST','DELETE'],  
   allowedHeaders: ['Authorization', 'Content-Type'],          
