@@ -12,7 +12,7 @@ import UpdateComponent from './SubComponents/UpdateComponent';
 import './App.css';
 import { useState,useEffect } from "react";
 import HomeUpdateComponent from "./updateComponents/HomeUpdateComponent";
-import ImageUpdateComponent from "./updateComponents/imageUpdateComponent";
+import ImageUpdateComponent from "./updateComponents/ImageUpdateComponent";
 import AboutUpdateComponent from "./updateComponents/AboutUpdateComponent";
 import AboutInsertComponent from "./updateSubComponents/AboutInsertComponent";
 import AboutDeleteComponent from "./updateSubComponents/AboutDeleteComponent";
