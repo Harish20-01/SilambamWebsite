@@ -3,7 +3,9 @@ import React from 'react'
 const LoadingComponent = () => {
   return (
     <div>
-      Procesing.....
+      <div id="Loadingpage">
+          
+      </div>
     </div>
   )
 }

@@ -177,7 +177,9 @@ nav #Logo img{
         width: 30px;
         height: 50px;
     }
-
+    #Login-Container{
+        display: none;
+    }
     
 }
 
