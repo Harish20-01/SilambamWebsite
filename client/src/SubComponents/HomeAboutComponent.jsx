@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styles/SubComponentsStyles/HomeAboutComponent.css'
+import '../Styles/SubComponentsStyles/homeAboutComponent.css'
 
 const HomeAboutComponent = () => {
   return (
