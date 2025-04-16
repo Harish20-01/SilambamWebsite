@@ -1,4 +1,4 @@
-/* Style the slideshow container */
+/* 
 .slideshow-container {
     position: relative;
     max-width: 100%;
@@ -7,7 +7,7 @@
     margin-top: 15px;
   }
   
-  /* Style for each individual slide */
+  
   .slide {
     display: flex;
     justify-content: center;
@@ -15,15 +15,15 @@
    
   }
   
-  /* Style for the images */
+ 
   .slide-image {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Optional: For rounded corners */
+    border-radius: 10px;  
     transition: opacity 1s ease-in-out;
   }
   
-  /* Navigation buttons */
+  /* Navigation buttons *//*
   .prev, .next {
     position: absolute;
     top: 50%;
@@ -59,4 +59,125 @@
       width: 100%;
       height:50vh;
     }
+  } 
+
+  */
+  *{
+    box-sizing: border-box;
   }
+  #homeSlide.slideshow-container {
+    position: relative;
+    width: 98%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+    margin: 1%;
+    box-sizing: border-box;
+  }
+  
+  #homeSlide .slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  #homeSlide .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover contain;
+    animation: fade 1s ease-in-out;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Overlay for text */
+  #homeSlide .slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0,0,0,0.7));
+    z-index: 1;
+  }
+  
+  /* Text Content */
+  #homeSlide .slide h2 {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    padding: 0 20px;
+  }
+  
+  #homeSlide .slide p {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ddd;
+    font-size: 1rem;
+    text-align: center;
+    z-index: 2;
+    max-width: 80%;
+  }
+  
+  /* Arrows */
+  #homeSlide .prev, #homeSlide .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 28px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s;
+  }
+  
+  #homeSlide .prev:hover, #homeSlide .next:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .prev {
+    left: 15px;
+  }
+  
+  #homeSlide .next {
+    right: 15px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    #homeSlide .slide h2 {
+      font-size: 1.5rem;
+      bottom: 60px;
+    }
+  
+    #homeSlide .slide p {
+      font-size: 0.9rem;
+      bottom: 30px;
+    }
+    
+    #homeSlide .prev, #homeSlide .next {
+      font-size: 22px;
+      padding: 8px;
+    }
+    #homeSlide.slideshow-container{
+      height: 60vh;
+    }
+  }
+  

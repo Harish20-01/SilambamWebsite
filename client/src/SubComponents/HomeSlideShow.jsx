@@ -49,7 +49,7 @@ const HomeSlideShow = () => {
   const validIndex = currentIndex % images.length;
 
   return (
-    <div className="slideshow-container">
+    <div className="slideshow-container" id="homeSlide">
       <div className="slide">
         <img
           src={images[currentIndex]?.url} // Safe access using optional chaining

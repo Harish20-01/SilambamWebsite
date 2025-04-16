@@ -1,0 +1,105 @@
+/* ClassDetails.css */
+
+.class-details-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+  }
+  
+  .section {
+    margin-bottom: 40px;
+  }
+  
+  .section-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .class-description p {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  .venue-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between ; /* Distribute the venues evenly */
+    gap: 20px; /* Space between the venues */
+  }
+  
+  .venue {
+    flex: 1 1 calc(33.333% - 13.34px); /* Ensures the venue boxes take up 1/3 of the width */
+    background-color: #f9f9f9;
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .venue:hover {
+    transform: translateY(-5px); /* Lift effect when hovered */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .venue-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .venue p {
+    font-size: 18px;
+    color: #444;
+  }
+  
+  .venue ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .venue li {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .contact-btn {
+    text-decoration: none; /* Prevent underline for links */
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-btn:hover {
+    background-color: #135bb5;
+  }
+  
+  @media (max-width: 768px) {
+    .venue {
+      flex: 1 1 100%;
+      margin-bottom: 20px;
+      
+    }
+  
+    .contact-btn {
+      width: 100%;
+      padding: 12px 0;
+    }
+  }
+  

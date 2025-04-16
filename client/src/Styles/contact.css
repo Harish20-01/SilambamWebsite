@@ -1,82 +1,92 @@
-.Contact-Container{
-    
-}
 
-#Contact-Location{
+
+/* Contact Form Container */
+.Contact-Container {
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
-}
-
-#Contact-Location iframe{
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: 10%;
-    height: 70vh;
-}
-#Contact-Location h2{
-    margin-top: 10px;
-    text-align: center;
-    color: red;
-}
-
-#Message-Container{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: 10%;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #Message-Container {
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; 
     padding: 40px;
-    border:3px solid rgb(224, 210, 210);
-    box-shadow: 10px 10px 6px rgb(153, 76, 76);
-    background-color: rgb(0,0,0,0.2);
-    border-radius: 1%;
-}
-#Message-Container form{
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  #Message-Container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: red;
+  }
+  form {
     display: flex;
     flex-direction: column;
-    padding: 5%;
-}
-#Message-Container form label{
-    margin-top: 15px;
-    color: rgb(153, 76, 76);
+    
+  }
+  
+  form label {
+    margin-bottom: 5px;
     font-weight: bold;
-}
-#Message-Container form input {
-    height: 30px;
-}
-#Message-Container form textarea{
-    height:60px;
-}
-#Message-Container form button{
-    width:60%;
-    height: 30px;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 3%;
-    color: red;
-    font-weight: bold;
-}
-#Message-Container form textarea:focus,#Message-Container form input:focus{
-    outline: none;
-    border: 2px solid rgb(184, 97, 97);
-}
+  }
+  
+  form input,
+  form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  form button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  #Contact-Location {
+    width: 100%;
+    max-width: 600px; /* Keep it same width as message container */
+    margin: 40px auto; /* Center and give vertical spacing */
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  #Contact-Location h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #dc1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #Contact-Location iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+  }
 
-@media (max-width:768px){
-    #Message-Container{
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-bottom: 10%;
-        padding: 2px;
-    }
-    #Contact-Location iframe{
-        width: 80%;
-        margin: 10%;
-        height: 60vh;
-    }
-}

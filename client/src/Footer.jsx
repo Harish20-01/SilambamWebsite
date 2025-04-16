@@ -10,7 +10,7 @@ const Footer = () => {
           <h3>About Us</h3>
           <div>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum dolorem voluptatem iusto sed quos quasi aspernatur natus quod aliquid nisi eligendi voluptates vero dicta, necessitatibus error iste quaerat non dignissimos!
+              கலைகளே ஒரு மனிதனை மனிதனாக்குகிறது. அவ்வகையில் தமிழரின் மரபுக் கலைகள் மிகவும் சிறப்புமிக்கவை. அத்தகைய கலைகளை நோக்கிய எங்களின் பயணத்தின் விளைவாக ஜூலை-1-2020 அன்று துவங்கப்பட்டதே தமிழர் மரபுக் கலையகம். தமிழரின் மரபுக் கலைகளை அனைத்துத் தரப்பு மக்களிடமும் எளிய முறையில் கொண்டு சேர்ப்பதே எங்களின் நோக்கமாகும்.
               </p>
           </div>
         </div>

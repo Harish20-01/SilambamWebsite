@@ -1,0 +1,148 @@
+/* Main Profile Container */
+.trainer-profile {
+  width: 40%; /* Default width */
+  margin: 2% auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;  /* Initially hidden */
+  transform: translateY(60px);  /* Start from below */
+}
+
+/* When the profile is in view, we slide it in */
+.trainer-profile.in-view {
+  opacity: 1;
+  transform: translateY(0); /* Slide into place */
+}
+
+/* Trainer Details Container */
+.trainer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+}
+
+/* When expanded, layout changes to side-by-side */
+.trainer-details.expanded {
+  flex-direction: row; /* Change to side-by-side */
+  justify-content: center;
+}
+
+/* Trainer Image */
+.trainer-image {
+  width: 40%; /* Increased size for better visibility */
+  height: 40%; /* Adjusted height */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.trainer-image.expanded-image {
+  width: 300px; /* Enlarged image size when expanded */
+  height: 300px; /* Match the height */
+  border-radius: 12px; /* Rounded corners for side-by-side */
+  margin-right: 30px;
+}
+
+/* Trainer Info */
+.trainer-info {
+  color: #444;
+  transition: all 0.3s ease;
+}
+
+.trainer-info.expanded-text {
+  text-align: left; /* Align text to the left when expanded */
+  max-width: 600px;
+}
+
+/* Read More Button */
+.read-more-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.read-more-btn:hover {
+  background-color: #444;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .trainer-details.expanded {
+    flex-direction: column; /* Stack vertically on mobile */
+    width: 90%; /* Make the details container full width on mobile */
+  }
+
+  .trainer-image {
+    width: 250px; /* Adjust image size on mobile */
+    height: 250px;
+  }
+
+  .trainer-profile {
+    width: 80%; /* Adjust profile width on mobile */
+  }
+}
+
+/* Larger screen view */
+@media (min-width: 1024px) {
+  .trainer-profile {
+    width: 60%; /* Increase profile width on large screens */
+    padding: 50px;
+  }
+
+  .trainer-image {
+    width: 45%; /* Make the image slightly larger on bigger screens */
+    height: 45%;
+  }
+}
+
+/* Full-screen maximized profile */
+@media (min-width: 1440px) {
+  .trainer-profile {
+    width: 50%; /* Maximize profile width on extra large screens */
+  }
+
+  .trainer-image {
+    width: 50%; /* Further increase the image size on large screens */
+    height: 50%;
+  }
+}
+
+/* Paragraph Styling for Trainer Bio */
+.trainer-info p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  margin: 10px 0;
+  text-align: justify; /* Align text for readability */
+}
+
+/* To distinguish paragraphs clearly */
+.trainer-info p strong {
+  color: #333;
+  font-weight: 600; /* Bold important info like names and titles */
+}
+
+/* Paragraph with additional spacing */
+.trainer-info p + p {
+  margin-top: 20px; /* Add some margin to the next paragraph */
+}
