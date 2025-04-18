@@ -28,7 +28,7 @@ import UnAuthorisedRoute from "../public/UnAuthorisedRoute";
 import PasswordUpdate from "./SubComponents/PasswordUpdate";
 import ClassVenueUpdateComponent from "./updateComponents/ClassVenueUpdateComponent";
 import ClassVenueInsert from "./updateSubComponents/ClassVenueInsert";
-import ClassVenueDelete from "./updateSubComponents/classVenueDelete";
+import ClassVenueDelete from "./updateSubComponents/ClassVenueDeleteComponent";
 import ProductUpdateComponent from './updateComponents/ProductUpdateComponent';
 import ProductInsertComponent from "./updateSubComponents/ProductInsertComponent";
 import ProductDeleteComponent from "./updateSubComponents/ProductDeleteComponent";
