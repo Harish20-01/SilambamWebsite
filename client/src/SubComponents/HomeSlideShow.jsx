@@ -51,6 +51,10 @@ const HomeSlideShow = () => {
   return (
     <div className="slideshow-container" id="homeSlide">
       <div className="slide">
+            <div className="slide-caption">
+              <h2>தமிழர் மரபுக் கலையகம்</h2>
+              <p style={{textAlign:"center"}}>"Land of Traditional Atrs"</p>
+            </div>
         <img
           src={images[currentIndex]?.url} // Safe access using optional chaining
           alt={`Slide ${validIndex + 1}`}

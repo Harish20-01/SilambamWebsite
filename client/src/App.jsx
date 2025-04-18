@@ -26,6 +26,12 @@ import ImageInsertComponent from "./updateSubComponents/ImageInsertComponent";
 import ImageDeleteComponent from "./updateSubComponents/ImageDeleteComponent";
 import UnAuthorisedRoute from "../public/UnAuthorisedRoute";
 import PasswordUpdate from "./SubComponents/PasswordUpdate";
+import ClassVenueUpdateComponent from "./updateComponents/ClassVenueUpdateComponent";
+import ClassVenueInsert from "./updateSubComponents/ClassVenueInsert";
+import ClassVenueDelete from "./updateSubComponents/classVenueDelete";
+import ProductUpdateComponent from './updateComponents/ProductUpdateComponent';
+import ProductInsertComponent from "./updateSubComponents/ProductInsertComponent";
+import ProductDeleteComponent from "./updateSubComponents/ProductDeleteComponent";
 function App() {
   const[isLoggedIn,setIsLoggedIn]=useState(sessionStorage.getItem('isLoggedIn')==='true');
   return (
@@ -58,10 +64,20 @@ function App() {
                   <Route path="homeNewsInsert" element={isLoggedIn?<HomeNewsInsert/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
                   <Route path="homeNewsDelete" element={isLoggedIn?<HomeNewsDelete/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
               </Route>
+              <Route path="/homeUpdateComponent/classVenueUpdateComponent" element={isLoggedIn?<ClassVenueUpdateComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>} >
+                  <Route index element={isLoggedIn?<ClassVenueInsert/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
+                  <Route path="classVenueInsert" element={isLoggedIn?<ClassVenueInsert/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
+                  <Route path="classVenueDelete" element={isLoggedIn?<ClassVenueDelete/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
+              </Route>
               <Route path="/aboutUpdateComponent" element={isLoggedIn?<AboutUpdateComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>} >
                   <Route index  element={isLoggedIn?<AboutInsertComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
                    <Route path="insertAboutImage" element={isLoggedIn?<AboutInsertComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
                    <Route path="deleteAboutImage" element={isLoggedIn?<AboutDeleteComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
+              </Route>
+              <Route path="/productUpdateComponent" element={isLoggedIn?<ProductUpdateComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>} >
+                  <Route index  element={isLoggedIn?<ProductInsertComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
+                   <Route path="productInsert" element={isLoggedIn?<ProductInsertComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
+                   <Route path="productDelete" element={isLoggedIn?<ProductDeleteComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
               </Route>
               <Route path="/imageUpdateComponent" element={isLoggedIn?<ImageUpdateComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>} >
                     <Route index element={isLoggedIn?<ImageInsertComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>

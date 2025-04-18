@@ -2,8 +2,6 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const jwt = require('jsonwebtoken');
-const { HomeSlideImage, news, About, galleryImage, userMessage } = require('./models/model'); 
 const app = express();
 const port = 3000;
 const cookieParser = require('cookie-parser');
@@ -22,6 +20,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
 
 
 const homeSlideRoutes = require('./controllers/homeSlideControllers');
@@ -29,12 +28,16 @@ const newsRoutes = require('./controllers/newsControllers');
 const aboutRoutes = require('./controllers/aboutControllers');
 const galleryRoutes = require('./controllers/galleryControllers');
 const adminControlRoutes=require('./controllers/adminControllers');
+const homeClassVenue=require('./controllers/classVenueControllers');
+const SilambamProducts=require('./controllers/productController');
 
 app.use('/homeSlide', homeSlideRoutes);
 app.use('/news', newsRoutes);
 app.use('/about', aboutRoutes);
 app.use('/gallery', galleryRoutes);
 app.use('/api',adminControlRoutes);
+app.use('/class-venue',homeClassVenue);
+app.use('/silambam-products',SilambamProducts);
 
 
 const admin = { username: 'admin', password: 'admin123' };

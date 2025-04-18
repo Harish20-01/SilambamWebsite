@@ -51,6 +51,20 @@ const adminCredentials=new mongoose.Schema({
   password:String
 })
 
+const homeClassVenue=new mongoose.Schema({
+  place:String,
+  timing:String,
+  description:String,
+}) 
+
+const SilambamProducts=new mongoose.Schema({
+    public_id:String,
+    imageUrl:String,
+    name:String,
+    price:Number,
+    description:String
+})
+
 const news=mongoose.model('news',newsSchema);
 
 const HomeSlideImage = mongoose.model('HomeSlideImage', imageSchema);
@@ -63,6 +77,10 @@ const userMessage=mongoose.model('userMessage',userMessageSchema);
 
 const admin=mongoose.model('admin',adminCredentials);
 
-module.exports ={HomeSlideImage,news,About,galleryImage,userMessage,admin};
+const ClassVenue=mongoose.model('ClassVenue',homeClassVenue);
+
+const Products=mongoose.model('Products',SilambamProducts);
+
+module.exports ={HomeSlideImage,news,About,galleryImage,userMessage,admin,ClassVenue,Products};
 
 

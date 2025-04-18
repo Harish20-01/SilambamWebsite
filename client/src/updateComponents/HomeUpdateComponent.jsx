@@ -20,6 +20,7 @@ const HomeUpdateComponent = () => {
         <h2> Choose  section to edit </h2>
         <Link to="homeSlideComponent">HomeSlideImage</Link>
         <Link to="homeNewsUpdateComponent">HomeNews</Link>
+        <Link to='classVenueUpdateComponent'>ClassVenue</Link>
       <Outlet/>
     </div>
     </>

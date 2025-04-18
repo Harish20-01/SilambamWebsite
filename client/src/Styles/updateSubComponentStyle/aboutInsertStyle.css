@@ -26,12 +26,15 @@
     margin: 2%;
 }
 #AboutInsert-Container form button{
-    color: red;
-    padding: 1%;
+    color: white;
+    padding: 2%;
     border-radius: 5px;
     margin-top: 2%;
     width: 50%;
-    background-color: white;
+    background-color: blue;
+}
+#AboutInsert-Container form button:hover{
+    background-color: rgb(17, 17, 136);
 }
 #AboutInsert-Container form label,#AboutInsert-Container form input,#AboutInsert-Container form textarea{
     width: 100%;

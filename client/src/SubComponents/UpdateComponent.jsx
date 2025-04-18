@@ -24,6 +24,7 @@ const UpdateComponent = () => {
                 <Link to="/homeUpdateComponent">Home</Link>
                 <Link to="/aboutUpdateComponent">About</Link>
                 <Link to="/imageUpdateComponent">Gallery</Link>
+                <Link to="/productUpdateComponent">Products</Link>
                 <Link to="/passwordUpdateComponent">Change Password</Link>  
           </div>
     

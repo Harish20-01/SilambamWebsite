@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
 import LoadingComponent from '../../public/LoadingComponent';
 import '../Styles/updateSubComponentStyle/aboutDeleteStyle.css';
-const AboutDeleteComponent = () => {
+const ProductDeleteComponent = () => {
   const [images, setImages] = useState([]);
   const [selectedImages, setSelectedImages] = useState([]);
   const[isProcessing,setIsPreocessing]=useState(false);
@@ -12,8 +12,9 @@ const AboutDeleteComponent = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get("https://silambamwebsite.onrender.com/about");
+        const response = await axios.get("https://silambamwebsite.onrender.com/silambam-products");
         setImages(response.data); 
+        console.log(response.data);
       } catch (error) {
         console.error('Error fetching images:', error);
       }
@@ -41,7 +42,7 @@ const AboutDeleteComponent = () => {
     setIsPreocessing(true);
     try {
         const data={public_ids:selectedImages};
-        const response=await axios.delete("https://silambamwebsite.onrender.com/about",{
+        const response=await axios.delete("https://silambamwebsite.onrender.com/silambam-products",{
           headers:{
             "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 
           },
@@ -69,19 +70,19 @@ const AboutDeleteComponent = () => {
   return (
     isProcessing?(<LoadingComponent/>):(
       <div id="AboutDelete-Container">
-        <h2>About Section</h2>
-        <h3>Select Images to Delete</h3>
+        <h2>Product Section</h2>
+        <h3>Select Name to Delete</h3>
         <form>
           {images.map((image) => (
-            <div key={image.public_id} htmlFor={image.public_id} className='AboutDelete-Element' onClick={() => handleCheckboxChange(item.place)}>
+            <div key={image.public_id} htmlFor={image.public_id} className='AboutDelete-Element' onClick={() => handleCheckboxChange(image.public_id)}>
               <input
                 type="checkbox"
                 id={image.public_id}
                 value={image.public_id}
+                onClick={() => handleCheckboxChange(image.public_id)}
                 checked={selectedImages.includes(image.public_id)}
-                onChange={() => handleCheckboxChange(image.public_id)}
               />
-              <label htmlFor={image.public_id}>{image.title}</label>
+              <label htmlFor={image.public_id}>{image.name}</label>
             </div>
           ))}
         </form>
@@ -92,4 +93,4 @@ const AboutDeleteComponent = () => {
   );
 };
 
-export default AboutDeleteComponent;
+export default ProductDeleteComponent;

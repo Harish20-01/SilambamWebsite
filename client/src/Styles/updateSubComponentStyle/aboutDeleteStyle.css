@@ -1,35 +1,59 @@
-#AboutDelete-Container{
+#AboutDelete-Container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-#AboutDelete-Container h2{
-    color:red;
+
+#AboutDelete-Container h2 {
+    color: red;
     margin: 1%;
 }
-#AboutDelete-Container form{
+
+#AboutDelete-Container form input{
+    accent-color: red;
+    
+}
+
+#AboutDelete-Container form {
     display: flex;
     flex-direction: column;
     width: 50vh;
     padding: 1%;
 }
-#AboutDelete-Container form .AboutDelete-Element{
-    border: 2px solid gold;
+
+#AboutDelete-Container form .AboutDelete-Element {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    border-radius: 8px;
     padding: 1%;
     text-align: center;
     margin: 0.5%;
+    gap: 20px;
+    padding: 10px;
+    transition: box-shadow 0.3s ease;
+    background-color: #fff;
+}
+#AboutDelete-Container form .AboutDelete-Element label{
+    white-space: nowrap;
 }
 
-#AboutDelete-Container  button{
+#AboutDelete-Container form .AboutDelete-Element:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* stronger shadow on hover */
+}
+
+#AboutDelete-Container button {
     color: red;
     margin-bottom: 2%;
     padding: 0.5%;
     border-radius: 5px;
     background-color: white;
+    border: 1px solid red;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-#AboutDelete-Container button:hover{
+
+#AboutDelete-Container button:hover {
     color: white;
     background-color: red;
-    box-shadow: 2px 5px 40px solid rgba(168, 28, 28, 0.7);
+    box-shadow: 0 4px 20px rgba(168, 28, 28, 0.4);
 }

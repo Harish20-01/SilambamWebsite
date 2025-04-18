@@ -102,9 +102,15 @@
     background-color: rgba(0,0,0,0.4);
     border-radius: 10px;
     max-width: 700px;
+    height: 95vh;
+    overflow-y: scroll;
+  }
+  .fullscreen-details::-webkit-scrollbar{
+    display: none;
   }
   .fullscreen-details h3{
     color: red;
+    font-weight: bolder;
   }
   
   .close-btn {
@@ -115,6 +121,8 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: sticky;
+    bottom: 10px;
   }
   
 

@@ -4,6 +4,7 @@ import axios from 'axios';
 import '../Styles/SubComponentsStyles/login.css';
 import { useToast } from '../../public/MessageToastContent';
 import LoadingComponent from '../../public/LoadingComponent';
+import { FaUser, FaLock } from 'react-icons/fa';
 
 const Login = ({ setIsLoggedIn }) => {
   const [username, setUsername] = useState('');
@@ -47,7 +48,7 @@ const Login = ({ setIsLoggedIn }) => {
       <h2>Admin Login</h2>
       <form onSubmit={handleLogin}>
         <div>
-          <label>Username</label>
+          <label>Username<FaUser/></label>
           <input 
             type="text" 
             value={username}
@@ -56,7 +57,7 @@ const Login = ({ setIsLoggedIn }) => {
           />
         </div>
         <div>
-          <label>Password</label>
+          <label>Password<FaLock/></label>
           <input 
             type="password" 
             value={password}
