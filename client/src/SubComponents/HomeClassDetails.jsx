@@ -36,7 +36,7 @@ const ClassDetails = () => {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        <h2 className="section-title">பயிற்சி வகுப்பு விவரங்கள்:</h2>
+        <h2 className="section-title">பயிற்சி நடக்கும் இடங்கள்:</h2>
       </motion.div>
     
       {/* Venue 1, Venue 2, and Venue 3 */}
@@ -48,13 +48,13 @@ const ClassDetails = () => {
       >
       {venue.map((item, index) => (
       <div key={index} className="venue">
-        <h2 className="venue-title">Venue {index + 1} - {item.place || 'Unnamed Venue'}</h2>
+        <h2 className="venue-title"> இடம் {index + 1} - {item.place || 'Unnamed Venue'}</h2>
         <ul>
-          <li>வகுப்பு நடக்கும் இடம்: {item.place || 'N/A'}</li>
-          <li>நேரம்: {item.timing || 'N/A'}</li>
+          <li><span>நாள்:</span>&nbsp;&nbsp;{item.place || 'N/A'},</li>
+          <li><span>நேரம்:</span>&nbsp;&nbsp;{item.timing || 'N/A'},</li>
           <li><dl>
-            <dt>விவரம்:</dt>
-            <dd>&nbsp;{item.description || 'முடிவடையவில்லை'}</dd>
+            <dt><span>விவரம்:</span>&nbsp;&nbsp;</dt>
+            <dd>&nbsp;{item.description || 'முடிவடையவில்லை'}.</dd>
           </dl>
           </li> 
         </ul>

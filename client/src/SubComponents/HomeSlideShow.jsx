@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../Styles/SubComponentsStyles/homeSlideShow.css"; // Optional: Add custom styles
+import "../Styles/SubComponentsStyles/homeSlideShow.css";
+import LoadingComponent from "../../public/LoadingComponent"; // Optional: Add custom styles
 
 const HomeSlideShow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,7 +41,7 @@ const HomeSlideShow = () => {
   }, [images]);
 
   if (loading) {
-    return <div>Loading...</div>; 
+    return <div><LoadingComponent/></div>; 
   }
 
   if (images.length === 0) {
@@ -53,7 +54,7 @@ const HomeSlideShow = () => {
       <div className="slide">
             <div className="slide-caption">
               <h2>தமிழர் மரபுக் கலையகம்</h2>
-              <p style={{textAlign:"center"}}>"Land of Traditional Atrs"</p>
+              <p style={{textAlign:"center"}}>Land of Traditional Atrs</p>
             </div>
         <img
           src={images[currentIndex]?.url} // Safe access using optional chaining

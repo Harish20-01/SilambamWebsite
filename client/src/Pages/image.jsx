@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../Styles/SubComponentsStyles/imageGalleryStyle.css';
+import LoadingComponent from '../../public/LoadingComponent';
 
 const ImageGallery = () => {
   const [Images, setImages] = useState([]);
@@ -50,7 +51,7 @@ const ImageGallery = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><LoadingComponent/></div>;
   }
 
   return (

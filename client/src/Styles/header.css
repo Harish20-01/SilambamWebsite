@@ -40,9 +40,9 @@ nav {
     color: rgb(162, 46, 46);
     text-align: center;
     text-shadow:
-      0 0 5px rgba(155, 84, 84, 0.7),
+      0 0 5px rgba(22, 16, 16, 0.7),
       0 0 10px rgba(197, 37, 37, 0.6),
-      0 0 15px rgba(171, 3, 3, 0.5);
+      0 0 15px rgba(13, 3, 3, 0.5);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
@@ -52,10 +52,11 @@ nav {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.3);
     position: absolute;
     top: 100%;
     left: 0;
+    font-size: 1.0rem;
     padding: 15px 0;
     z-index: 99;
   }
@@ -72,7 +73,7 @@ nav {
   /* Show on menu toggle */
 #Navbar-items.activate {
     display: flex;
-    
+    background-color: rgba(225,225,225,0.8);
   }
   
   /* Hide dropdown hover effect on mobile (optional) */
@@ -93,8 +94,10 @@ nav {
   }
   
   #Navbar-items a.active {
-    color: brown;
+    color: brown; 
+
   }
+ 
   
   #Navbar-items a::after {
     content: '';
@@ -141,12 +144,16 @@ nav {
       justify-content: space-between;
       padding: 0px 0px;
       position: sticky;
+      font-size: 0.8rem;
     }
   
     #Logo {
         flex-direction: row;
         padding-top: 0;
         margin-left: 20px;
+    }
+    #Navbar-items.activate{
+      background-color: none;
     }
   
     #Logo img {
@@ -156,14 +163,18 @@ nav {
     }
   
     #Logo h3 {
-        text-align: center;
-        margin-left: 10px;
-        color: rgb(162, 46, 46);
-        text-align: center;
-        text-shadow:
-        0 0 5px rgba(155, 84, 84, 0.7),
-        0 0 10px rgba(197, 37, 37, 0.6),
-        0 0 15px rgba(171, 3, 3, 0.5);
+      white-space: wrap;
+      text-align: center;
+      padding: 2%;
+      margin-left: 10px;
+      color: rgb(162, 46, 46); 
+      border-radius: 10px;
+      font-size: 1.2rem;
+      width: 100%;
+      text-shadow:
+          0 0 5px rgba(255, 80, 80, 0.9),
+          0 0 10px rgba(255, 80, 80, 0.9),
+          0 0 20px rgba(255, 80, 80, 0.9);
     }
   
     #Navbar-items {
@@ -174,6 +185,7 @@ nav {
       gap: 10px;
       align-items: center;
       justify-content:center;
+      font-size: 0.9rem;
     }
   
     #ToggleMenu {
@@ -182,6 +194,7 @@ nav {
   
     #Login-Container {
       display: block;
+      text-wrap: nowrap;
       border: 2px solid rgb(138, 37, 37);
       padding: 5px 10px;
       border-radius: 5px;

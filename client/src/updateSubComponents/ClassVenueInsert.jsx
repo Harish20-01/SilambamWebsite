@@ -53,7 +53,7 @@ const ClassVenueInsert = () => {
             <div id="HomeNewsInsert-Container">
                 <h3>Update New Venues Here..</h3>
                 <form>
-                    <label>Place(இடம்)</label>
+                    <label>Date(நாள்)</label>
                     <input 
                         type='text'
                         value={place}

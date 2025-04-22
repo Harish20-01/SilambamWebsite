@@ -20,10 +20,10 @@ const Header = () => {
       <nav className={menuOpen?'border-radius':''}>
         <div id="Logo">
           <img src={logo} alt="logo" />
-          <h3>தமிழர் மரபுக் கலையகம்</h3>
+          <h3>தமிழர்&nbsp;மரபுக் கலையகம்</h3>
           {/* Quote Section */}
           <div className="quote">
-            "The Land of traditional Arts"
+            Land of Traditional Arts
           </div>
         </div>
 
@@ -44,7 +44,7 @@ const Header = () => {
               className={({ isActive }) => (isActive ? 'active li' : ' li')}
               onClick={handleNavClick}
             >
-              கலைவெளி
+              படங்கள்
             </NavLink>
             <ul id="dropDown-Content" className="dropDown-Content">
               <li>
@@ -91,7 +91,7 @@ const Header = () => {
               className={({ isActive }) => (isActive ? 'active li' : 'li')}
               onClick={handleNavClick}
             >
-              தொடர்பு
+             தொடர்புக்கு
             </NavLink>
           </li>
         </div>
@@ -103,7 +103,7 @@ const Header = () => {
             onClick={handleNavClick}
             title="Only For Admin"
           >
-            LogIn
+             உள்நுழைய
           </NavLink>
         </div>
 

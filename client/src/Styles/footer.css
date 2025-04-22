@@ -3,9 +3,14 @@
     background-color: black;
     color: white;
 }
+#Footer-Container li{
+    line-height: 4vh;
+    list-style-type: none;
+}
 
 #About-Footer div{
-    text-align: center;
+    text-align:justify;
+    margin-left: 2%;
 }
 
 #About-Footer,#Quick-Links,#Contact-details{
@@ -33,12 +38,14 @@ li a{
     list-style-type: none;
     font-weight: bolder;
     text-decoration: none;
-   
-    line-height: 10xp;
 }
 #Footer-Container .fa{
     vertical-align: middle;
     margin-right: 5px;
+    color: aquamarine;
+}
+#Footer-Container h3{
+    color: rgb(227, 30, 30);
 }
 
 #Contact{
@@ -48,7 +55,7 @@ li a{
 }
 
 #Contact li a ,#Quick-Links div li a{
-    color:aquamarine
+    color:white;
 }
 @media (max-width:768px){
 

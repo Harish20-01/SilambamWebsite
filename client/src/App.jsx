@@ -32,8 +32,21 @@ import ClassVenueDelete from "./updateSubComponents/ClassVenueDeleteComponent";
 import ProductUpdateComponent from './updateComponents/ProductUpdateComponent';
 import ProductInsertComponent from "./updateSubComponents/ProductInsertComponent";
 import ProductDeleteComponent from "./updateSubComponents/ProductDeleteComponent";
+import LoadingComponent from "../public/LoadingComponent";
 function App() {
   const[isLoggedIn,setIsLoggedIn]=useState(sessionStorage.getItem('isLoggedIn')==='true');
+  const[isLoading,setIsLoading]=useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingComponent/>;
+  }
   return (
     <>
       <Header />

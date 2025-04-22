@@ -2,27 +2,34 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../Styles/about.css';
+import LoadingComponent from '../../public/LoadingComponent';
 
 const About = () => {
   const [data, setData] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
-
+  const[loading,setLoading]=useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("https://silambamwebsite.onrender.com/about");
         console.log(response.data); // Check if data is coming from the API
         setData(response.data); 
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
+        setLoading(false);
       }
     };
 
     fetchData();
   }, []);
+  if(loading)
+  {
+    return <LoadingComponent/>
+  }
 
   if (data.length === 0) {
-    return <div>Loading...</div>;  // Show loading if data is still being fetched
+    return <div style={{height:"100vh",display:"flex",alignItems:"center",justifyContent:"center"}}>No Images Founded....</div>;  // Show loading if data is still being fetched
   }
 
   return (

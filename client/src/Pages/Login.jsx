@@ -45,10 +45,10 @@ const Login = ({ setIsLoggedIn }) => {
     isProcessing?(<LoadingComponent/> ): (
     <div id="Login-Form-Container">
     <div className="login-form">
-      <h2>Admin Login</h2>
+      <h2>Admin Login(நிர்வாகி)</h2>
       <form onSubmit={handleLogin}>
         <div>
-          <label>Username<FaUser/></label>
+          <label>Username(பயனர்)<FaUser/></label>
           <input 
             type="text" 
             value={username}
@@ -57,7 +57,7 @@ const Login = ({ setIsLoggedIn }) => {
           />
         </div>
         <div>
-          <label>Password<FaLock/></label>
+          <label>Password(கடவுச்சொல்)<FaLock/></label>
           <input 
             type="password" 
             value={password}
