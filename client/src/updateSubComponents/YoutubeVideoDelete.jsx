@@ -14,7 +14,7 @@ const YoutubeVideoDelete = () => {
   useEffect(() => {
     const fetchVenues = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/youtube-video");
+        const response = await axios.get("https://silambamwebsite-1.onrender.com/youtube-video");
         setTitle(response.data); 
       } catch (error) {
         console.error('Error fetching venues:', error);
@@ -40,7 +40,7 @@ const YoutubeVideoDelete = () => {
     }
     setIsPreocessing(true);
     try {
-      const response = await axios.delete("http://localhost:3000/youtube-video", {
+      const response = await axios.delete("https://silambamwebsite-1.onrender.com/youtube-video", {
         headers: {
           "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`,
         },

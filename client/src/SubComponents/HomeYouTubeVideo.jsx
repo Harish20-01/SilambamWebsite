@@ -8,7 +8,7 @@ const HomeYouTubeVideo = () => {
   useEffect(()=>{
     const fetchData=async()=>{
       try{
-        const response=await axios.get('http://localhost:3000/youtube-video');
+        const response=await axios.get('https://silambamwebsite-1.onrender.com/youtube-video');
         if(response.status==200){
             setData(response.data);
         
