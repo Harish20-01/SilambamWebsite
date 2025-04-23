@@ -33,20 +33,23 @@ import ProductUpdateComponent from './updateComponents/ProductUpdateComponent';
 import ProductInsertComponent from "./updateSubComponents/ProductInsertComponent";
 import ProductDeleteComponent from "./updateSubComponents/ProductDeleteComponent";
 import LoadingComponent from "../public/LoadingComponent";
+import YoutubeUpdateComponent from "./updateComponents/YoutubeUpdateComponent";
+import YoutubeVideoInsert from "./updateSubComponents/YoutubeVideoInsert";
+import YoutubeVideoDelete from "./updateSubComponents/YoutubeVideoDelete";
 function App() {
   const[isLoggedIn,setIsLoggedIn]=useState(sessionStorage.getItem('isLoggedIn')==='true');
   const[isLoading,setIsLoading]=useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 0.1);
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
+  /* if (isLoading) {
     return <LoadingComponent/>;
-  }
+  } */
   return (
     <>
       <Header />
@@ -81,6 +84,11 @@ function App() {
                   <Route index element={isLoggedIn?<ClassVenueInsert/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
                   <Route path="classVenueInsert" element={isLoggedIn?<ClassVenueInsert/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
                   <Route path="classVenueDelete" element={isLoggedIn?<ClassVenueDelete/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
+              </Route>
+              <Route path="/homeUpdateComponent/youtubeUpdateComponent" element={isLoggedIn?<YoutubeUpdateComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>} >
+                  <Route index element={isLoggedIn?<YoutubeVideoInsert/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
+                  <Route path="youtubeVideoInsert" element={isLoggedIn?<YoutubeVideoInsert/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
+                  <Route path="youtubeVideoDelete" element={isLoggedIn?<YoutubeVideoDelete/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
               </Route>
               <Route path="/aboutUpdateComponent" element={isLoggedIn?<AboutUpdateComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>} >
                   <Route index  element={isLoggedIn?<AboutInsertComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>

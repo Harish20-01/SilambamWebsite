@@ -57,11 +57,11 @@ const Footer = () => {
                       <FaMobileAlt className='fa'/> 
                         +91 91593 18285</a>
                   </li>
-                  <li><a href="https://www.instagram.com/venky_silambam" target="_blank">
-                      <FaInstagram className='fa'/>venky_silambam</a>
-                  </li>
                   <li><a href="https://www.instagram.com/tamilar_marabu_kalaiyagam" target="_blank">
                       <FaInstagram className='fa'/>tamilar_marabu_kalaiyagam</a>
+                  </li>
+                  <li><a href="https://www.instagram.com/venky_silambam" target="_blank">
+                      <FaInstagram className='fa'/>venky_silambam</a>
                   </li>
                   <li><a href="https://www.youtube.com/@TamilarMarabuKalaiyagam" target="_blank">
                       <FaYoutube className='fa'/>Tamilar Marabu Kalaiyagam</a>

@@ -40,9 +40,9 @@ const HomeSlideShow = () => {
     }
   }, [images]);
 
-  if (loading) {
+  /* if (loading) {
     return <div><LoadingComponent/></div>; 
-  }
+  } */
 
   if (images.length === 0) {
     return <div>No images found</div>; 
@@ -54,7 +54,7 @@ const HomeSlideShow = () => {
       <div className="slide">
             <div className="slide-caption">
               <h2>தமிழர் மரபுக் கலையகம்</h2>
-              <p style={{textAlign:"center"}}>Land of Traditional Atrs</p>
+              <p style={{textAlign:"center"}}>Land of Traditional Arts</p>
             </div>
         <img
           src={images[currentIndex]?.url} // Safe access using optional chaining

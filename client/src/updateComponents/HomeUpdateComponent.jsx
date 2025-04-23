@@ -21,6 +21,7 @@ const HomeUpdateComponent = () => {
         <Link to="homeSlideComponent">HomeSlideImage</Link>
         <Link to="homeNewsUpdateComponent">HomeNews</Link>
         <Link to='classVenueUpdateComponent'>ClassVenue</Link>
+        <Link to="youtubeUpdateComponent">YoutubeLink</Link>
       <Outlet/>
     </div>
     </>

@@ -1,20 +1,19 @@
 const express=require('express');
 const router = express.Router();
 const validateRoute=require('../validation/validateRoute');
-const { ClassVenue } = require('../models/model');
+const { YoutubeId } = require('../models/model');
 
 router.get('/',async(req,res)=>{
-    const data=await ClassVenue.find();
+    const data=await YoutubeId.find();
     res.status(200).send(data);
 })
 
 router.post('/',validateRoute,async(req,res)=>{
     try{
-        const {timing,place,description}=req.body;
-        const venueInstance=new ClassVenue({
-            place,
-            timing,
-            description
+        const {title,id}=req.body;
+        const venueInstance=new YoutubeId({
+            title,
+            id
         }) ;
         await venueInstance.save();
          return res.status(200).json({message:"data uploaded succesfully",success:true});
@@ -26,13 +25,13 @@ router.post('/',validateRoute,async(req,res)=>{
 
 router.delete('/', validateRoute, async (req, res) => {
     try {
-      const { place } = req.body;
+      const { title } = req.body;
   
-      if (!Array.isArray(place)) {
+      if (!Array.isArray(title)) {
         return res.status(400).json({ success: false, message: "Invalid data format. Expected an array of place names." });
       }
   
-      await ClassVenue.deleteMany({ place: { $in: place } });
+      await YoutubeId.deleteMany({ place: { $in: title } });
       return res.status(200).json({ message: "Data deleted successfully", success: true });
     } catch (error) {
       return res.status(400).json({ message: 'Error processing the delete', success: false, error });

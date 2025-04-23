@@ -23,7 +23,7 @@ const Header = () => {
           <h3>தமிழர்&nbsp;மரபுக் கலையகம்</h3>
           {/* Quote Section */}
           <div className="quote">
-            Land of Traditional Arts
+            "Land of Traditional Arts"
           </div>
         </div>
 

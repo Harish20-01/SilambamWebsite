@@ -65,6 +65,11 @@ const SilambamProducts=new mongoose.Schema({
     description:String
 })
 
+const YoutubeVideoId=new mongoose.Schema({
+  title:String,
+  id:String
+})
+
 const news=mongoose.model('news',newsSchema);
 
 const HomeSlideImage = mongoose.model('HomeSlideImage', imageSchema);
@@ -81,6 +86,8 @@ const ClassVenue=mongoose.model('ClassVenue',homeClassVenue);
 
 const Products=mongoose.model('Products',SilambamProducts);
 
-module.exports ={HomeSlideImage,news,About,galleryImage,userMessage,admin,ClassVenue,Products};
+const YoutubeId=mongoose.model('YoutubeId',YoutubeVideoId);
+
+module.exports ={HomeSlideImage,news,About,galleryImage,userMessage,admin,ClassVenue,Products,YoutubeId};
 
 

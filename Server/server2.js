@@ -30,6 +30,7 @@ const galleryRoutes = require('./controllers/galleryControllers');
 const adminControlRoutes=require('./controllers/adminControllers');
 const homeClassVenue=require('./controllers/classVenueControllers');
 const SilambamProducts=require('./controllers/productController');
+const YoutubeId=require('./controllers/youtubeVideoControllers');
 
 app.use('/homeSlide', homeSlideRoutes);
 app.use('/news', newsRoutes);
@@ -38,6 +39,7 @@ app.use('/gallery', galleryRoutes);
 app.use('/api',adminControlRoutes);
 app.use('/class-venue',homeClassVenue);
 app.use('/silambam-products',SilambamProducts);
+app.use('/youtube-video',YoutubeId);
 
 
 const admin = { username: 'admin', password: 'admin123' };
