@@ -6,6 +6,9 @@
     background-color: aqua;
     padding: 1.5%;
 }
+#HomeNewsUpdate-ul li{
+    list-style-type: none;
+}
 .HomeNewsUpdate-Title{
     text-align: center;
     margin: 1%;

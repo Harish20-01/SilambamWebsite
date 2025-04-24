@@ -50,7 +50,7 @@ const ClassDetails = () => {
       <div key={index} className="venue">
         <h2 className="venue-title"> இடம் {index + 1} - {item.place || 'Unnamed Venue'}</h2>
         <ul>
-          <li><span>நாள்:</span>&nbsp;&nbsp;{item.place || 'N/A'},</li>
+          <li><span>நாள்:</span>&nbsp;&nbsp;{item.day || 'N/A'},</li>
           <li><span>நேரம்:</span>&nbsp;&nbsp;{item.timing || 'N/A'},</li>
           <li><dl>
             <dt><span>விவரம்:</span>&nbsp;&nbsp;</dt>

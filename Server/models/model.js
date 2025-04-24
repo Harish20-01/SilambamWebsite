@@ -30,7 +30,6 @@ const aboutSchema=new mongoose.Schema({
   description:String,
   imageUrl:String,
   public_id:String,
-  staff:String
 })
 
 const galleryImageSchema=new mongoose.Schema({
@@ -53,6 +52,7 @@ const adminCredentials=new mongoose.Schema({
 
 const homeClassVenue=new mongoose.Schema({
   place:String,
+  day:String,
   timing:String,
   description:String,
 }) 

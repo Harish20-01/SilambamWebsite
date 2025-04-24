@@ -5,6 +5,15 @@
     background-color: rgb(252, 215, 120);
     position: relative;
     z-index: 0;
+    padding: 1%;
+    
 }
-
+#About-Update-Container nav li{
+    list-style-type: none;
+    
+}
+#About-Update-Container nav  a{
+    font-weight: bolder;
+    
+}
 

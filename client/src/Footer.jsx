@@ -51,7 +51,7 @@ const Footer = () => {
             <div id="Contact">
                   <li><a href="mailto:tamilarmarabukalaiyagam@gamil.com" target="_blank">
                         <FaEnvelope className='fa'/>
-                        tamilarmarabukalaiyagam@gamil.com</a>
+                        tamilarmarabukalaiyagam@gmail.com</a>
                   </li>
                   <li><a href="">
                       <FaMobileAlt className='fa'/> 

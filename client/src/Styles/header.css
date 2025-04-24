@@ -231,4 +231,9 @@ nav {
         border-bottom-right-radius: 0px;
     }
   }
-  
+
+  @media (max-width:900px){
+    #Login-Container {
+      display: none;
+    }
+  }

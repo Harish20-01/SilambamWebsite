@@ -35,7 +35,6 @@ router.post('/', upload.single('image'),validateRoute, async (req, res) => {
         description,
         imageUrl: result.secure_url,
         public_id: result.public_id,
-        staff,
       });
 
       await aboutInstance.save();

@@ -12,6 +12,7 @@ router.post('/',validateRoute,async(req,res)=>{
     try{
         const {timing,place,description}=req.body;
         const venueInstance=new ClassVenue({
+            day,
             place,
             timing,
             description

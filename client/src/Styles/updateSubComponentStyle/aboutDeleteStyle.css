@@ -38,7 +38,8 @@
 }
 
 #AboutDelete-Container form .AboutDelete-Element:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* stronger shadow on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgb(0,0,0,0.1);
 }
 
 #AboutDelete-Container button {

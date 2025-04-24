@@ -2,155 +2,80 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../Styles/about.css';
 
-const LoadingComponent = () => (
-  <div className="flex items-center justify-center h-screen">
-    <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-red-600"></div>
-  </div>
-);
-
-const About = () => {
-  const [data, setData] = useState([]);
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [expandedItems, setExpandedItems] = useState(new Set());
+const Courses = () => {
+  const [courses, setCourses] = useState([]);
+  const [selectedCourse, setSelectedCourse] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchCourses = async () => {
       try {
-        const response = await axios.get("https://silambamwebsite.onrender.com/about");
-        setData(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setLoading(false);
+        const res = await axios.get('https://silambamwebsite.onrender.com/about');
+        setCourses(res.data);
+      } catch (err) {
+        console.error('Error fetching courses:', err);
       }
     };
-
-    fetchData();
+    fetchCourses();
   }, []);
 
-  const toggleExpand = (id, e) => {
-    e.stopPropagation();
-    setExpandedItems(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(id)) {
-        newSet.delete(id);
-      } else {
-        newSet.add(id);
-      }
-      return newSet;
-    });
-  };
-
-  const handleContainerClick = (item) => {
-    setSelectedItem(item);
-  };
-
-  if (loading) return <LoadingComponent />;
-
-  if (data.length === 0) {
+  if (!courses.length) {
     return (
-      <div className="h-screen flex items-center justify-center text-lg text-gray-700">
-        No Images Found...
+      <div className="loading-message">
+        No courses found...
+      </div>
+    );
+  }
+
+  if (selectedCourse) {
+    return (
+      <div className="course-expanded-view" onClick={() => setSelectedCourse(null)}>
+        <div className="course-expanded-content" onClick={(e) => e.stopPropagation()}>
+          <img src={selectedCourse.imageUrl} alt={selectedCourse.title} />
+          <div>
+            <h3>{selectedCourse.title}</h3>
+            <p className="course-full-description">
+              {selectedCourse.description.split('\n').map((line, i) => (
+                <span key={i}>{line}<br /></span>
+              ))}
+            </p>
+            {/* <p className="course-staff"><strong>Teaching Staff:</strong> {selectedCourse.staff}</p> */}
+            <button onClick={() => setSelectedCourse(null)} className="close-btn">குறைத்துக் காண்</button>
+          </div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="about-about-container">
-      {data.map((item, index) => {
-        const isExpanded = expandedItems.has(item.id);
-        const layoutClass = isExpanded ? 'stacked' : 'side-by-side';
-        const descriptionLines = item.description.split('\n');
-        const previewText = descriptionLines.slice(0, 5).join('\n');
-        const remainingText = descriptionLines.slice(5).join('\n');
-        const renderDescription = isExpanded ? item.description : previewText;
-
-        const contentElement = (
-          <>
-            <h3 className="about-title">{item.title}</h3>
-            <div className={`about-description ${isExpanded ? 'expanded' : 'collapsed'}`}>
-              {renderDescription.split('\n').map((line, i) => (
-                <p key={i} className="mb-2">{line}</p>
-              ))}
-              {!isExpanded && remainingText && <span>...</span>}
-            </div>
-            {remainingText && (
-              <button
-                onClick={(e) => toggleExpand(item.id, e)}
-                className="about-button"
-              >
-                {isExpanded ? 'Show Less' : 'Show More'}
-              </button>
-            )}
-            <h2 className="about-staff">
-              <span className="staff-label">Teaching STAFF: </span>{item.staff}
-            </h2>
-          </>
-        );
+    <div className="courses-container">
+      {courses.map((course, index) => {
+        const isEven = index % 2 === 0;
+        const layoutClass = isEven ? 'row-left' : 'row-right';
+        const previewText = course.description.split('\n').slice(0, 5).join('\n');
 
         return (
-          <div
-            key={item.id}
-            className={`about-element ${layoutClass}`}
-            style={{
-              backgroundColor: index % 2 === 0 ? "rgb(165, 174, 174)" : "rgb(237, 220, 220)"
-            }}
-            onClick={() => handleContainerClick(item)}
-          >
-            {layoutClass === 'side-by-side' ? (
-              index % 2 === 0 ? (
-                <>
-                  <div className="about-content" onClick={(e) => e.stopPropagation()}>
-                    {contentElement}
-                  </div>
-                  <div className="about-image">
-                    <img src={item.imageUrl} alt={item.title} />
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="about-image">
-                    <img src={item.imageUrl} alt={item.title} />
-                  </div>
-                  <div className="about-content" onClick={(e) => e.stopPropagation()}>
-                    {contentElement}
-                  </div>
-                </>
-              )
-            ) : (
-              <>
-                <div className="about-image">
-                  <img src={item.imageUrl} alt={item.title} />
-                </div>
-                <div className="about-content" onClick={(e) => e.stopPropagation()}>
-                  {contentElement}
-                </div>
-              </>
-            )}
+          <div key={course._id} className={`course-row ${layoutClass}`}>
+            <div className="course-image-wrapper">
+              <img src={course.imageUrl} alt={course.title} />
+            </div>
+            <div className="course-info">
+              <h3 className="course-title">{course.title}</h3>
+              <p className="course-description">
+                {previewText.split('\n').map((line, i) => (
+                  <span key={i}>{line}<br /></span>
+                ))}
+                {course.description.split('\n').length > 5 && <span>...</span>}
+              </p>
+              <button onClick={() => setSelectedCourse(course)} className="course-button">
+                 மேலும் படிக்க
+              </button>
+              {/* <p className="course-staff"><strong>Teaching Staff:</strong> {course.staff}</p> */}
+            </div>
           </div>
         );
       })}
-
-      {selectedItem && (
-        <div className="fullscreen-overlay" onClick={() => setSelectedItem(null)}>
-          <div className="fullscreen-content" onClick={(e) => e.stopPropagation()}>
-            <img className="fullscreen-bg" src={selectedItem.imageUrl} alt={selectedItem.title} />
-            <div className="fullscreen-details">
-              <h3>{selectedItem.title}</h3>
-              <div className="fullscreen-description">
-                {selectedItem.description.split('\n').map((line, i) => (
-                  <p key={i} className="mb-2">{line}</p>
-                ))}
-              </div>
-              <h2><span className="staff-label">Teaching STAFF: </span>{selectedItem.staff}</h2>
-              <button className="close-btn" onClick={() => setSelectedItem(null)}>X</button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
 
-export default About;
+export default Courses;

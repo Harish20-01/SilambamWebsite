@@ -73,7 +73,7 @@ const Header = () => {
               className={({ isActive }) => (isActive ? 'active li' : 'li')}
               onClick={handleNavClick}
             >
-              பாடங்கள்
+              கலைகள்
             </NavLink>
           </li>
           <li>

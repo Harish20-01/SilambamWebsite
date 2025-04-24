@@ -8,6 +8,7 @@ import '../Styles/updateSubComponentStyle/homeNewsInsertStyle.css';
 const ClassVenueInsert = () => {
     const[place,setPlace]=useState('');
     const[description,setDescription]=useState('');
+    const[day,setDay]=useState('');
     const[timing,setTiming]=useState('');
     const{showError,showSuccess}=useToast();
     const[isProcessing,setIsPreocessing]=useState(false);
@@ -20,6 +21,7 @@ const ClassVenueInsert = () => {
         }
         setIsPreocessing(true);
         const data={
+            day,
             place,
             description,
             timing
@@ -53,7 +55,7 @@ const ClassVenueInsert = () => {
             <div id="HomeNewsInsert-Container">
                 <h3>Update New Venues Here..</h3>
                 <form>
-                    <label>Date(நாள்)</label>
+                    <label>place(இடம்)</label>
                     <input 
                         type='text'
                         value={place}
@@ -61,6 +63,15 @@ const ClassVenueInsert = () => {
                         onChange={(e)=>setPlace(e.target.value)}
                     >
                     </input>
+                    <label>Date(நாள்)</label>
+                    <input 
+                        type='text'
+                        value={day}
+                        required
+                        onChange={(e)=>setDay(e.target.value)}
+                    >
+                    </input>
+                    
                     <label>Timing(நேரம் )</label>
                     <input 
                         type='text'

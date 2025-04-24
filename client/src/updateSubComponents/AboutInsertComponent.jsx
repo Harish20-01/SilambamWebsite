@@ -5,7 +5,6 @@ import LoadingComponent from '../../public/LoadingComponent';
 import '../Styles/updateSubComponentStyle/aboutInsertStyle.css';
 const AboutInsertComponent = () => {
     const[title,setTitle]=useState('');
-    const [staffName,setStaffName]=useState('');
     const[file,setFile]=useState();
     const[description,setDescription]=useState('');
     const{showError,showSuccess}=useToast();
@@ -15,7 +14,6 @@ const AboutInsertComponent = () => {
         setIsPreocessing(true);
             const data=new FormData();
             data.append("title",title);
-            data.append("staff",staffName);
             data.append("description",description);
             data.append("image",file);
             
@@ -31,7 +29,6 @@ const AboutInsertComponent = () => {
                 console.log("submitted");
                 setDescription('');
                 setFile();
-                setStaffName('');
                 setTitle('');
                 setIsPreocessing(false);
                 showSuccess('Image inserted Successfully..');
@@ -64,13 +61,7 @@ const AboutInsertComponent = () => {
                     value={title}
                     onChange={(e)=>setTitle(e.target.value)}
                 ></input>
-                <label>Staff Name</label>
-                <input
-                    type="text"
-                    required
-                    value={staffName}
-                    onChange={(e)=>setStaffName(e.target.value)}
-                ></input>
+                
                 <label>Description</label>
                 <textarea
                     value={description}
