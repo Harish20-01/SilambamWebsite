@@ -6,6 +6,7 @@ import HomeNewsComponent from '../SubComponents/HomeNewsComponent';
 import TrainerProfile from '../SubComponents/HomeTrainerComponent';
 import HomeClassDetails from '../SubComponents/HomeClassDetails';
 import HomeYouTubeVideo from '../SubComponents/HomeYouTubeVideo';
+import HomeReviewComponent from '../SubComponents/HomeReviewComponent';
 const Home = () => {
   return (
     <div style={{backgroundColor:"#f9f9f4"}} > 
@@ -15,6 +16,7 @@ const Home = () => {
       <TrainerProfile/>
       <HomeClassDetails/>
       <HomeYouTubeVideo/>
+      <HomeReviewComponent/>
     </div>
   )
 }

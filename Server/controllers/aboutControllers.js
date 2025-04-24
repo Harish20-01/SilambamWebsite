@@ -76,6 +76,40 @@ router.delete('/',validateRoute, async (req, res) => {
   }
 });
 
+router.put('/:id', upload.single('image'), validateRoute, async (req, res) => {
+  try {
+    const { title, description } = req.body;
+    const { id } = req.params;
+    const about = await About.findById(id);
+    if (!about) return res.status(404).json({ message: 'Not found' });
+
+    if (req.file) {
+      if (about.public_id) {
+        await cloudinary.uploader.destroy(about.public_id);
+      }
+
+      const result = await new Promise((resolve, reject) => {
+        cloudinary.uploader.upload_stream({ resource_type: 'auto' }, (error, result) => {
+          if (error) reject(error);
+          else resolve(result);
+        }).end(req.file.buffer);
+      });
+
+      about.imageUrl = result.secure_url;
+      about.public_id = result.public_id;
+    }
+
+    about.title = title;
+    about.description = description;
+
+    await about.save();
+    return res.status(200).json({ message: 'Updated successfully' });
+  } catch (error) {
+    return res.status(500).json({ message: 'Update failed', error });
+  }
+});
+
+
 
 router.get('/',async(req,res)=>{
   const data=await About.find();

@@ -27,7 +27,7 @@
 
 #homeSlide .slide-caption h2 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 2rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 
@@ -35,6 +35,7 @@
   margin-top: 0.5rem;
   font-size: 1rem;
   color: #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }  
 
   #homeSlide .slide {
@@ -117,7 +118,11 @@
     }
   
     #homeSlide .slide-caption p {
-      font-size: 0.9rem;
+      font-size: 0.7rem;
     }
+    #homeSlide.slideshow-container {
+      border-radius: 5px;
+    }
+   
   }
   

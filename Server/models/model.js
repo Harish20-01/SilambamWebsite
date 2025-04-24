@@ -70,6 +70,11 @@ const YoutubeVideoId=new mongoose.Schema({
   id:String
 })
 
+const UserReview=new mongoose.Schema({
+  name:String,
+  text:String,
+})
+
 const news=mongoose.model('news',newsSchema);
 
 const HomeSlideImage = mongoose.model('HomeSlideImage', imageSchema);
@@ -88,6 +93,8 @@ const Products=mongoose.model('Products',SilambamProducts);
 
 const YoutubeId=mongoose.model('YoutubeId',YoutubeVideoId);
 
-module.exports ={HomeSlideImage,news,About,galleryImage,userMessage,admin,ClassVenue,Products,YoutubeId};
+const Reviews=mongoose.model("Reviews",UserReview);
+
+module.exports ={HomeSlideImage,news,About,galleryImage,userMessage,admin,ClassVenue,Products,YoutubeId,Reviews};
 
 

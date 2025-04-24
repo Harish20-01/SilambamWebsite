@@ -3,6 +3,7 @@ import '../Styles/contact.css';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent'; // Make sure you have axios imported
+import ReviewSubmitComponent from '../SubComponents/ReviewSubmitComponent';
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -96,6 +97,7 @@ const Contact = () => {
           title="Location"
         ></iframe>
       </div>
+      <ReviewSubmitComponent/>
     </div>
   );
 };

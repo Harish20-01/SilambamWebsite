@@ -22,6 +22,7 @@ const HomeUpdateComponent = () => {
         <Link to="homeNewsUpdateComponent">HomeNews</Link>
         <Link to='classVenueUpdateComponent'>ClassVenue</Link>
         <Link to="youtubeUpdateComponent">YoutubeLink</Link>
+        <Link to="reviewDeleteComponent">Reviews</Link>
       <Outlet/>
     </div>
     </>

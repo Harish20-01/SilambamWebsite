@@ -15,6 +15,7 @@ const AboutUpdateComponent = () => {
   const isInsertActive =
     location.pathname === '/aboutUpdateComponent' || location.pathname === '/aboutUpdateComponent/insertAboutImage';
   const isDeleteActive = location.pathname === '/aboutUpdateComponent/deleteAboutImage';
+  const isUpdateActive=location.pathname==='/aboutUpdateComponent/updateAboutImage';
   return (
     <div>
         <div onClick={handleBackFuction} className='backward-button'>
@@ -28,6 +29,11 @@ const AboutUpdateComponent = () => {
                 <NavLink to="/aboutUpdateComponent/insertAboutImage"
                   className={ isInsertActive ? 'inside-updateComponent-active-class' : ''}
                 >Insert</NavLink>
+              </li>
+              <li>
+                <NavLink to="/aboutUpdateComponent/updateAboutImage"
+                className={isUpdateActive ? 'inside-updateComponent-active-class' : ''}
+                >Update</NavLink>
               </li>
               <li>
                 <NavLink to="/aboutUpdateComponent/deleteAboutImage"

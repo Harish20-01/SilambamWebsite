@@ -12,7 +12,7 @@ dotenv.config();
 const corsOptions = {
   origin:['https://silambamwebsite-1.onrender.com','http://localhost:5173'],  
   credentials: true,  
-  methods: ['GET', 'POST','DELETE'],  
+  methods: ['GET', 'POST','DELETE','PUT'],  
   allowedHeaders: ['Authorization', 'Content-Type'],          
 };
 
@@ -31,6 +31,7 @@ const adminControlRoutes=require('./controllers/adminControllers');
 const homeClassVenue=require('./controllers/classVenueControllers');
 const SilambamProducts=require('./controllers/productController');
 const YoutubeId=require('./controllers/youtubeVideoControllers');
+const Review=require('./controllers/reviewControllers');
 
 app.use('/homeSlide', homeSlideRoutes);
 app.use('/news', newsRoutes);
@@ -40,6 +41,7 @@ app.use('/api',adminControlRoutes);
 app.use('/class-venue',homeClassVenue);
 app.use('/silambam-products',SilambamProducts);
 app.use('/youtube-video',YoutubeId);
+app.use('/reviews',Review);
 
 
 const admin = { username: 'admin', password: 'admin123' };
