@@ -2,9 +2,9 @@
     padding: 30px;
     border-radius: 10px;
     max-width: 1000px;
-    margin: 40px auto;
+    margin:40px auto;
     font-family: 'Noto Sans Tamil', sans-serif;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,12 +12,13 @@
     color: #fff;
   }
 
-  .about-container {
+  .home-about-container {
     position: relative;
     padding: 30px;
     border-radius: 10px;
     overflow: hidden;
     z-index: 0;
+    
     background-image: url('../../Logo/logo.png'); /* or use a class-based approach */
     background-size: contain;
     background-position: center;
@@ -25,7 +26,7 @@
   }
   
   /* Create a semi-transparent overlay */
-  .about-container::before {
+  .home-about-container::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -34,7 +35,7 @@
   }
   
   /* Ensure content appears on top */
-  .about-container > * {
+  .home-about-container > * {
     position: relative;
     z-index: 2;
     color: #fff;

@@ -33,7 +33,8 @@ const HomeAboutComponent = () => {
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6}}
-      className="about-container"
+      className="home-about-container"
+      
     >
       <div className="heading-group">
         <h3> தமிழர் மரபுக் கலையகம் </h3>

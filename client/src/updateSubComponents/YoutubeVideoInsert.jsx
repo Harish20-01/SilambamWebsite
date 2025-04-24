@@ -23,7 +23,7 @@ const YoutubeVideoInsert = () => {
             id
         }
         try{
-            const response=await axios.post('https://silambamwebsite-1.onrender.com/youtube-video',data,{
+            const response=await axios.post('https://silambamwebsite.onrender.com/youtube-video',data,{
                 headers:{
                     "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 
                 }

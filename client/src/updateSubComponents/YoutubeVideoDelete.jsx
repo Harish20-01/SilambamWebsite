@@ -14,7 +14,7 @@ const YoutubeVideoDelete = () => {
   useEffect(() => {
     const fetchVenues = async () => {
       try {
-        const response = await axios.get("https://silambamwebsite-1.onrender.com/youtube-video");
+        const response = await axios.get("https://silambamwebsite.onrender.com/youtube-video");
         setTitle(response.data); 
       } catch (error) {
         console.error('Error fetching venues:', error);

@@ -42,14 +42,14 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 0.1);
+    }, 100);
 
     return () => clearTimeout(timer);
   }, []);
 
-  /* if (isLoading) {
+  if (isLoading) {
     return <LoadingComponent/>;
-  } */
+  }
   return (
     <>
       <Header />
