@@ -54,7 +54,7 @@ const Contact = () => {
     <div className='Contact-Container'>
       
       <div id="Message-Container">
-        <h2>உங்களின் கேள்விகளை எங்களுக்கு தெரியப்படுத்துங்கள்..</h2>
+        <h2>உங்களின் கேள்விகளை எங்களுக்கு தெரியப்படுத்துங்கள்...</h2>
         <form onSubmit={handleSubmit}>
           <label>பெயர்:</label>
           <input

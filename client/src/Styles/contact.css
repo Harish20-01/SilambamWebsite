@@ -89,4 +89,8 @@
     border: none;
     border-radius: 8px;
   }
-
+@media (max-width:768px){
+  #Contact-Location h2,#Message-Container h2{
+    font-size: 1rem;
+  }
+}

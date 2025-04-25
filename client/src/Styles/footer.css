@@ -64,7 +64,16 @@ li a{
         text-align: center;
     }
     #Quick-Links{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        width: 90vw;
+        margin-left: 2%;
+    }
+    #Quick-Links h3{
         text-align: left;
+        margin-left: 0%;
     }
     #QuicK-Links div{
         display: none;

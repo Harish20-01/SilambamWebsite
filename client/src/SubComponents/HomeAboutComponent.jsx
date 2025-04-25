@@ -1,8 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import '../Styles/SubComponentsStyles/homeAboutComponent.css';
-import logo from '../../Logo/logo.png'
-
 const data = [
   {
     title: 'தற்காப்புக்கலை:',
@@ -54,7 +52,7 @@ const HomeAboutComponent = () => {
             <dd className="items">
               <ul>
                 {section.items.map((item, idx) => (
-                  <li key={idx}>🌿 {item}</li>
+                  <li key={idx}>🌳{item}</li>
                 ))}
               </ul>
             </dd>

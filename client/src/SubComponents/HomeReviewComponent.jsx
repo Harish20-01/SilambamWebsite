@@ -47,7 +47,7 @@ const HomeReviewComponent = () => {
 
   return (
     <div className="review-slider-container">
-      <h2>User Reviews</h2>
+      <h2>பயனர் கருத்து</h2>
       {isLoading ? (
         <p>Loading reviews...</p>
       ) : reviews.length > 0 ? (
@@ -55,6 +55,7 @@ const HomeReviewComponent = () => {
           <button onClick={handlePrev} className="nav-button">‹</button>
           <div className="review-card">
             <h4>{reviews[currentIndex].name}</h4>
+            <h5>{reviews[currentIndex].reviewerType=="Student"?"மாணவர்":"பெற்றோர்"}</h5>
             <p>{reviews[currentIndex].text}</p>
           </div>
           <button onClick={handleNext} className="nav-button">›</button>

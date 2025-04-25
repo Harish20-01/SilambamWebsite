@@ -112,5 +112,8 @@
     .subheading {
       font-size: 0.95rem;
     }
+    #container{
+      margin:40px 1.5%;
+    }
   }
   

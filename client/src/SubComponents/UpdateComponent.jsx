@@ -15,22 +15,21 @@ const UpdateComponent = () => {
   return (
     <div>
       <div id="admin-heading">
-          <h1>Admin Dashboard</h1>
+          <h1>Admin Dashboard(முகப்பலகம்)</h1>
       </div>
       <div id="Update-Component">
           <div>
-           
             {/* Navigation Links */}
-                <Link to="/homeUpdateComponent">Home</Link>
-                <Link to="/aboutUpdateComponent">About</Link>
-                <Link to="/imageUpdateComponent">Gallery</Link>
-                <Link to="/productUpdateComponent">Products</Link>
-                <Link to="/passwordUpdateComponent">Change Password</Link>  
+                <Link to="/homeUpdateComponent">Home(முகப்பு)</Link>
+                <Link to="/imageUpdateComponent">Gallery(படங்கள்)</Link>
+                <Link to="/aboutUpdateComponent">About(கலைகள்)</Link>
+                <Link to="/productUpdateComponent">Products(பொருட்கள)</Link>
+                <Link to="/passwordUpdateComponent">Change Password(கடவுச்சொல்லை மாற்று)</Link>  
           </div>
     
       </div>
       <div id="Logout-Container">
-          <button onClick={handleLogOut}>Log Out</button>
+          <button onClick={handleLogOut}>Log Out(வெளியேறு)</button>
       </div>
     </div>
   )

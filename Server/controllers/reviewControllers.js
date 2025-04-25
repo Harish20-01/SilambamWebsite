@@ -4,14 +4,14 @@ const validateRoute=require('../validation/validateRoute');
 const { Reviews } = require('../models/model');
 
 router.post('/', async (req, res) => {
-    const { name, text } = req.body;
+    const { name, text ,reviewerType,} = req.body;
   
     if (!name || !text) {
       return res.status(400).json({ message: 'Name and review text are required.' });
     }
   
     try {
-      const newReview = new Reviews({ name, text });
+      const newReview = new Reviews({ name, text, reviewerType,});
       await newReview.save();
       res.status(201).json({ message: 'Review submitted successfully' });
     } catch (error) {

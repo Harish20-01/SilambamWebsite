@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FaRegCalendarAlt } from 'react-icons/fa';
 import '../Styles/SubComponentsStyles/homeNewsComponent.css'; 
 
 const HomeNewsComponent = () => {
@@ -10,11 +11,12 @@ const HomeNewsComponent = () => {
     const fetchNews = async () => {
       try {
         const response = await axios.get('https://silambamwebsite.onrender.com/news');
-        setNews(response.data); // Set the news data
-        setLoading(false); // Set loading to false once data is fetched
+        setNews(response.data); 
+        console.log(response.data)
+        setLoading(false); 
       } catch (error) {
         console.error('Error fetching news:', error);
-        setLoading(false); // Handle error and stop loading
+        setLoading(false); 
       }
     };
 
@@ -49,7 +51,8 @@ const HomeNewsComponent = () => {
 
   return (
     <div className="slideshow-container" id="SlideShow-Container">
-          <div className="news-ticker">
+          <h3>செய்திகளும் நிகழ்வுகளும்</h3>
+         {!loading&& (<><div className="news-ticker">
               <div className="news-ticker-content">
                 {news.map((item, index) => (
                   <span key={index} className="news-item">
@@ -63,10 +66,20 @@ const HomeNewsComponent = () => {
           <div className="slide">
             <h2>{news[currentIndex].title}</h2>
             <p>{news[currentIndex].description}</p>
+            
             {news[currentIndex].imageUrl && (
               <img src={news[currentIndex].imageUrl} alt="News" className="slide-image" />
             )}
+            <p className="published-date">
+                <FaRegCalendarAlt style={{ marginRight: '8px' }} className='published-date-icon'/>
+                 Last Updated: {new Date(news[currentIndex].publishedAt).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+            </p>
           </div>
+          </>)}
     </div>
   );
 };

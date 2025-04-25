@@ -73,6 +73,7 @@ const YoutubeVideoId=new mongoose.Schema({
 const UserReview=new mongoose.Schema({
   name:String,
   text:String,
+  reviewerType:String
 })
 
 const news=mongoose.model('news',newsSchema);

@@ -66,7 +66,7 @@ const Footer = () => {
                   <li><a href="https://www.youtube.com/@TamilarMarabuKalaiyagam" target="_blank">
                       <FaYoutube className='fa'/>Tamilar Marabu Kalaiyagam</a>
                   </li>
-                  <li><a href="https://www.youtube.com/@tamilarmarabukalaiyagam" target="_blank">
+                  <li><a href="https://www.youtube.com/@Venky_Silambam" target="_blank">
                       <FaYoutube className='fa'/>Venky Silambam</a>
                   </li>
                   <li><a href="https://www.facebook.com/profile.php?id=61571714846047&mibextid=ZbWKwL" target="_blank">
