@@ -39,7 +39,7 @@ const AboutDataUpdateComponent = () => {
     if (formData.file) data.append('image', formData.file);
 
     try {
-      const response = await axios.put(`https://silambamwebsite.onrender.com /about/${selectedId}`, data, {
+      const response = await axios.put(`https://silambamwebsite.onrender.com/about/${selectedId}`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`,
@@ -50,7 +50,7 @@ const AboutDataUpdateComponent = () => {
         showSuccess('Updated Successfully');
         setFormData({ title: '', description: '', imageUrl: '', file: null });
         setSelectedId('');
-        const res = await axios.get('https://silambamwebsite.onrender.com /about');/* https://silambamwebsite.onrender.com */
+        const res = await axios.get('https://silambamwebsite.onrender.com/about');/* https://silambamwebsite.onrender.com */
         setAboutList(res.data);
       } else {
         showError('Update failed');
