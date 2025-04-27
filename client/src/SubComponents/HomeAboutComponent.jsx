@@ -36,7 +36,7 @@ const HomeAboutComponent = () => {
     >
       <div className="heading-group">
         <h3> தமிழர் மரபுக் கலையகம் </h3>
-        <p className="subheading">மரபு மீட்சி மற்றும் கலைப் பயிற்சிக்கான ஒருங்கிணைந்த இடம்</p>
+        <p className="subheading">மரபு மீட்சி மற்றும் மரபுக் கலைகள் பயிற்சிக்கான ஒருங்கிணைந்த இடம்</p>
       </div>
 
       <dl className="about-list">

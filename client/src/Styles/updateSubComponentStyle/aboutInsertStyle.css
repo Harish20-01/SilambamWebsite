@@ -15,9 +15,10 @@
     margin: 2%;
     padding: 1%;
     height: 50vh;
-    border: 1px solid red;
+    box-shadow: 0px 0px 10px rgb(0,0,0,0.3);
     border-radius: 5px;
-    box-shadow: 2px 2px 6px rgb(0,0,0,0.7);
+    padding: 2%;
+
 }
 #Aboutinsert-Submit-Button{
     display: flex;
@@ -31,10 +32,10 @@
     border-radius: 5px;
     margin-top: 2%;
     width: 50%;
-    background-color: blue;
+    background-color:red;
 }
 #AboutInsert-Container form button:hover{
-    background-color: rgb(17, 17, 136);
+    background-color: rgb(116, 32, 16);
 }
 #AboutInsert-Container form label,#AboutInsert-Container form input,#AboutInsert-Container form textarea{
     width: 100%;
@@ -69,6 +70,6 @@
 }
 @media(max-width:768px){
     #AboutInsert-Container form{
-        width: 60vw;
+        width: 90vw;
     }
 }

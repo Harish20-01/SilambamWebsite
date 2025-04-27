@@ -72,6 +72,8 @@
   }
   .login-form {
     background-color: #ffffff;
+    background: transparent;
+    backdrop-filter: blur(20px);
     padding: 40px 30px;
     border-radius: 12px;
     box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);
@@ -92,7 +94,7 @@
     display: block;
     margin-bottom: 6px;
     font-weight: 500;
-    color: #333;
+    color:#fff;
   }
   
   .login-form input[type="text"],

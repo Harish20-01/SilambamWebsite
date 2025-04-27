@@ -51,7 +51,7 @@ const HomeNewsComponent = () => {
 
   return (
     <div className="slideshow-container" id="SlideShow-Container">
-          <h3>செய்திகளும் நிகழ்வுகளும்</h3>
+          <h3 className="blinking-title">செய்திகளும்,நிகழ்வுகளும்</h3>
          {!loading&& (<><div className="news-ticker">
               <div className="news-ticker-content">
                 {news.map((item, index) => (

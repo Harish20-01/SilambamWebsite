@@ -1,8 +1,8 @@
 /* ClassDetails.css */
 
 .class-details-container {
-    width: 90%;
-    max-width: 1200px;
+    width: 98%;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 40px;
     background-color: #fff;
@@ -16,11 +16,14 @@
   }
   
   .section-title {
-    font-size: 30px;
+    font-size: 2rem;
     margin-bottom: 20px;
     color: #333;
   }
-  
+  .section-title span{
+    display: inline;
+    white-space: nowrap;
+  }
   .class-description p {
     font-size: 18px;
     color: #444;
@@ -103,6 +106,11 @@
     .contact-btn {
       width: 100%;
       padding: 12px 0;
+    }
+    .section-title span{
+      font-size: 1.5rem;
+      display: inline-flex;
+      white-space:none;
     }
   }
   

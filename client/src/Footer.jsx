@@ -53,7 +53,7 @@ const Footer = () => {
                         <FaEnvelope className='fa'/>
                         tamilarmarabukalaiyagam@gmail.com</a>
                   </li>
-                  <li><a href="">
+                  <li><a href="tel:+919159318285">
                       <FaMobileAlt className='fa'/> 
                         +91 91593 18285</a>
                   </li>

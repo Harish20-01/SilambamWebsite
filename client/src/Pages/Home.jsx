@@ -9,7 +9,7 @@ import HomeYouTubeVideo from '../SubComponents/HomeYouTubeVideo';
 import HomeReviewComponent from '../SubComponents/HomeReviewComponent';
 const Home = () => {
   return (
-    <div style={{backgroundColor:"#f9f9f4"}} > 
+    <div > 
       <HomeSlideShow/>
       <HomeAboutComponent/>
       <HomeNewsComponent/>

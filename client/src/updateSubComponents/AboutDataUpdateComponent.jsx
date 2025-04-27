@@ -12,7 +12,7 @@ const AboutDataUpdateComponent = () => {
   const { showError, showSuccess } = useToast();
 
   useEffect(() => {
-    axios.get('https://silambamwebsite.onrender.com /about')
+    axios.get('https://silambamwebsite.onrender.com/about')
       .then(res => setAboutList(res.data))
       .catch(() => showError('Failed to load about data'));
   }, []);

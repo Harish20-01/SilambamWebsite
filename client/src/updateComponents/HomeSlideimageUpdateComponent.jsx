@@ -31,11 +31,11 @@ const HomeSlideimageUpdateComponent = () => {
                 <NavLink to="/homeUpdateComponent/homeSlideComponent/homeSlideImageInsert"
                     className={isInsertActive? 'inside-updateComponent-active-class' : ''}
                 >
-                insert</NavLink>
+                Insert</NavLink>
             </li>
             <li><NavLink to="/homeUpdateComponent/homeSlideComponent/homeSlideImageDelete"
                     className={ isDeleteActive ? 'inside-updateComponent-active-class' : ''}
-            >delete</NavLink>
+            >Delete</NavLink>
             </li>
         </ul>
         <Outlet/>

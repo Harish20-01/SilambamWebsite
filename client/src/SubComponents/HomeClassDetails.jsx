@@ -36,7 +36,7 @@ const ClassDetails = () => {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        <h2 className="section-title">பயிற்சி நடக்கும் இடங்கள்:</h2>
+        <h2 className="section-title"><span>பயிற்சி&nbsp;</span><span>நடக்கும்&nbsp;</span><span> இடங்கள்:</span></h2>
       </motion.div>
     
       {/* Venue 1, Venue 2, and Venue 3 */}

@@ -71,6 +71,6 @@ form #HomeNewsInsert-Submit-Button{
 }
 @media(max-width:768px){
     #HomeNewsInsert-Container form{
-        width:60vw
+        width:90vw
     }
 }

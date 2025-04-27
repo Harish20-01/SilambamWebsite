@@ -58,3 +58,9 @@
     background-color: red;
     box-shadow: 0 4px 20px rgba(168, 28, 28, 0.4);
 }
+@media(max-width:768px){
+    #AboutDelete-Container form .AboutDelete-Element {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+}

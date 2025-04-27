@@ -9,6 +9,7 @@
   .slider {
     display: flex;
     margin: 2%;
+    min-width: 300px;
     align-items: center;
     justify-content: space-between;
   }
@@ -50,4 +51,9 @@
     transform: scale(1.2);
     color: #000;
   }
-  
+  @media(max-width:768px){
+    .review-slider-container{
+      max-width: 650px;
+      width: 98%;
+    }
+  }

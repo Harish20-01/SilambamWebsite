@@ -20,7 +20,7 @@ const Header = () => {
       <nav className={menuOpen?'border-radius':''}>
         <div id="Logo">
           <img src={logo} alt="logo" />
-          <h3>தமிழர்&nbsp;மரபுக் கலையகம்</h3>
+          <h3>தமிழர்&nbsp;மரபுக்&nbsp;கலையகம்</h3>
           {/* Quote Section */}
           <div className="quote">
             "Land of Traditional Arts"

@@ -22,7 +22,7 @@ const AboutUpdateComponent = () => {
         </div>
         <div id="About-Update-Container"> 
             <h2 style={{textAlign:"center",color:"red",margin:"2%"}}>Product Update Section</h2>
-            <ul style={{display:"flex",alignItems:"center",justifyContent:"space-around",backgroundColor:"aqua"}}> 
+            <ul style={{display:"flex",alignItems:"center",justifyContent:"space-around",backgroundColor:"aqua",listStyleType:"none",padding:"0.5%"}}> 
               <li>
                 <NavLink to="/productUpdateComponent/productInsert"
                   className={ isInsertActive ? 'inside-updateComponent-active-class' : ''}

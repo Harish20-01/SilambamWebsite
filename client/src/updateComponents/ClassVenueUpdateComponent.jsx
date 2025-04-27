@@ -25,12 +25,12 @@ const ClassVenueUpdateComponent = () => {
         <li>
           <NavLink to="/homeUpdateComponent/classVenueUpdateComponent/classVenueInsert"
             className={isInsertActive ? 'inside-updateComponent-active-class' : ''}
-          >insert</NavLink>
+          >Insert</NavLink>
         </li>
         <li>
           <NavLink to="/homeUpdateComponent/classVenueUpdateComponent/classVenueDelete"
           className={isDeleteActive? 'inside-updateComponent-active-class' : ''}
-          >delete</NavLink>
+          >Delete</NavLink>
         </li>
       </ul>
         <Outlet/>

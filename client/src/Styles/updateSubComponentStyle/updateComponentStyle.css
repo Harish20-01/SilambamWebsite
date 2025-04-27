@@ -27,7 +27,7 @@
    border: 3px solid rgb(219, 217, 208);
    padding: 2%;
    margin: 2%;
-   width: 50vh;
+   width: 50vw;
    color: rgb(244, 11, 11);
    text-align: center;
 }
@@ -48,4 +48,9 @@
     color:aliceblue;
     background-color:red;
     box-shadow: 2px 2px 10px rgb(0,0,0,0.8);
+}
+@media(max-width:768px){
+    #Update-Component a{
+        width: 80vw;
+    }
 }

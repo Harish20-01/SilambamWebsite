@@ -10,7 +10,7 @@ const TrainerProfile = () => {
 
   const containerStyle = {
     width: showMore ? '96%' : '',
-    maxWidth: '900px',
+    maxWidth: '1400px',
     transition: 'width 0.4s ease-in-out',
   };
 

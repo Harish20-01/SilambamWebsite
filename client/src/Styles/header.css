@@ -19,18 +19,16 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:  baseline;
+    justify-content: center;
     flex-grow: 0;
   }
   
   #Logo img {
     width: 90px;
     height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 10px;
+    object-fit: contain ;
     margin-top: 0px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    background-color: white;
     z-index: 2;
   }
   
@@ -141,6 +139,7 @@ nav {
   @media (min-width: 769px) {
     nav {
       flex-direction: row;
+      align-items: last baseline;
       justify-content: space-between;
       padding: 0px 0px;
       position: sticky;
@@ -150,7 +149,7 @@ nav {
     #Logo {
         flex-direction: row;
         padding-top: 0;
-        margin-left: 20px;
+        margin-left: 10px;
     }
     #Navbar-items.activate{
       background-color: none;
@@ -158,8 +157,9 @@ nav {
   
     #Logo img {
       margin-top: 0;
-      width: 60px;
-      height: 60px;
+      width: 90px;
+      height: 90px;
+      margin: 2px;
     }
   
     #Logo h3 {
@@ -167,7 +167,7 @@ nav {
       text-align: center;
       padding: 2%;
       margin-left: 10px;
-      color: rgb(162, 46, 46); 
+      color: red; 
       border-radius: 10px;
       font-size: 1.2rem;
       width: 100%;
@@ -230,10 +230,25 @@ nav {
     .border-radius{
         border-bottom-right-radius: 0px;
     }
+    #Logo img{
+      border-radius: 50%;
+    }
   }
 
-  @media (max-width:900px){
+  @media (max-width:930px){
     #Login-Container {
       display: none;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1052px){
+    #Logo h3{
+      font-size: 0.9rem;
+    }
+    #Navbar-items{
+      font-size: 0.8rem;
+    }
+    #Logo img{
+      width: 60px;
+      height: 60px;
     }
   }

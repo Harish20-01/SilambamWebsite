@@ -9,6 +9,10 @@
 #HomeSlideImage-update ul{
     background-color: aqua;
     display: flex;
+    padding: 0.5%;
+    list-style-type: none;
     justify-content: space-around;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
 }
 

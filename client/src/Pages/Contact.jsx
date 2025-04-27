@@ -86,7 +86,7 @@ const Contact = () => {
             id="message"
             onKeyDown={(e) => handleKeyDown(e, document.getElementById('submitButton'))}
           ></textarea>
-          <button id="submitButton" type="submit">Submit</button>
+          <button id="submitButton" type="submit">சமர்ப்பிக்க</button>
         </form>
       </div>
 

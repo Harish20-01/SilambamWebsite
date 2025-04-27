@@ -55,7 +55,7 @@ const ImageGallery = () => {
   }
 
   return (
-    <div>
+    <div >
       <div id="heading-image">
         <img src={Images[Images.length - 1].imageUrl} alt="Heading" />
         <h1>Gallery</h1>

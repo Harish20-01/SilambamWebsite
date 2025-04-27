@@ -1,7 +1,7 @@
 /* Main Profile Container */
 .trainer-profile {
-  width: 40%; /* Default width */
-  margin: 2% auto;
+  width: 98%; /* Default width */
+  margin: 1% auto;
   padding: 40px;
   background-color: #fff;
   border-radius: 10px;
@@ -98,32 +98,32 @@
   }
 
   .trainer-profile {
-    width: 80%; /* Adjust profile width on mobile */
+    width: 90%; /* Adjust profile width on mobile */
   }
 }
 
 /* Larger screen view */
 @media (min-width: 1024px) {
   .trainer-profile {
-    width: 60%; /* Increase profile width on large screens */
+    width: 10%; /* Increase profile width on large screens */
     padding: 50px;
   }
 
   .trainer-image {
-    width: 45%; /* Make the image slightly larger on bigger screens */
-    height: 45%;
+    width: 50%; /* Make the image slightly larger on bigger screens */
+    height: 50%;
   }
 }
 
 /* Full-screen maximized profile */
 @media (min-width: 1440px) {
   .trainer-profile {
-    width: 50%; /* Maximize profile width on extra large screens */
+    width: 98%; /* Maximize profile width on extra large screens */
   }
 
   .trainer-image {
-    width: 50%; /* Further increase the image size on large screens */
-    height: 50%;
+    width: 35%; /* Further increase the image size on large screens */
+    height: 35%;
   }
 }
 

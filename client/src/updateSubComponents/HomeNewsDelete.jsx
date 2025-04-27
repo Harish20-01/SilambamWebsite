@@ -86,7 +86,7 @@ const HomeNewsDelete = () => {
           <h3>Select Title to Delete</h3>
           <form>
             {data.map((item) => (
-              <div key={item._id}>
+              <div key={item._id} onClick={() => handleCheckboxChange(item.public_id)}>
                 <input
                   type="checkbox"
                   id={item._id}

@@ -5,6 +5,7 @@ import '../Styles/SubComponentsStyles/login.css';
 import { useToast } from '../../public/MessageToastContent';
 import LoadingComponent from '../../public/LoadingComponent';
 import { FaUser, FaLock } from 'react-icons/fa';
+import image from '../../public/backgroundImage.jpg';
 
 const Login = ({ setIsLoggedIn }) => {
   const [username, setUsername] = useState('');
@@ -43,7 +44,15 @@ const Login = ({ setIsLoggedIn }) => {
 
   return (
     isProcessing?(<LoadingComponent/> ): (
-    <div id="Login-Form-Container">
+    <div id="Login-Form-Container" 
+    style={{
+      backgroundImage: `url(${image})`,
+      backgroundSize: 'contain',
+      backgroundPosition: 'center',
+      height: '100vh',
+      width: '100%',
+    }}>
+      
     <div className="login-form">
       <h2>Admin Login(நிர்வாகி)</h2>
       <form onSubmit={handleLogin}>
