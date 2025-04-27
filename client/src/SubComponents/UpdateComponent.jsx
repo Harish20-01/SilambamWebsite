@@ -23,8 +23,8 @@ const UpdateComponent = () => {
                 <Link to="/homeUpdateComponent">Home(முகப்பு)</Link>
                 <Link to="/imageUpdateComponent">Gallery(படங்கள்)</Link>
                 <Link to="/aboutUpdateComponent">About(கலைகள்)</Link>
-                <Link to="/productUpdateComponent">Products(பொருட்கள)</Link>
-                <Link to="/passwordUpdateComponent">Change Password(கடவுச்சொல்லை மாற்று)</Link>  
+                <Link to="/productUpdateComponent">Products(பொருட்கள்)</Link>
+                <Link to="/passwordUpdateComponent">Change Password(கடவுச்சொல் மாற்ற)</Link>  
           </div>
     
       </div>

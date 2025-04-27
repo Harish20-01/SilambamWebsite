@@ -58,7 +58,7 @@ const ImageGallery = () => {
     <div >
       <div id="heading-image">
         <img src={Images[Images.length - 1].imageUrl} alt="Heading" />
-        <h1>Gallery</h1>
+        <h1>படங்கள்</h1>
       </div>
 
       <div className='gallery-container'>
