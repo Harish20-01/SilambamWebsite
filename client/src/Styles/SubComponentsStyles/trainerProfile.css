@@ -105,7 +105,7 @@
 /* Larger screen view */
 @media (min-width: 1024px) {
   .trainer-profile {
-    width: 10%; /* Increase profile width on large screens */
+    width: 98%; /* Increase profile width on large screens */
     padding: 50px;
   }
 

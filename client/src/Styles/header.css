@@ -26,7 +26,6 @@ nav {
   #Logo img {
     width: 90px;
     height: 90px;
-    border-radius: 10px;
     object-fit: contain ;
     margin-top: 0px;
     z-index: 2;
@@ -44,7 +43,6 @@ nav {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  /* Navbar items base (hidden on mobile, shown on desktop) */
   #Navbar-items {
     display: none;
     flex-direction: column;
@@ -169,7 +167,7 @@ nav {
       margin-left: 10px;
       color: red; 
       border-radius: 10px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       width: 100%;
       text-shadow:
           0 0 5px rgba(255, 80, 80, 0.9),
@@ -185,7 +183,7 @@ nav {
       gap: 10px;
       align-items: center;
       justify-content:center;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
   
     #ToggleMenu {
@@ -231,7 +229,7 @@ nav {
         border-bottom-right-radius: 0px;
     }
     #Logo img{
-      border-radius: 50%;
+      border-radius: 0px;
     }
   }
 
