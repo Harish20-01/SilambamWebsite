@@ -51,7 +51,7 @@ const HomeNewsDelete = () => {
     try {
       const dataa={public_ids:selectedImages};
       console.log(dataa);
-      const response=await axios.delete("http://localhost:3000/news",{
+      const response=await axios.delete("https://silambamwebsite.onrender.com/news",{
         headers:{
           "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 
         },
@@ -70,6 +70,7 @@ const HomeNewsDelete = () => {
         setIsPreocessing(false);
       }
     } catch (error) {
+      console.log(error)
       showError(`Error deleting images:{error}`);
       setIsPreocessing(false);
     }

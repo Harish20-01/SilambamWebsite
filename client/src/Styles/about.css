@@ -65,6 +65,7 @@
 .course-description {
   white-space: pre-wrap;
   font-size: 1rem;
+  text-align: justify;
   color: #333;
   margin-bottom: 1rem;
 }
