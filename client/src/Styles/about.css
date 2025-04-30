@@ -132,11 +132,12 @@
 }
 
 .course-full-description {
-  /* white-space: pre-wrap; */
+  white-space: pre-wrap;
   font-size: 1.1rem;
   text-align:justify;
   line-height: 1.6;
 }
+
 
 .close-btn {
   margin-top: 20px;

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkBreaks from 'remark-breaks';
 import axios from 'axios';
 import '../Styles/about.css';
 
@@ -18,6 +20,22 @@ const Courses = () => {
     fetchCourses();
   }, []);
 
+
+  const renderWithBold = (text) => {
+    return text.split('\n').map((line, index) => {
+      const parts = line.split(/(<b>.*?<\/b>)/g); // Split on <b>...</b>
+      return (
+        <p key={index}>
+          {parts.map((part, i) => {
+            if (part.startsWith('<b>') && part.endsWith('</b>')) {
+              return <strong key={i}>{part.slice(3, -4)}</strong>;
+            }
+            return <span key={i}>{part}</span>;
+          })}
+        </p>
+      );
+    });
+  };
   if (!courses.length) {
     return (
       <div className="loading-message">
@@ -33,12 +51,9 @@ const Courses = () => {
           <img src={selectedCourse.imageUrl} alt={selectedCourse.title} />
           <div>
             <h3>{selectedCourse.title}</h3>
-            <p className="course-full-description">
-              {selectedCourse.description.split('\n').map((line, i) => (
-                <span key={i}>{line}<br /></span>
-              ))}
-            </p>
-            {/* <p className="course-staff"><strong>Teaching Staff:</strong> {selectedCourse.staff}</p> */}
+           <div className="course-full-description">
+              {renderWithBold(selectedCourse.description)}
+            </div>
             <button onClick={() => setSelectedCourse(null)} className="close-btn">குறைத்துக் காண்</button>
           </div>
         </div>
@@ -60,16 +75,13 @@ const Courses = () => {
             </div>
             <div className="course-info">
               <h3 className="course-title">{course.title}</h3>
-              <p className="course-description">
-                {previewText.split('\n').map((line, i) => (
-                  <span key={i}>{line}<br /></span>
-                ))}
+              <div className="course-description">
+                {renderWithBold(previewText)}
                 {course.description.split('\n').length > 5 && <span>...</span>}
-              </p>
+              </div>
               <button onClick={() => setSelectedCourse(course)} className="course-button">
                  மேலும் படிக்க
               </button>
-              {/* <p className="course-staff"><strong>Teaching Staff:</strong> {course.staff}</p> */}
             </div>
           </div>
         );
