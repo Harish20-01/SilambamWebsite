@@ -12,7 +12,8 @@ const ClassVenueUpdateComponent = () => {
     const location=useLocation();
     const isInsertActive =
     location.pathname === '/homeUpdateComponent/classVenueUpdateComponent' || location.pathname === '/homeUpdateComponent/classVenueUpdateComponent/classVenueInsert';
-  const isDeleteActive = location.pathname === '/homeUpdateComponent/classVenueUpdateComponent/classVenueDelete';
+    const isDeleteActive = location.pathname === '/homeUpdateComponent/classVenueUpdateComponent/classVenueDelete';
+    const isUpdateActive =location.pathname === '/homeUpdateComponent/classVenueUpdateComponent/classVenueUpdate';
   return (
     <div>
         <div onClick={handleClick} className='backward-button'>
@@ -26,6 +27,11 @@ const ClassVenueUpdateComponent = () => {
           <NavLink to="/homeUpdateComponent/classVenueUpdateComponent/classVenueInsert"
             className={isInsertActive ? 'inside-updateComponent-active-class' : ''}
           >Insert</NavLink>
+        </li>
+        <li>
+            <NavLink to="/homeUpdateComponent/classVenueUpdateComponent/classVenueUpdate"
+            className={isUpdateActive ? 'inside-updateComponent-active-class' : ''}
+            >Update</NavLink>
         </li>
         <li>
           <NavLink to="/homeUpdateComponent/classVenueUpdateComponent/classVenueDelete"

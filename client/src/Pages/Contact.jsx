@@ -35,7 +35,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await axios.post('https://silambamwebsite.onrender.com/submit/message-form', data);
+      const response = await axios.post('https://silambamwebsite.onrender.com/message-form', data);
       if (response.status === 200) {
         showSuccess(`Hi ${name}, thank you for your message! :)`);
         setEmail(''); 

@@ -16,4 +16,30 @@
     font-weight: bolder;
     
 }
+#ClassVenueUpdate-Container, #ProductDataUpdate-Container {
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #ClassVenueUpdate-Container form ,#ProductDataUpdate-Container form{ 
+    max-width: 600px;
+    width: 100%;
+    min-width: 300px;
+  }
+
+  #ClassVenueUpdate-Container select,#ProductDataUpdate-Container select{
+    margin: 2%;
+    padding: 0.5%;
+  }
+  
+  #ClassVenueUpdate-Container h2 ,#ProductDataUpdate-Container h2{
+    text-align: center;
+  }
+  #ClassVenueUpdate-Submit-Button,#ProductDataUpdate-Submit-Button {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
 

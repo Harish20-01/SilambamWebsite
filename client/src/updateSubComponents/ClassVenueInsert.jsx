@@ -36,7 +36,8 @@ const ClassVenueInsert = () => {
                 showSuccess('successfully uploaded');
                 setPlace('');
                 setDescription('');
-                setImage();
+                setDay('');
+                setTiming('');
                 setIsPreocessing(false);
             }
             else{

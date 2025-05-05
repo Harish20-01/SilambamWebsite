@@ -2,6 +2,7 @@ const express=require('express');
 const router = express.Router();
 const validateRoute=require('../validation/validateRoute');
 const { Reviews } = require('../models/model');
+const sendMail=require('../mail/nodeMailer');
 
 router.post('/', async (req, res) => {
     const { name, text ,reviewerType,} = req.body;
@@ -13,6 +14,9 @@ router.post('/', async (req, res) => {
     try {
       const newReview = new Reviews({ name, text, reviewerType,});
       await newReview.save();
+      const sub="Submitting review in the website";
+      const info=`${name} submits a review : ${text}`;
+      sendMail(sub,info);
       res.status(201).json({ message: 'Review submitted successfully' });
     } catch (error) {
       res.status(500).json({ message: 'Error submitting review', error });

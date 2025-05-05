@@ -38,6 +38,8 @@ import YoutubeVideoInsert from "./updateSubComponents/YoutubeVideoInsert";
 import YoutubeVideoDelete from "./updateSubComponents/YoutubeVideoDelete";
 import AboutDataUpdateComponent from "./updateSubComponents/AboutDataUpdateComponent";
 import ReviewDeleteComponent from "./updateComponents/ReviewDeleteComponent";
+import ClassVenueDataUpdate from "./updateSubComponents/ClassVenueDataUpdate";
+import ProductDataUpdateComponent from "./updateSubComponents/ProductDataUpdateComponent";
 function App() {
   const[isLoggedIn,setIsLoggedIn]=useState(sessionStorage.getItem('isLoggedIn')==='true');
   const[isLoading,setIsLoading]=useState(true);
@@ -86,11 +88,13 @@ function App() {
                   <Route index element={isLoggedIn?<ClassVenueInsert/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
                   <Route path="classVenueInsert" element={isLoggedIn?<ClassVenueInsert/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
                   <Route path="classVenueDelete" element={isLoggedIn?<ClassVenueDelete/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
+                  <Route path="classVenueUpdate" element={isLoggedIn?<ClassVenueDataUpdate/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
               </Route>
               <Route path="/homeUpdateComponent/youtubeUpdateComponent" element={isLoggedIn?<YoutubeUpdateComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>} >
                   <Route index element={isLoggedIn?<YoutubeVideoInsert/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
                   <Route path="youtubeVideoInsert" element={isLoggedIn?<YoutubeVideoInsert/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
                   <Route path="youtubeVideoDelete" element={isLoggedIn?<YoutubeVideoDelete/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
+                  
               </Route>
               <Route path="/homeUpdateComponent/reviewDeleteComponent" element={isLoggedIn?<ReviewDeleteComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>} ></Route>
               <Route path="/aboutUpdateComponent" element={isLoggedIn?<AboutUpdateComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>} >
@@ -103,6 +107,7 @@ function App() {
                   <Route index  element={isLoggedIn?<ProductInsertComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
                    <Route path="productInsert" element={isLoggedIn?<ProductInsertComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
                    <Route path="productDelete" element={isLoggedIn?<ProductDeleteComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
+                   <Route path="productUpdate" element={isLoggedIn?<ProductDataUpdateComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>
               </Route>
               <Route path="/imageUpdateComponent" element={isLoggedIn?<ImageUpdateComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>} >
                     <Route index element={isLoggedIn?<ImageInsertComponent/>:<UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn}/>}/>

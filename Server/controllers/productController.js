@@ -77,4 +77,41 @@ router.post('/', upload.single('image'),validateRoute, async (req, res) => {
     }
   });
 
+  router.put('/:id', upload.single('image'), validateRoute, async (req, res) => {
+    try {
+      const { name, price, description } = req.body;
+      const { id } = req.params;
+      const product = await Products.findById(id);
+
+      if (!product) return res.status(404).json({ message: 'Product not found' });
+  
+      if (req.file) {
+        if (product.public_id) {
+          await cloudinary.uploader.destroy(product.public_id);
+        }
+  
+        const result = await new Promise((resolve, reject) => {
+          cloudinary.uploader.upload_stream({ resource_type: 'auto' }, (error, result) => {
+            if (error) reject(error);
+            else resolve(result);
+          }).end(req.file.buffer);
+        });
+  
+        product.imageUrl = result.secure_url;
+        product.public_id = result.public_id;
+      }
+  
+      product.name = name;
+      product.price = price;
+      product.description = description;
+  
+      await product.save();
+      res.status(200).json({ message: 'Product updated successfully' });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: 'Update failed', error });
+    }
+  });
+  
+
   module.exports=router;
