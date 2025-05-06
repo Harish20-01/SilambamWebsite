@@ -15,7 +15,7 @@ const sendMail=(subject,info)=>{
 
         let mailOptions = {
         from: '"Tamilar Martial Arts" <tamilarmartialarts993@gmail.com>',
-        to: 'tamilarmarabukalaiyagam@gamil.com',
+        to: 'venkysilambam@gmail.com',
         subject,
         text: info
         };

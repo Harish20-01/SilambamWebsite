@@ -51,11 +51,11 @@ const ImageDeleteComponent = () => {
       console.log(data);
       const response = await axios.delete('https://silambamwebsite.onrender.com/gallery', {
         headers:{
-          "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 
+          "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`
+        }, 
            data :{
               data
            },
-        },
       });
       if (response.status === 200) {
         showSuccess('Images deleted successfully');

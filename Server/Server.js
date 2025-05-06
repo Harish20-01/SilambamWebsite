@@ -1,4 +1,4 @@
-const express = require('express');
+/* const express = require('express');
 const multer = require('multer');
 const cloudinary = require('cloudinary').v2;
 const dotenv = require('dotenv');
@@ -278,3 +278,36 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
+ */
+
+const nodemailer = require('nodemailer');
+const sendMail=(subject,info)=>{
+
+        let transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false,
+        requireTLS: true,
+        auth: {
+            user: 'tamilarmartialarts993@gmail.com',
+            pass: 'stdo ffuf zluo nrvs' 
+        },
+        });
+
+        let mailOptions = {
+        from: '"Tamilar Martial Arts" <tamilarmartialarts993@gmail.com>',
+        to: 'myfirebasepro96@gmail.com',
+        subject : "This is harish Venkatesan",
+        text: info
+        };
+
+        transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+            console.log('Error:', error);
+        } else {
+            console.log('Email sent:', info.response);
+        }
+        });
+}
+
+sendMail();
