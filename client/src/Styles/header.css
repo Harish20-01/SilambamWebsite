@@ -231,6 +231,31 @@ nav {
     #Logo img{
       border-radius: 0px;
     }
+    #Navbar-items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 0;
+      opacity: 0;
+      transform: translateY(-20px);
+      pointer-events: none;
+      transition: all 0.5s ease;
+      z-index: 99;
+    }
+    
+    /* When menu is toggled open */
+    #Navbar-items.activate {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      padding: 15px 0;
+      background-color: rgba(225,225,225,0.8);
+    }
   }
 
   @media (max-width:930px){
@@ -284,29 +309,3 @@ nav {
   }
   
   /* transition effect for nav links */
-
-  #Navbar-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 0;
-    opacity: 0;
-    transform: translateY(-20px);
-    pointer-events: none;
-    transition: all 0.5s ease;
-    z-index: 99;
-  }
-  
-  /* When menu is toggled open */
-  #Navbar-items.activate {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-    padding: 15px 0;
-    background-color: rgba(225,225,225,0.8);
-  }
