@@ -308,4 +308,29 @@ nav {
     }
   }
   
-  /* transition effect for nav links */
+
+
+  /* Container for inline NavLink + toggle */
+.mobile-kalaigal-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Only visible on mobile */
+.dropdown-toggle {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 769px) {
+  .dropdown-toggle {
+    display: none;
+  }
+}

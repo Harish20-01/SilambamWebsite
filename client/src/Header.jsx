@@ -193,28 +193,41 @@ const Header = () => {
             </ul>
           </li>
 
-          <li className="mobile-only" style={{fontWeight:"bold"}}>
-            <div className="li" onClick={() => setShowCourses(!showCourses)}>
-              கலைகள் ▼
-            </div>
-            {showCourses && (
-              <ul className="mobile-course-dropdown">
-                {courses.map((course) => (
-                  <li key={course._id}>
-                    <div className="li" onClick={() => handleCourseClick(course._id)}>
-                      {course.title}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
+          
 
-          <li>
-            <NavLink to="/About" className={({ isActive }) => (isActive ? 'active li' : 'li')} onClick={handleNavClick}>
-              கலைகள் தொகுப்பு
-            </NavLink>
-          </li>
+          <li className="dropDown">
+                  <div className="li mobile-kalaigal-container">
+                    <NavLink
+                      to="/About"
+                      className={({ isActive }) => (isActive ? 'active li' : 'li')}
+                      onClick={handleNavClick}
+                    >
+                      கலைகள்
+                    </NavLink>
+
+                    {/* Mobile dropdown toggle */}
+                    <span
+                      className={`dropdown-toggle ${showCourses ? 'rotate' : ''}`}
+                      onClick={() => setShowCourses(!showCourses)}
+                    >
+                      ▼
+                    </span>
+                  </div>
+
+                  {/* Mobile dropdown list */}
+                  {showCourses && (
+                    <ul className="mobile-course-dropdown">
+                      {courses.map((course) => (
+                        <li key={course._id}>
+                          <div className="li" onClick={() => handleCourseClick(course._id)}>
+                            {course.title}
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+
           <li>
             <NavLink to="/Silambam" className={({ isActive }) => (isActive ? 'active li' : 'li')} onClick={handleNavClick}>
               பொருட்கள்
