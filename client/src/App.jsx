@@ -40,6 +40,8 @@ import AboutDataUpdateComponent from "./updateSubComponents/AboutDataUpdateCompo
 import ReviewDeleteComponent from "./updateComponents/ReviewDeleteComponent";
 import ClassVenueDataUpdate from "./updateSubComponents/ClassVenueDataUpdate";
 import ProductDataUpdateComponent from "./updateSubComponents/ProductDataUpdateComponent";
+import ScrollToTop from "./ScrollFunctionality";
+
 function App() {
   const[isLoggedIn,setIsLoggedIn]=useState(sessionStorage.getItem('isLoggedIn')==='true');
   const[isLoading,setIsLoading]=useState(true);
@@ -56,6 +58,7 @@ function App() {
   }
   return (
     <>
+      <ScrollToTop/>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
