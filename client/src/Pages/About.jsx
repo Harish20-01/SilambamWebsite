@@ -96,7 +96,9 @@ import axios from 'axios';
 import '../Styles/about.css';
 import { useLocation } from 'react-router-dom';
 
+
 const Courses = () => {
+  const courseRefs = React.useRef({});
   const [courses, setCourses] = useState([]);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const location = useLocation();
@@ -113,6 +115,11 @@ const Courses = () => {
     fetchCourses();
   }, []);
 
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },
+  [selectedCourse])
+
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const courseId = params.get('course');
@@ -121,6 +128,10 @@ const Courses = () => {
       if (course) setSelectedCourse(course);
     }
   }, [location.search, courses]);
+
+  const handleCourseSelect = (course) => {
+    setSelectedCourse(course);
+  };
 
   const renderWithBold = (text) => {
     return text.split('\n').map((line, index) => {
@@ -150,7 +161,17 @@ const Courses = () => {
           <div>
             <h3>{selectedCourse.title}</h3>
             <div className="course-full-description">{renderWithBold(selectedCourse.description)}</div>
-            <button onClick={() => setSelectedCourse(null)} className="close-btn">
+            <button
+              onClick={() => {
+                const courseId = selectedCourse?._id;
+                setSelectedCourse(null);
+                // Slight delay to ensure DOM is updated before scrolling
+                setTimeout(() => {
+                  courseRefs.current[courseId]?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+              }}
+              className="close-btn"
+            >
               குறைத்துக் காண்
             </button>
           </div>
@@ -160,14 +181,17 @@ const Courses = () => {
   }
 
   return (
-    <div className="courses-container">
+    <div className="courses-container" >
       {courses.map((course, index) => {
         const isEven = index % 2 === 0;
         const layoutClass = isEven ? 'row-left' : 'row-right';
         const previewText = course.description.split('\n').slice(0, 5).join('\n');
+        if (!courseRefs.current[course._id]) {
+          courseRefs.current[course._id] = React.createRef();
+        }
 
         return (
-          <div key={course._id} className={`course-row ${layoutClass}`}>
+          <div key={course._id} className={`course-row ${layoutClass}`} ref={courseRefs.current[course._id]}>
             <div className="course-image-wrapper">
               <img src={course.imageUrl} alt={course.title} />
             </div>
@@ -177,8 +201,8 @@ const Courses = () => {
                 {renderWithBold(previewText)}
                 {course.description.split('\n').length > 5 && <span>...</span>}
               </div>
-              <button onClick={() => setSelectedCourse(course)} className="course-button">
-                மேலும் படிக்க
+              <button onClick={() => handleCourseSelect(course)} className="course-button">
+                  மேலும் படிக்க
               </button>
             </div>
           </div>

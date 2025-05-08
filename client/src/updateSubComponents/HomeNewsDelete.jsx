@@ -43,7 +43,7 @@ const HomeNewsDelete = () => {
       showError('No images selected for deletion');
       return;
     }
-    if(selectedImages.length>=data.length-1){
+    if(data.length-selectedImages.length<1){
       showError('You Can not delete all the news');
       return;
     }

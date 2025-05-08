@@ -47,7 +47,7 @@ const HomeSlideImageDelete = () => {
       showError('No images selected for deletion');
       return;
     }
-    else if(images.length-selectedImages.length<=2){
+    else if(images.length-selectedImages.length<2){
       showError('Atleast two images Should be there ');
       return;
     }
