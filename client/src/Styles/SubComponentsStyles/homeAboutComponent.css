@@ -18,7 +18,7 @@
     border-radius: 10px;
     overflow: hidden;
     z-index: 0;
-    background-image: url('../../Logo/logo.png'); /* or use a class-based approach */
+    background-image: url('../../../Logo/logo.png'); /* or use a class-based approach */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

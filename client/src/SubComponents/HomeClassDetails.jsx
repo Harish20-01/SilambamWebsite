@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import '../Styles/SubComponentsStyles/homeClassDetails.css'; // The external CSS file for styles
+import '../Styles/SubComponentsStyles/homeClassDetails.css'; 
 import axios from 'axios';
 
 // Class Details Component
@@ -30,17 +30,17 @@ const ClassDetails = () => {
   return (
     <div ref={ref} className="class-details-container">
       {/* Class Description */}
-      <motion.div
+      < div
         className="section class-description"
         initial={{ opacity: 0, y: 60 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         <h2 className="section-title"><span>பயிற்சி&nbsp;</span><span>நடக்கும்&nbsp;</span><span> இடங்கள்:</span></h2>
-      </motion.div>
+      </ div>
     
       {/* Venue 1, Venue 2, and Venue 3 */}
-      <motion.div
+      < div
         className="venue-container"
         initial={{ opacity: 0, y: 60 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -58,16 +58,16 @@ const ClassDetails = () => {
           </dl>
           </li> 
         </ul>
-        <motion.a
+        < a
           href="tel:+919159318285"
           className="contact-btn"
           whileTap={{ scale: 0.95 }}
         >
           அழைக்க
-        </motion.a>
+        </ a>
         </div>
         ))} 
-          </motion.div>
+          </ div>
     </div>
   );
 };

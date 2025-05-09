@@ -42,7 +42,8 @@
   width: 40%; /* Increased size for better visibility */
   height: 40%; /* Adjusted height */
   border-radius: 50%;
-  object-fit: cover;
+  max-height: 400px;
+  object-fit: contain cover;
   border: 5px solid #eee;
   transition: all 0.3s ease;
 }

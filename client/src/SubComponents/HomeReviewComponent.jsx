@@ -26,7 +26,6 @@ const HomeReviewComponent = () => {
       });
   }, []);
 
-  // Optional: Auto slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       if (reviews.length > 0) {
@@ -34,7 +33,7 @@ const HomeReviewComponent = () => {
       }
     }, 3000);
 
-    return () => clearInterval(interval); // Clear on unmount
+    return () => clearInterval(interval); 
   }, [reviews]);
 
   const handleNext = () => {
@@ -55,7 +54,7 @@ const HomeReviewComponent = () => {
           <button onClick={handlePrev} className="nav-button">‹</button>
           <div className="review-card">
             <h4>{reviews[currentIndex].name}</h4>
-            <h5>{reviews[currentIndex].reviewerType=="Student"?"மாணவர்":"பெற்றோர்"}</h5>
+            <h5>{reviews[currentIndex].reviewerType=="Student"?"மாணவர்/Student":"பெற்றோர்/Parent"}</h5>
             <p>{reviews[currentIndex].text}</p>
           </div>
           <button onClick={handleNext} className="nav-button">›</button>

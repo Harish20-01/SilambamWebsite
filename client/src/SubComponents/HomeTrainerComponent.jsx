@@ -1,12 +1,18 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import image from '../../Logo/logo.png';
+import image from '../../TrainerProfile/TrainerProfile.jpg';
 import '../Styles/SubComponentsStyles/trainerProfile.css';
 
 const TrainerProfile = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [showMore, setShowMore] = useState(false);
+  const handleToggle = () => {
+    if (showMore && ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    setShowMore(!showMore);
+  };
 
   const containerStyle = {
     width: showMore ? '96%' : '',
@@ -90,7 +96,7 @@ const TrainerProfile = () => {
       </motion.div>
 
       <motion.button
-        onClick={() => setShowMore(!showMore)}
+        onClick={handleToggle}
         className="read-more-btn"
         whileTap={{ scale: 0.95 }}
       >

@@ -31,7 +31,7 @@ const ReviewSubmitComponent = () => {
       });
 
       if (response.status === 201) {
-        showSuccess('Thank you for your review!');
+        showSuccess('தங்களின் கருத்துக்கு நன்றி...');
         setName('');
         setText('');
       } else {
@@ -52,7 +52,7 @@ const ReviewSubmitComponent = () => {
         <label>Your Name(பெயர்):</label>
         <input
           type="text"
-          placeholder="John Doe"
+          placeholder=""
           value={name}
           onChange={(e) => setName(e.target.value)}
         />

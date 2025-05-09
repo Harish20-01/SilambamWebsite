@@ -309,15 +309,12 @@ nav {
   }
   
 
-
-  /* Container for inline NavLink + toggle */
 .mobile-kalaigal-container {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-/* Only visible on mobile */
 .dropdown-toggle {
   display: inline-block;
   cursor: pointer;
