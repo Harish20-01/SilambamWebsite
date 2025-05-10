@@ -51,7 +51,7 @@ const ReviewSubmitComponent = () => {
 
   return (
     <div className="review-submit-container">
-      <h2>மதிப்பாய்வு சமர்ப்பிக்க <FaRegStar/></h2>
+      <h2>மதிப்பாய்வு சமர்ப்பிக்க <FaRegStar className='faregstar'/></h2>
       <form onSubmit={handleSubmit} className="review-form">
         <label>Your Name(பெயர்):</label>
         <input

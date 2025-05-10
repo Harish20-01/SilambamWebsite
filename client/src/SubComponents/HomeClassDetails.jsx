@@ -47,14 +47,14 @@ const ClassDetails = () => {
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
       >
       {venue.map((item, index) => (
-      <div key={index} className="venue">
+      <div key={index} className="venue"  style={{backgroundColor:index%2==0?"":"rgb(0,0,0,0.1"}}>{/*  #d5b${index}*/}
         <h2 className="venue-title"> இடம் {index + 1} - {item.place || 'Unnamed Venue'}</h2>
         <ul>
-          <li><span>நாள்:</span>&nbsp;&nbsp;{item.day || 'N/A'},</li>
-          <li><span>நேரம்:</span>&nbsp;&nbsp;{item.timing || 'N/A'},</li>
+          <li><span>நாள்:</span>&nbsp;&nbsp;{item.day || 'N/A'}</li>
+          <li><span>நேரம்:</span>&nbsp;&nbsp;{item.timing || 'N/A'}</li>
           <li><dl>
             <dt><span>விவரம்:</span>&nbsp;&nbsp;</dt>
-            <dd>&nbsp;{item.description || 'முடிவடையவில்லை'}.</dd>
+            <dd>&nbsp;{item.description || 'முடிவடையவில்லை'}</dd>
           </dl>
           </li> 
         </ul>

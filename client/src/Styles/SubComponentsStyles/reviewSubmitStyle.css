@@ -12,7 +12,10 @@
     font-size: 1.1rem;
     color: red;
   }
-  
+  .faregstar{
+    vertical-align: middle;
+    margin-bottom: 5px;
+  }
   .review-form {
     display: flex;
     flex-direction: column;
