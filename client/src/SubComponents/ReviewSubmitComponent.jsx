@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import { FaRegStar } from 'react-icons/fa';
+import { FaRegStar,FaStar } from 'react-icons/fa';
 import '../Styles/SubComponentsStyles/reviewSubmitStyle.css'; // Optional CSS file
 
 const ReviewSubmitComponent = () => {
@@ -10,12 +10,14 @@ const ReviewSubmitComponent = () => {
   const [reviewerType, setReviewerType] = useState('');
   /* const [message, setMessage] = useState(''); */
   const {showError,showSuccess}=useToast();
+  const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(null);
+  const url=import.meta.env.VITE_SERVER_URL;
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
 
     if (!name.trim() || !text.trim()||!reviewerType.trim()) {
       showError('Please fill in both fields.');
@@ -24,16 +26,18 @@ const ReviewSubmitComponent = () => {
     }
 
     try {
-      const response = await axios.post('https://silambamwebsite.onrender.com/reviews', {
+      const response = await axios.post(`${url}/reviews`, {
         name,
         text,
         reviewerType,
+        rating
       });
 
       if (response.status === 201) {
         showSuccess('தங்களின் கருத்துக்கு நன்றி...');
         setName('');
         setText('');
+        setRating(0);
       } else {
         showError('Something went wrong. Please try again.');
       }
@@ -71,7 +75,30 @@ const ReviewSubmitComponent = () => {
           value={text}
           onChange={(e) => setText(e.target.value)}
         ></textarea>
-
+         <label>Rate Us (மதிப்பீடு):</label>
+        <div className="star-rating">
+          {[...Array(5)].map((_, index) => {
+            const currentRating = index + 1;
+            return (
+              <button
+                type="button"
+                key={index}
+                className="star-button"
+                style={{background:"white"}}
+                onClick={() => setRating(currentRating)}
+                onMouseEnter={() => setHover(currentRating)}
+                onMouseLeave={() => setHover(null)
+                }
+              >
+                {currentRating <= (hover || rating) ? (
+                  <FaStar color="#ffc107" />
+                ) : (
+                  <FaRegStar color="#ccc" />
+                )}
+              </button>
+            );
+          })}
+        </div>
         <button type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'Submit Review(சமர்ப்பிக்க)'}
         </button>

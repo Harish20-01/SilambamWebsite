@@ -9,12 +9,13 @@ const YoutubeVideoDelete = () => {
   const [title, setTitle] = useState([]);
   const [selectedTitle, setSelectedTitle] = useState([]);
   const [isProcessing, setIsPreocessing] = useState(false);
+  const url=import.meta.env.VITE_SERVER_URL;
   const { showSuccess, showError } = useToast();
 
   useEffect(() => {
     const fetchVenues = async () => {
       try {
-        const response = await axios.get("https://silambamwebsite.onrender.com/youtube-video");
+        const response = await axios.get(`${url}/youtube-video`);
         setTitle(response.data); 
       } catch (error) {
         console.error('Error fetching venues:', error);
@@ -40,7 +41,7 @@ const YoutubeVideoDelete = () => {
     }
     setIsPreocessing(true);
     try {
-      const response = await axios.delete("https://silambamwebsite-1.onrender.com/youtube-video", {
+      const response = await axios.delete(`${url}/youtube-video`, {
         headers: {
           "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`,
         },

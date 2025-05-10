@@ -5,14 +5,14 @@ const { Reviews } = require('../models/model');
 const sendMail=require('../mail/nodeMailer');
 
 router.post('/', async (req, res) => {
-    const { name, text ,reviewerType,} = req.body;
+    const { name, text ,reviewerType,rating} = req.body;
   
     if (!name || !text) {
       return res.status(400).json({ message: 'Name and review text are required.' });
     }
   
     try {
-      const newReview = new Reviews({ name, text, reviewerType,});
+      const newReview = new Reviews({ name, text, reviewerType,rating});
       await newReview.save();
       const sub="Submitting review in the website";
       const info=`${name} submits a review : ${text}`;

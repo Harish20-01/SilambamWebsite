@@ -9,11 +9,12 @@ const ImageDeleteComponent = () => {
     const [selectedImages, setSelectedImages] = useState([]);
     const[isProcessing,setIsProcessing]=useState(false);
     const{showSuccess,showError}=useToast();
+    const url=import.meta.env.VITE_SERVER_URL;
 
   useEffect(()=>{
     const fetchImage=async()=>{
       try{
-      const response=await axios.get("https://silambamwebsite.onrender.com/gallery");
+      const response=await axios.get(`${url}/gallery`);
       setImages(response.data);
       }
       catch(err){
@@ -49,7 +50,7 @@ const ImageDeleteComponent = () => {
     try {
       const data = { public_ids: selectedImages};
       console.log(data);
-      const response = await axios.delete('https://silambamwebsite.onrender.com/gallery', {
+      const response = await axios.delete(`${url}/gallery`, {
         headers:{
           "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`
         }, 

@@ -129,6 +129,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [courses, setCourses] = useState([]);
   const [showCourses, setShowCourses] = useState(false);
+  const url=import.meta.env.VITE_SERVER_URL;
   const navigate = useNavigate();
 
   const handleChange = () => {
@@ -144,7 +145,7 @@ const Header = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get('https://silambamwebsite.onrender.com/about');
+        const res = await axios.get(`${url}/about`);
         setCourses(res.data);
       } catch (err) {
         console.error('Error fetching courses:', err);

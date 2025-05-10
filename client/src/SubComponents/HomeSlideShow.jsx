@@ -7,6 +7,7 @@ const HomeSlideShow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true); 
+  const url=import.meta.env.VITE_SERVER_URL;
 
   const nextSlide = () => {
     if (images.length === 0) return;
@@ -21,7 +22,7 @@ const HomeSlideShow = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get("https://silambamwebsite.onrender.com/homeSlide/images");
+        const response = await axios.get(`${url}/homeSlide/images`);
         setImages(response.data); // Set the fetched images
         setLoading(false); // Set loading to false after data is fetched
       } catch (error) {

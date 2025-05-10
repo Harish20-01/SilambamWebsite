@@ -10,6 +10,7 @@ const HomeSlideImageInsert = () => {
   const[file,setFile]=useState();
   const{showError,showSuccess}=useToast();
   const[isProcessing,setIsProcessing]=useState(false);
+  const url=import.meta.env.VITE_SERVER_URL;
   async function handleSubmit(e){
     e.preventDefault();
     setIsProcessing(true);
@@ -17,7 +18,7 @@ const HomeSlideImageInsert = () => {
       const data=new FormData()
       data.append("image",file);
       console.log(sessionStorage.getItem('authToken'));
-      const response=await axios.post("https://silambamwebsite.onrender.com/homeSlide/upload",data,{
+      const response=await axios.post(`${url}/homeSlide/upload`,data,{
         headers:{
           "Content-Type":"multipart/form-data",
           "Authorization": `Bearers ${sessionStorage.getItem('authToken')}`, 

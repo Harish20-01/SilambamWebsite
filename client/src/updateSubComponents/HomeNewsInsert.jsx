@@ -10,6 +10,7 @@ const HomeNewsInsert = () => {
     const[description,setDescription]=useState('');
     const[image,setImage]=useState();
     const{showError,showSuccess}=useToast();
+    const url=import.meta.env.VITE_SERVER_URL;
     const[isProcessing,setIsPreocessing]=useState(false);
    async  function handleSubmit(e){
         e.preventDefault();
@@ -23,7 +24,7 @@ const HomeNewsInsert = () => {
         data.append('description',description);
         data.append('image',image);
         try{
-            const response=await axios.post('https://silambamwebsite.onrender.com/news',data,{
+            const response=await axios.post(`${url}/news`,data,{
                 headers:{
                     'Content-type':'mutlipart/form-data',
                     "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 

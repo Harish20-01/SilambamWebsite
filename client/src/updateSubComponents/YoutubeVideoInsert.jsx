@@ -10,6 +10,7 @@ const YoutubeVideoInsert = () => {
     const[id,setId]=useState('');
     const{showError,showSuccess}=useToast();
     const[isProcessing,setIsPreocessing]=useState(false);
+    const url=import.meta.env.VITE_SERVER_URL;
    async  function handleSubmit(e){
         e.preventDefault();
         
@@ -23,7 +24,7 @@ const YoutubeVideoInsert = () => {
             id
         }
         try{
-            const response=await axios.post('https://silambamwebsite.onrender.com/youtube-video',data,{
+            const response=await axios.post(`${url}/youtube-video`,data,{
                 headers:{
                     "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 
                 }

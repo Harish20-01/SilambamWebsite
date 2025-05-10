@@ -8,11 +8,12 @@ const AboutDeleteComponent = () => {
   const [selectedImages, setSelectedImages] = useState([]);
   const[isProcessing,setIsPreocessing]=useState(false);
   const{showSuccess,showError}=useToast();
+  const url=import.meta.env.VITE_SERVER_URL;
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get("https://silambamwebsite.onrender.com/about");
+        const response = await axios.get(`${url}/about`);
         setImages(response.data); 
       } catch (error) {
         console.error('Error fetching images:', error);
@@ -41,7 +42,7 @@ const AboutDeleteComponent = () => {
     setIsPreocessing(true);
     try {
         const data={public_ids:selectedImages};
-        const response=await axios.delete("https://silambamwebsite.onrender.com/about",{
+        const response=await axios.delete(`${url}/about`,{
           headers:{
             "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 
           },

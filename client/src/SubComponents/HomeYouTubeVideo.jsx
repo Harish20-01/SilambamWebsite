@@ -5,10 +5,11 @@ import axios from 'axios';
 
 const HomeYouTubeVideo = () => {
   const[data,setData]=useState([]);
+  const url=import.meta.env.VITE_SERVER_URL;
   useEffect(()=>{
     const fetchData=async()=>{
       try{
-        const response=await axios.get('https://silambamwebsite.onrender.com/youtube-video');
+        const response=await axios.get(`${url}/youtube-video`);
         if(response.status==200){
             setData(response.data);
         

@@ -10,6 +10,7 @@ const PasswordUpdate = () => {
   const[oldPassword,setOldPassword]=useState('');
   const[username,setUsername]=useState('')
   const [successMessage, setSuccessMessage] = useState('');
+  const url=import.meta.env.VITE_SERVER_URL;
   
   const handlePasswordChange = async (e) => {
     e.preventDefault();
@@ -24,7 +25,7 @@ const PasswordUpdate = () => {
     const token = sessionStorage.getItem('authToken');
 
     try {
-      const response = await axios.post('https://silambamwebsite.onrender.com/api/change-password', {
+      const response = await axios.post(`${url}/api/change-password`, {
         username,
         oldPassword,
         newPassword,

@@ -9,11 +9,12 @@ const HomeSlideImageDelete = () => {
   const [selectedImages, setSelectedImages] = useState([]);
   const[isProcessing,setIsProcessing]=useState(false);
   const{showError,showSuccess}=useToast();
+  const url=import.meta.env.VITE_SERVER_URL;
 
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const response = await axios.get('https://silambamwebsite.onrender.com/homeSlide/images');
+        const response = await axios.get(`${url}/homeSlide/images`);
         if (response.status === 200) {
           setImages(response.data);
           console.log(response);
@@ -55,7 +56,7 @@ const HomeSlideImageDelete = () => {
     try {
       const data = { public_ids: selectedImages };
       console.log(data,sessionStorage.getItem('authToken'));
-      const response = await axios.delete('https://silambamwebsite.onrender.com/homeSlide', {
+      const response = await axios.delete(`${url}/homeSlide`, {
         headers:{
           "Authorization":`Bearer ${sessionStorage.getItem('authToken')}`, 
         },

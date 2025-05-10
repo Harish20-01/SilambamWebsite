@@ -9,10 +9,11 @@ const HomeNewsDelete = () => {
   const [selectedImages, setSelectedImages] = useState([]);
   const{showError,showSuccess}=useToast();
   const[isProcessing,setIsPreocessing]=useState(false);
+  const url=import.meta.env.VITE_SERVER_URL;
   useEffect(()=>{
     const fetchData=async()=>{
       try{
-    const response=await axios.get('https://silambamwebsite.onrender.com/news');
+    const response=await axios.get(`${url}/news`);
     console.log(response.data);
     if(response.status==200){
       setData(response.data);
@@ -51,7 +52,7 @@ const HomeNewsDelete = () => {
     try {
       const dataa={public_ids:selectedImages};
       console.log(dataa);
-      const response=await axios.delete("https://silambamwebsite.onrender.com/news",{
+      const response=await axios.delete(`${url}/news`,{
         headers:{
           "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 
         },

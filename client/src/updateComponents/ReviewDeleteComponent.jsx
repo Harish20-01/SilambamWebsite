@@ -11,12 +11,13 @@ const ReviewDeleteComponent = () => {
   const [selectedReviews, setSelectedReviews] = useState([]);
   const [isProcessing, setIsProcessing] = useState(false);
   const { showSuccess, showError } = useToast();
+  const url=import.meta.env.VITE_SERVER_URL;
   const navigate=useNavigate();
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get("https://silambamwebsite.onrender.com/reviews");
+        const response = await axios.get("${url}/reviews");
         setReviews(response.data);
       } catch (error) {
         console.error('Error fetching reviews:', error);
@@ -43,7 +44,7 @@ const ReviewDeleteComponent = () => {
 
     setIsProcessing(true);
     try {
-      const response = await axios.delete("https://silambamwebsite.onrender.com/reviews", {
+      const response = await axios.delete(`${url}/reviews`, {
         headers: {
           "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`
         },

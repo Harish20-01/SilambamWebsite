@@ -9,11 +9,12 @@ const ImageGallery = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(null);
   const [loading, setLoading] = useState(true);
   const [loadedImages, setLoadedImages] = useState({});
+  const url=import.meta.env.VITE_SERVER_URL;
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get('https://silambamwebsite.onrender.com/gallery/');
+        const response = await axios.get(`${url}/gallery/`);
         setImages(response.data);
         setLoading(false);
       } catch (error) {

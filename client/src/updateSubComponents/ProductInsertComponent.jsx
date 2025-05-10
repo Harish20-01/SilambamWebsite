@@ -10,6 +10,7 @@ const ProductInsertComponent = () => {
     const[description,setDescription]=useState('');
     const{showError,showSuccess}=useToast();
     const[isProcessing,setIsPreocessing]=useState(false);
+    const url=import.meta.env.VITE_SERVER_URL;
      async function handleSubmit(e){
         e.preventDefault();
         setIsPreocessing(true);
@@ -20,7 +21,7 @@ const ProductInsertComponent = () => {
             data.append("image",file);
             
         try{
-            const response= await axios.post("https://silambamwebsite.onrender.com/silambam-products",data,{
+            const response= await axios.post(`${url}/silambam-products`,data,{
                 headers:{
                     "Content-Type":"multipart/form-data",
                     "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 

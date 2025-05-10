@@ -7,12 +7,13 @@ import '../Styles/updateSubComponentStyle/aboutDataUpdateStyle.css';
 const AboutDataUpdateComponent = () => {
   const [aboutList, setAboutList] = useState([]);
   const [selectedId, setSelectedId] = useState('');
+  const url=import.meta.env.VITE_SERVER_URL;
   const [formData, setFormData] = useState({ title: '', description: '', imageUrl: '', file: null });
   const [isProcessing, setIsProcessing] = useState(false);
   const { showError, showSuccess } = useToast();
 
   useEffect(() => {
-    axios.get('https://silambamwebsite.onrender.com/about')
+    axios.get(`${url}/about`)
       .then(res => setAboutList(res.data))
       .catch(() => showError('Failed to load about data'));
   }, []);
@@ -39,7 +40,7 @@ const AboutDataUpdateComponent = () => {
     if (formData.file) data.append('image', formData.file);
 
     try {
-      const response = await axios.put(`https://silambamwebsite.onrender.com/about/${selectedId}`, data, {
+      const response = await axios.put(`${url}/about/${selectedId}`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`,
@@ -50,7 +51,7 @@ const AboutDataUpdateComponent = () => {
         showSuccess('Updated Successfully');
         setFormData({ title: '', description: '', imageUrl: '', file: null });
         setSelectedId('');
-        const res = await axios.get('https://silambamwebsite.onrender.com/about');/* https://silambamwebsite.onrender.com */
+        const res = await axios.get('${url}/about');/* ${url} */
         setAboutList(res.data);
       } else {
         showError('Update failed');

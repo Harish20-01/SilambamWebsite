@@ -13,6 +13,7 @@ const Login = ({ setIsLoggedIn }) => {
   const [error, setError] = useState('');
   const{showSuccess,showError}=useToast();
   const[isProcessing,setIsPreocessing]=useState(false);
+  const url=import.meta.env.VITE_SERVER_URL;
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -20,7 +21,7 @@ const Login = ({ setIsLoggedIn }) => {
     setIsPreocessing(true);
 
     try {
-      const response = await axios.post('https://silambamwebsite.onrender.com/api/login', {
+      const response = await axios.post(`${url}/api/login`, {
         username,
         password
       });

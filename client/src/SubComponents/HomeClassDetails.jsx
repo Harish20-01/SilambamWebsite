@@ -3,13 +3,13 @@ import { motion, useInView } from 'framer-motion';
 import '../Styles/SubComponentsStyles/homeClassDetails.css'; 
 import axios from 'axios';
 
-// Class Details Component
 const ClassDetails = () => {
   const[venue,setVenue]=useState([]);
+  const url=import.meta.env.VITE_SERVER_URL;
   useEffect(()=>{
     const fetchData=async()=>{
       try{
-      const response=await axios.get('https://silambamwebsite.onrender.com/class-venue');
+      const response=await axios.get(`${url}/class-venue`);
       if(response.status==200){
           setVenue(response.data);
           console.log(response.data);

@@ -7,12 +7,13 @@ const HomeNewsComponent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const url=import.meta.env.VITE_SERVER_URL;
   const [isPaused, setIsPaused] = useState(false); // NEW STATE
 
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get('https://silambamwebsite.onrender.com/news');
+        const response = await axios.get(`${url}/news`);
         setNews(response.data); 
         setLoading(false); 
       } catch (error) {

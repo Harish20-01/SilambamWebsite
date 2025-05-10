@@ -13,6 +13,14 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  .star-display {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+  }
   
   .review-card {
     flex: 1;

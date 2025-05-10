@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { FaStar, FaRegStar } from 'react-icons/fa';
 import '../Styles/SubComponentsStyles/homeReviewStyle.css';
 
 const HomeReviewComponent = () => {
+  
   const [reviews, setReviews] = useState([  {
     "name": "John Doe",
     "text": "This website is amazing!"
@@ -13,9 +15,10 @@ const HomeReviewComponent = () => {
   }]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const url=import.meta.env.VITE_SERVER_URL;
 
   useEffect(() => {
-    axios.get('https://silambamwebsite.onrender.com/reviews') // Replace with your actual API
+    axios.get(`${url}/reviews`) // Replace with your actual API
       .then(response => {
         setReviews(response.data);
         setIsLoading(false);
@@ -25,6 +28,7 @@ const HomeReviewComponent = () => {
         setIsLoading(false);
       });
   }, []);
+  console.log(reviews)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,6 +59,15 @@ const HomeReviewComponent = () => {
           <div className="review-card">
             <h4>{reviews[currentIndex].name}</h4>
             <h5>{reviews[currentIndex].reviewerType=="Student"?"மாணவர்/Student":"பெற்றோர்/Parent"}</h5>
+             <div className="star-display">
+                {[...Array(5)].map((_, i) => (
+                  i < reviews[currentIndex].rating ? (
+                    <FaStar key={i} color="#ffc107" />
+                  ) : (
+                    <FaRegStar key={i} color="#ccc" />
+                  )
+                ))}
+            </div>
             <p>{reviews[currentIndex].text}</p>
           </div>
           <button onClick={handleNext} className="nav-button">›</button>

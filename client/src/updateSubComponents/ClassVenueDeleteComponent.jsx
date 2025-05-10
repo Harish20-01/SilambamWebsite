@@ -9,12 +9,13 @@ const ClassVenueDelete = () => {
   const [venue, setVenue] = useState([]);
   const [selectedVenue, setSelectedVenue] = useState([]);
   const [isProcessing, setIsPreocessing] = useState(false);
+  const url=import.meta.env.VITE_SERVER_URL;
   const { showSuccess, showError } = useToast();
 
   useEffect(() => {
     const fetchVenues = async () => {
       try {
-        const response = await axios.get("https://silambamwebsite.onrender.com/class-venue");
+        const response = await axios.get(`${url}/class-venue`);
         setVenue(response.data); 
       } catch (error) {
         console.error('Error fetching venues:', error);
@@ -40,7 +41,7 @@ const ClassVenueDelete = () => {
     }
     setIsPreocessing(true);
     try {
-      const response = await axios.delete("https://silambamwebsite.onrender.com/class-venue", {
+      const response = await axios.delete(`${url}/class-venue`, {
         headers: {
           "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`,
         },

@@ -12,6 +12,7 @@ const ClassVenueInsert = () => {
     const[timing,setTiming]=useState('');
     const{showError,showSuccess}=useToast();
     const[isProcessing,setIsPreocessing]=useState(false);
+    const url=import.meta.env.VITE_SERVER_URL;
    async  function handleSubmit(e){
         e.preventDefault();
         
@@ -27,7 +28,7 @@ const ClassVenueInsert = () => {
             timing
         }
         try{
-            const response=await axios.post('https://silambamwebsite.onrender.com/class-venue',data,{
+            const response=await axios.post(`${url}/class-venue`,data,{
                 headers:{
                     "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 
                 }

@@ -101,6 +101,9 @@
   .trainer-profile {
     width: 90%; /* Adjust profile width on mobile */
   }
+  .trainer-image.expanded-image{
+     margin-right: 0px;
+  }
 }
 
 /* Larger screen view */

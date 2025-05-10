@@ -7,6 +7,7 @@ import '../Styles/updateSubComponentStyle/aboutDataUpdateStyle.css';
 const ClassVenueDataUpdate = () => {
   const [venueList, setVenueList] = useState([]);
   const [selectedId, setSelectedId] = useState('');
+  const url=import.meta.env.VITE_SERVER_URL;
   const [formData, setFormData] = useState({
     place: '',
     day: '',
@@ -17,7 +18,7 @@ const ClassVenueDataUpdate = () => {
   const { showError, showSuccess } = useToast();
 
   useEffect(() => {
-    axios.get('https://silambamwebsite.onrender.com/class-venue')
+    axios.get(`${url}/class-venue`)
       .then(res => setVenueList(res.data))
       .catch(() => showError('Failed to load class venue data'));
   }, []);
@@ -39,7 +40,7 @@ const ClassVenueDataUpdate = () => {
     setIsProcessing(true);
 
     try {
-      const response = await axios.put(`https://silambamwebsite.onrender.com/class-venue/${selectedId}`, formData, {
+      const response = await axios.put(`${url}/class-venue/${selectedId}`, formData, {
         headers: {
           "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`
         }
@@ -49,7 +50,7 @@ const ClassVenueDataUpdate = () => {
         showSuccess('Class venue updated successfully');
         setFormData({ place: '', day: '', timing: '', description: '' });
         setSelectedId('');
-        const res = await axios.get('https://silambamwebsite.onrender.com/class-venue');
+        const res = await axios.get(`${url}/class-venue`);
         setVenueList(res.data);
       } else {
         showError('Update failed');

@@ -10,9 +10,10 @@ const ProductDataUpdateComponent = () => {
   const [formData, setFormData] = useState({ name: '', price: '', description: '', imageUrl: '', file: null });
   const [isProcessing, setIsProcessing] = useState(false);
   const { showError, showSuccess } = useToast();
+  const url=import.meta.env.VITE_SERVER_URL;
 
   useEffect(() => {
-    axios.get('https://silambamwebsite.onrender.com/silambam-products')
+    axios.get(`${url}/silambam-products`)
       .then(res => setProductList(res.data))
       .catch(() => showError('Failed to load product data'));
   }, []);
@@ -42,7 +43,7 @@ const ProductDataUpdateComponent = () => {
 
     try {
       const response = await axios.put(
-        `https://silambamwebsite.onrender.com/silambam-products/${selectedId}`,
+        `${url}/silambam-products/${selectedId}`,
         data,
         {
           headers: {
@@ -56,7 +57,7 @@ const ProductDataUpdateComponent = () => {
         showSuccess('Product updated successfully');
         setFormData({ name: '', price: '', description: '', imageUrl: '', file: null });
         setSelectedId('');
-        const res = await axios.get('https://silambamwebsite.onrender.com/silambam-products');
+        const res = await axios.get(`${url}/silambam-products`);
         setProductList(res.data);
       } else {
         showError('Update failed');

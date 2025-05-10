@@ -7,6 +7,7 @@ const Silambam = () => {
   const [data, setData] = useState([]);
   const [expandedCards, setExpandedCards] = useState({});
   const ref = useRef(null);
+  const url=import.meta.env.VITE_SERVER_URL;
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const toggleDescription = (id) => {
@@ -19,7 +20,7 @@ const Silambam = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://silambamwebsite.onrender.com/silambam-products');
+        const response = await axios.get(`${url}/silambam-products`);
         if (response.status === 200) {
           setData(response.data);
           console.log(response.data)

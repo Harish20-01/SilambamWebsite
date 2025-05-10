@@ -9,7 +9,7 @@ const Courses = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get('https://silambamwebsite.onrender.com/about');
+        const res = await axios.get('${url}/about');
         setCourses(res.data);
       } catch (err) {
         console.error('Error fetching courses:', err);
@@ -96,17 +96,16 @@ import axios from 'axios';
 import '../Styles/about.css';
 import { useLocation } from 'react-router-dom';
 
-
 const Courses = () => {
   const courseRefs = React.useRef({});
   const [courses, setCourses] = useState([]);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const location = useLocation();
-
+  const url=import.meta.env.VITE_SERVER_URL;
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get('https://silambamwebsite.onrender.com/about');
+        const res = await axios.get(`${url}/about`);
         setCourses(res.data);
       } catch (err) {
         console.error('Error fetching courses:', err);

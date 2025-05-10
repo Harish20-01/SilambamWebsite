@@ -8,11 +8,12 @@ const ProductDeleteComponent = () => {
   const [selectedImages, setSelectedImages] = useState([]);
   const[isProcessing,setIsPreocessing]=useState(false);
   const{showSuccess,showError}=useToast();
+  const url=import.meta.env.VITE_SERVER_URL;
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get("https://silambamwebsite.onrender.com/silambam-products");
+        const response = await axios.get(`${url}/silambam-products`);
         setImages(response.data); 
         console.log(response.data);
       } catch (error) {
@@ -42,7 +43,7 @@ const ProductDeleteComponent = () => {
     setIsPreocessing(true);
     try {
         const data={public_ids:selectedImages};
-        const response=await axios.delete("https://silambamwebsite.onrender.com/silambam-products",{
+        const response=await axios.delete(`${url}/silambam-products`,{
           headers:{
             "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 
           },

@@ -11,6 +11,7 @@ const ImageInsertComponent = () => {
 const [selectedImages, setSelectedImages] = useState([]);
 const [isProcessing, setIsProcessing] = useState(false);
 const{showSuccess,showError}=useToast();
+const url=import.meta.env.VITE_SERVER_URL;
 /* const [uploadSuccess, setUploadSuccess] = useState(false);
 const [uploadedImages, setUploadedImages] = useState([]); */
 
@@ -34,7 +35,7 @@ const handleImageUpload = async () => {
       formData.append('images', file);
     });
     
-    const response = await axios.post('https://silambamwebsite.onrender.com/gallery/upload', formData, {
+    const response = await axios.post(`${url}/gallery/upload`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
         "Authorization": `Bearer ${sessionStorage.getItem('authToken')}`, 

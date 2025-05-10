@@ -11,6 +11,7 @@ const Contact = () => {
   const [mobileNo, setMobileNo] = useState('');
   const [message, setMessage] = useState('');
   const{showError,showSuccess}=useToast();
+  const url=import.meta.env.VITE_SERVER_URL;
 
   const handleKeyDown = (e, nextInput, currentInput) => {
    
@@ -35,7 +36,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await axios.post('https://silambamwebsite.onrender.com/message-form', data);
+      const response = await axios.post(`${url}/message-form`, data);
       if (response.status === 200) {
         showSuccess(`Hi ${name}, thank you for your message! :)`);
         setEmail(''); 
