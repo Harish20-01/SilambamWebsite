@@ -40,7 +40,7 @@ const YoutubeVideoDelete = () => {
 
     setIsProcessing(true);
     try {
-      const response = await axios.delete(`http://localhost:3000/youtube-video`, {
+      const response = await axios.delete(`${url}/youtube-video`, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem('authToken')}`,
         },
