@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 import '../Styles/updateSubComponentStyle/homeNewsInsertStyle.css';
 
 const YoutubeVideoInsert = () => {
@@ -47,7 +47,7 @@ const YoutubeVideoInsert = () => {
         }
     }
     return(
-        isProcessing?(<LoadingComponent/>):(
+        isProcessing?(<Processing content='Inserting Youtube Id..'/>):(
             <div id="HomeNewsInsert-Container">
                 <h3>Update Youtube ID Here..</h3>
                 <form>

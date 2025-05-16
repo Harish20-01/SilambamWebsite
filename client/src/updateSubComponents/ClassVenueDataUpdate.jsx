@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 import '../Styles/updateSubComponentStyle/aboutDataUpdateStyle.css';
 
 const ClassVenueDataUpdate = () => {
@@ -63,7 +63,7 @@ const ClassVenueDataUpdate = () => {
     }
   };
 
-  return isProcessing ? <LoadingComponent /> : (
+  return isProcessing ? <Processing content='Updating Venues...' /> : (
     <div id="ClassVenueUpdate-Container">
       <h2>Update Class Venue</h2>
       <select value={selectedId} onChange={e => setSelectedId(e.target.value)}>

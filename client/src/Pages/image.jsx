@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../Styles/SubComponentsStyles/imageGalleryStyle.css';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 
 const ImageGallery = () => {
   const [Images, setImages] = useState([]);
@@ -52,13 +52,12 @@ const ImageGallery = () => {
   };
 
   if (loading) {
-    return <div><LoadingComponent/></div>;
+    return <div><Processing content='Loading Images....'/></div>;
   }
 
   return (
     <div >
       <div id="heading-image">
-        <img src={Images[Images.length - 1].imageUrl} alt="Heading" />
         <h1>படங்கள்</h1>
       </div>
 

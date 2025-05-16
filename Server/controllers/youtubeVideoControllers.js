@@ -24,18 +24,32 @@ router.post('/',validateRoute,async(req,res)=>{
 })
 
 router.delete('/', validateRoute, async (req, res) => {
-    try {
-      const { title } = req.body;
-  
-      if (!Array.isArray(title)) {
-        return res.status(400).json({ success: false, message: "Invalid data format. Expected an array of place names." });
-      }
-  
-      await YoutubeId.deleteMany({ place: { $in: title } });
-      return res.status(200).json({ message: "Data deleted successfully", success: true });
-    } catch (error) {
-      return res.status(400).json({ message: 'Error processing the delete', success: false, error });
+  try {
+    const { ids } = req.body;
+
+    if (!Array.isArray(ids)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid data format. Expected an array of IDs.',
+      });
     }
-  });
+
+    await YoutubeId.deleteMany({ _id: { $in: ids } });
+
+    return res.status(200).json({
+      message: 'Videos deleted successfully',
+      success: true,
+    });
+  } catch (error) {
+    console.error('Delete error:', error);
+    return res.status(500).json({
+      message: 'Error processing the delete',
+      success: false,
+      error,
+    });
+  }
+});
+
+  
   
 module.exports=router;

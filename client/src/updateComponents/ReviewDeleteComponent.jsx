@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaArrowLeft } from 'react-icons/fa';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing'
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '../../public/MessageToastContent';
 import '../Styles/updateSubComponentStyle/aboutDeleteStyle.css';
@@ -71,7 +71,7 @@ const ReviewDeleteComponent = () => {
   }
 
   return isProcessing ? (
-    <LoadingComponent />
+    <Processing content='Deleting Reviews...' />
   ) : (
     <div id="AboutDelete-Container">
       <div onClick={onBack} className="backward-button" style={{margin:"20px"}}>

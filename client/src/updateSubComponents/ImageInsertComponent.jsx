@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 import '../Styles/updateSubComponentStyle/imageInsertStyle.css';
 const ImageInsertComponent = () => {
     const navigate=useNavigate();
@@ -55,7 +55,7 @@ const handleImageUpload = async () => {
 };
 
   return (
-    isProcessing?(<LoadingComponent/>):(
+    isProcessing?(<Processing content='Inserting Images into the Gallery...'/>):(
         <div id="ImageInsert-Container">
           <h2>Gallery Image Insert Section</h2>
           <h3>Submit the Image </h3>

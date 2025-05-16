@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect,useState } from 'react';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing'
 import '../Styles/updateSubComponentStyle/imageDeleteStyle.css';
 const ImageDeleteComponent = () => {
     const[images,setImages]=useState([]);
@@ -83,7 +83,7 @@ const ImageDeleteComponent = () => {
   return (
   
     <div>
-      {isProcessing?(<LoadingComponent/>):
+      {isProcessing?(<Processing content='Deleting Images'/>):
       (
       <div id="ImageDelete-Container">
         <h2>Gallery Image Delete Section</h2>

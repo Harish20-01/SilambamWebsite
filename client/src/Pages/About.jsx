@@ -95,12 +95,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../Styles/about.css';
 import { useLocation } from 'react-router-dom';
+import Processing from '../../assets/Processing';
 
 const Courses = () => {
   const courseRefs = React.useRef({});
   const [courses, setCourses] = useState([]);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const location = useLocation();
+  const [loading,setLoading]=useState(true);
   const url=import.meta.env.VITE_SERVER_URL;
   useEffect(() => {
     const fetchCourses = async () => {
@@ -109,6 +111,9 @@ const Courses = () => {
         setCourses(res.data);
       } catch (err) {
         console.error('Error fetching courses:', err);
+      }
+      finally{
+        setLoading(false);
       }
     };
     fetchCourses();
@@ -147,6 +152,10 @@ const Courses = () => {
       );
     });
   };
+
+  if(loading){
+    return <Processing/>
+  }
 
   if (!courses.length) {
     return <div className="loading-message">No courses found...</div>;

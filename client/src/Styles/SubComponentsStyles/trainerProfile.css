@@ -150,3 +150,7 @@
 .trainer-info p + p {
   margin-top: 20px; /* Add some margin to the next paragraph */
 }
+
+.trainer-info.expanded-text p {
+  text-indent: 3em; /* or adjust as needed */
+}

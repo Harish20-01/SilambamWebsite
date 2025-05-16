@@ -1,4 +1,4 @@
-#Update-Component{
+/* #Update-Component{
     display: flex;
     flex-direction: column;
     color: green;
@@ -38,11 +38,11 @@
     justify-content: center;
     margin: 2%;
 }
-#Logout-Container button{
+/* #Logout-Container button{
     color:red;
     padding: 1%;
     font-weight: bolder;
-}
+} 
 #Update-Component a:hover,
 #Update-Component a:focus{
     color:aliceblue;
@@ -53,4 +53,80 @@
     #Update-Component a{
         width: 80vw;
     }
+}
+ */
+:root {
+  --primary-color: #f31919;
+  --card-bg: #f9f9f9;
+  --card-hover: #ea5959b7;
+  --text-color: #333;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-home-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  
+  margin: 50px auto;
+  text-align: center;
+}
+
+.admin-title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.admin-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 40px;
+}
+
+.admin-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.admin-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text-color);
+  box-shadow: var(--shadow);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.admin-card:hover {
+  background: var(--card-hover);
+  transform: translateY(-5px);
+}
+
+.admin-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+/* Add this below the existing home.css */
+
+.logout-button {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: red;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top:20px ;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.logout-button:hover { 
+  color: white;
+  background-color: var(--primary-color);
+  transform: scale(1.05);
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 import '../Styles/updateSubComponentStyle/homeSlideImageInsertStyle.css'
 
 const HomeSlideImageInsert = () => {
@@ -42,7 +42,7 @@ const HomeSlideImageInsert = () => {
     }
   }
   return (
-    isProcessing?(<LoadingComponent/>):(
+    isProcessing?(<Processing content='Inserting HomeSlide Images'/>):(
         <div id="HomeSlideImage-insert">
           <h3>Home SlideShow Image Adding Section</h3>
           <form onSubmit={handleSubmit}>

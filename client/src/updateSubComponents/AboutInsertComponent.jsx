@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 import '../Styles/updateSubComponentStyle/aboutInsertStyle.css';
 const AboutInsertComponent = () => {
     const[title,setTitle]=useState('');
@@ -46,7 +46,7 @@ const AboutInsertComponent = () => {
     }
   
   return (
-    isProcessing?(<LoadingComponent/>):(
+    isProcessing?(<Processing content='Inserting data...'/>):(
         <div id="AboutInsert-Container">
             <h2>
                 About Section

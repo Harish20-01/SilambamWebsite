@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Styles/SubComponentsStyles/homeSlideShow.css";
-import LoadingComponent from "../../public/LoadingComponent"; // Optional: Add custom styles
+import LoadingComponent from "../../assets/LoadingComponent"; // Optional: Add custom styles
 
 const HomeSlideShow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

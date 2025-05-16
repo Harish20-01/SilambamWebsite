@@ -25,7 +25,7 @@ const HomeYouTubeVideo = () => {
     fetchData();
   },[])
   return (
-    <motion.div
+    <div
       id="YoutubeVideo-Container"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ const HomeYouTubeVideo = () => {
         />
      ))
      }
-    </motion.div>
+    </div>
   );
 };
 

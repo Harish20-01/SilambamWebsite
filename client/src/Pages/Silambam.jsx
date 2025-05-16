@@ -2,9 +2,11 @@ import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import '../Styles/silambamProduct.css';
 import { motion, useInView } from 'framer-motion';
+import Processing from '../../assets/Processing';
 
 const Silambam = () => {
   const [data, setData] = useState([]);
+  const [loading,setLoading]=useState(true);
   const [expandedCards, setExpandedCards] = useState({});
   const ref = useRef(null);
   const url=import.meta.env.VITE_SERVER_URL;
@@ -30,10 +32,14 @@ const Silambam = () => {
       } catch (err) {
         console.log(err);
       }
+      finally{
+        setLoading(false);
+      }
     };
     fetchData();
   }, []);
-
+  if(loading)
+      return <Processing content='Fetching Products...'/>
   return (
     <>
       <div id="product-heading">

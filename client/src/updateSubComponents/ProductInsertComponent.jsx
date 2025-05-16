@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 import '../Styles/updateSubComponentStyle/aboutInsertStyle.css';
 const ProductInsertComponent = () => {
     const[name,setName]=useState('');
@@ -49,7 +49,7 @@ const ProductInsertComponent = () => {
     }
   
   return (
-    isProcessing?(<LoadingComponent/>):(
+    isProcessing?(<Processing content='Inserting new Products..'/>):(
         <div id="AboutInsert-Container">
             <h2>
                 Product Insert Section

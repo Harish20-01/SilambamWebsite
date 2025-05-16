@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 import '../Styles/updateSubComponentStyle/aboutDeleteStyle.css';
 
 
@@ -64,7 +64,7 @@ const ClassVenueDelete = () => {
   };
 
   return isProcessing ? (
-    <LoadingComponent />
+    <Processing content='Deleting Venues...' />
   ) : (
     <div id="AboutDelete-Container">
       <h2>Class Venue Section</h2>

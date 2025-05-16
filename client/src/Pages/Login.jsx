@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../Styles/SubComponentsStyles/login.css';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import LoadingComponent from '../../assets/Processing';
 import { FaUser, FaLock } from 'react-icons/fa';
 import image from '../../public/backgroundImage.jpg';
 
@@ -44,7 +44,7 @@ const Login = ({ setIsLoggedIn }) => {
   
 
   return (
-    isProcessing?(<LoadingComponent/> ): (
+    isProcessing?(<LoadingComponent content='Logging in....'/> ): (
     <div id="Login-Form-Container" 
     style={{
       backgroundImage: `url(${image})`,

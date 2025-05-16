@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 import '../Styles/updateSubComponentStyle/aboutDeleteStyle.css';
 const ProductDeleteComponent = () => {
   const [images, setImages] = useState([]);
@@ -69,7 +69,7 @@ const ProductDeleteComponent = () => {
   };
 
   return (
-    isProcessing?(<LoadingComponent/>):(
+    isProcessing?(<Processing content= 'Deleting Product'/>):(
       <div id="AboutDelete-Container">
         <h2>Product Section</h2>
         <h3>Select Name to Delete</h3>

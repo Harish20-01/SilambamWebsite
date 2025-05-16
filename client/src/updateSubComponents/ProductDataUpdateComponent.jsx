@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 import '../Styles/updateSubComponentStyle/aboutDataUpdateStyle.css';
 
 const ProductDataUpdateComponent = () => {
@@ -69,7 +69,7 @@ const ProductDataUpdateComponent = () => {
     }
   };
 
-  return isProcessing ? <LoadingComponent /> : (
+  return isProcessing ? <Processing content='Updating Product Details'/> : (
     <div id="ProductDataUpdate-Container">
       <h2>Update Product</h2>
       <select value={selectedId} onChange={e => setSelectedId(e.target.value)}>

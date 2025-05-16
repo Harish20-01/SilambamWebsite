@@ -2,7 +2,7 @@ import React from 'react';
 import {useState,useEffect} from 'react';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 import '../Styles/updateSubComponentStyle/homeNewsDeleteStyle.css';
 const HomeNewsDelete = () => {
   const [data,setData]=useState([]);
@@ -80,7 +80,7 @@ const HomeNewsDelete = () => {
 
 
   return (
-    isProcessing?(<LoadingComponent/>):(
+    isProcessing?(<Processing content='Deleting News...'/>):(
         <div id="HomeNewsDelete-Container">
           <h2>
             Home News Delete Section

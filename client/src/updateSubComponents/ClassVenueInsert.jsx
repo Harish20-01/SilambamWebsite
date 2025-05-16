@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 import '../Styles/updateSubComponentStyle/homeNewsInsertStyle.css';
 
 const ClassVenueInsert = () => {
@@ -53,7 +53,7 @@ const ClassVenueInsert = () => {
         }
     }
     return(
-        isProcessing?(<LoadingComponent/>):(
+        isProcessing?(<Processing content='Inserting Venues....'/>):(
             <div id="HomeNewsInsert-Container">
                 <h3>Update New Venues Here..</h3>
                 <form>

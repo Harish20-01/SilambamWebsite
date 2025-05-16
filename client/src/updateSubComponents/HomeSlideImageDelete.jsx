@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useSyncExternalStore } from 'react';
 import axios from 'axios';
-import LoadingComponent from '../../public/LoadingComponent';
+import Processing from '../../assets/Processing';
 import { useToast } from '../../public/MessageToastContent';
 import '../Styles/updateSubComponentStyle/homeSlideImageDeleteStyle.css';
 
@@ -82,7 +82,7 @@ const HomeSlideImageDelete = () => {
   return (
   
     <div>
-      {isProcessing?(<LoadingComponent/>):
+      {isProcessing?(<Processing content='Deleting HomeSlide Images...'/>):
       (
         <>
       <h3 className='HomeSlideImageDelete-title'>Home Slide Image Delete Section</h3>
