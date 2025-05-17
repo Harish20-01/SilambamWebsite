@@ -4,6 +4,9 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent'; // Make sure you have axios imported
 import ReviewSubmitComponent from '../SubComponents/ReviewSubmitComponent';
+import Lottie from "lottie-react";
+import animation from '../../animation/LocationAnimation.json';
+import messageAnimation from '../../animation/FeedbackAnimation.json'
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -52,8 +55,12 @@ const Contact = () => {
   };
 
   return (
-    <div className='Contact-Container'>
-      
+  
+  <div className='Contact-Container'>
+    <div className='message-container-wrapper'>
+      <div className='animation-div'>
+        <Lottie animationData={messageAnimation} loop={true} />
+      </div>
       <div id="Message-Container">
         <h2>உங்களின் கேள்விகளை எங்களுக்கு தெரியப்படுத்துங்கள்...</h2>
         <form onSubmit={handleSubmit}>
@@ -90,14 +97,21 @@ const Contact = () => {
           <button id="submitButton" type="submit">சமர்ப்பிக்க</button>
         </form>
       </div>
-
+      </div>
+    <div className='contact-location-container-wrapper'>
+      
+        <div  className='animation-div'>
+            <Lottie animationData={animation} loop={true} />
+        </div>
+      
       <div id="Contact-Location">
         <h2>நேரில் பார்வையிட<FaMapMarkerAlt /></h2>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3908.8138310644113!2d78.6714!3d11.5652!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bab750060971593%3A0x9cfafd054f7283ed!2zS2FsYWkgTmlsYW0gLSDgrpXgrrLgr4jgrqjgrr_grrLgrq7gr40!5e0!3m2!1sen!2sin!4v1738131009118!5m2!1sen!2sin"
           title="Location"
         ></iframe>
-      </div>
+    </div>
+    </div>
       <ReviewSubmitComponent/>
     </div>
   );

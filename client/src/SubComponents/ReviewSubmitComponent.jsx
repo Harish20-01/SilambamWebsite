@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useToast } from '../../public/MessageToastContent';
 import { FaRegStar,FaStar } from 'react-icons/fa';
+import Lottie from "lottie-react";
+import animation from '../../animation/ReviewAnimatoin.json';
 import '../Styles/SubComponentsStyles/reviewSubmitStyle.css'; // Optional CSS file
 
 const ReviewSubmitComponent = () => {
@@ -50,6 +52,10 @@ const ReviewSubmitComponent = () => {
   };
 
   return (
+  <div className='review-submit-container-wrapper'>
+    <div  className='animation-div'>
+        <Lottie animationData={animation} loop={true} />
+    </div>
     <div className="review-submit-container">
       <h2>மதிப்பாய்வு சமர்ப்பிக்க <FaRegStar className='faregstar'/></h2>
       <form onSubmit={handleSubmit} className="review-form">
@@ -104,6 +110,7 @@ const ReviewSubmitComponent = () => {
         </button>
       </form>
     </div>
+  </div>
   );
 };
 

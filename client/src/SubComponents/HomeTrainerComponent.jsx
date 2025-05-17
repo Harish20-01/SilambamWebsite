@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import image from '../../TrainerProfile/TrainerProfile.jpg';
+import image from '../../TrainerProfile/Profile.jpg';
 import '../Styles/SubComponentsStyles/trainerProfile.css';
 
 const TrainerProfile = () => {

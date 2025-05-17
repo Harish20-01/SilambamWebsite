@@ -14,7 +14,7 @@
   #Message-Container {
     width: 100%;
     max-width: 600px; 
-    margin: 0 auto; 
+    margin-left: none; 
     padding: 40px;
     background-color: #ffffff;
     border-radius: 8px;
@@ -65,7 +65,10 @@
   #Contact-Location {
     width: 100%;
     max-width: 600px; /* Keep it same width as message container */
-    margin: 40px auto; /* Center and give vertical spacing */
+     /* Center and give vertical spacing */
+     margin-top: 40px;
+     margin-right: none;
+     margin-bottom: 50px;
     background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
@@ -89,8 +92,32 @@
     border: none;
     border-radius: 8px;
   }
+
+  .message-container-wrapper,.contact-location-container-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .message-container-wrapper .animation-div,.contact-location-container-wrapper .animation-div{
+    width: 400px;
+    height: 400px;
+    
+  }
 @media (max-width:768px){
   #Contact-Location h2,#Message-Container h2{
     font-size: 1rem;
   }
+
+  .message-container-wrapper{
+      flex-direction: column;
+    }
+    .message-container-wrapper .animation-div{
+      width: 200px;
+      height: 200px;
+    }
+    .contact-location-container-wrapper .animation-div{
+      display: none;
+    }
 }

@@ -1,6 +1,6 @@
 .review-submit-container {
     max-width: 600px;
-    margin: auto;
+    margin-left:none;
     width: 100%;
     padding: 20px;
     text-align: left;
@@ -54,4 +54,26 @@
     margin-top: 10px;
     font-size: 0.95rem;
     color: green;
+  }
+
+  .review-submit-container-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .review-submit-container-wrapper .animation-div{
+    width: 400px;
+    height: 400px;
+  }
+  @media(max-width:768px){
+    .review-submit-container-wrapper{
+      flex-direction: column;
+    }
+    .review-submit-container-wrapper.animation-div{
+      width: 200px;
+      height: 200px;
+    }
+    .review-submit-container{
+      margin: auto;
+    }
   }

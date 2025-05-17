@@ -8,7 +8,7 @@ const Processing = ({content=''}) => {
        display:"flex",
        alignItems:"center",
        justifyContent:"center",
-       height:"80vh",
+       height:"85vh",
        flexDirection:"column"
       }}>
       <div
