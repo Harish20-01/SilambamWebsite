@@ -28,7 +28,6 @@ const HomeReviewComponent = () => {
         setIsLoading(false);
       });
   }, []);
-  console.log(reviews)
 
   useEffect(() => {
     const interval = setInterval(() => {

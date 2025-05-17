@@ -110,14 +110,12 @@
     font-size: 1rem;
   }
 
-  .message-container-wrapper{
+  .message-container-wrapper,.contact-location-container-wrapper{
       flex-direction: column;
     }
-    .message-container-wrapper .animation-div{
+    .message-container-wrapper .animation-div,.contact-location-container-wrapper .animation-div{
       width: 200px;
       height: 200px;
     }
-    .contact-location-container-wrapper .animation-div{
-      display: none;
-    }
+   
 }

@@ -48,7 +48,7 @@ const ClassDetails = () => {
       >
       {venue.map((item, index) => (
       <div key={index} className="venue"  >{/*  #d5b${index}*/}
-        <h2 className="venue-title"> இடம் {index + 1} - {item.place || 'Unnamed Venue'}</h2>
+        <h2 className="venue-title"> இடம் {index + 1} -<span> {item.place || 'Unnamed Venue'}</span></h2>
         <ul>
           <li><span>நாள்:</span>&nbsp;&nbsp;{item.day || 'N/A'}</li>
           <li><span>நேரம்:</span>&nbsp;&nbsp;{item.timing || 'N/A'}</li>

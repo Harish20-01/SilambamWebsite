@@ -126,7 +126,7 @@
   }
 
   .trainer-image {
-    width: 35%; /* Further increase the image size on large screens */
+    width: 30%; /* Further increase the image size on large screens */
     height: 35%;
   }
 }

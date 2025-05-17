@@ -53,6 +53,10 @@
     background: transparent;
     padding: 1rem;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
   
   #SlideShow-Container .slide h2 {
@@ -69,13 +73,15 @@
   }
   
   #SlideShow-Container .slide img {
-    /* max-width: 100%; */
+    max-width: 1000px;
+    width: 100%;
     margin-top: 30px;
-    object-fit: contain ;
+    object-fit: contain cover;
     border-radius: 8px;
   }
   #SlideShow-Container .slide-image{
     height:50vh ;
+    
   }
   
   #SlideShow-Container .slide{

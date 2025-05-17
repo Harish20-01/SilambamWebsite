@@ -18,7 +18,7 @@
   .section-title {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #e41616;
+    color: red;
   }
   .section-title span{
     display: inline;
@@ -59,7 +59,9 @@
     color: #333;
     margin-bottom: 15px;
   }
-  
+  .venue-title span{
+    color:rgb(231, 14, 14,0.7);
+  }
   .venue p {
     font-size: 18px;
     color: #444;
@@ -81,7 +83,7 @@
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #1a73e8;
+    background-color: rgb(81, 77, 77);/* #1a73e8 */
     color: white;
     border: none;
     border-radius: 6px;
@@ -92,7 +94,7 @@
   }
   
   .contact-btn:hover {
-    background-color: #135bb5;
+    background-color:red ;/* #135bb5 */
   }
   
   @media (max-width: 768px) {
