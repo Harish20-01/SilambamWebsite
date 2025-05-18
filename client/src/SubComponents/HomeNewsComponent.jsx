@@ -52,15 +52,15 @@ const HomeNewsComponent = () => {
     <div 
       className="slideshow-container" 
       id="SlideShow-Container" 
-      onClick={togglePause} // TOGGLE ON CLICK
-      title={isPaused ? "Click to resume" : "Click to pause"} // OPTIONAL
-      style={{ cursor: 'pointer' }} // OPTIONAL: make it feel clickable
+      onClick={togglePause} 
+      title={isPaused ? "Click to resume" : "Click to pause"} 
+      style={{ cursor: 'pointer' }} 
     >
           {isPaused && (
           <div style={{
             position: 'absolute',
-            top: '18%',
-            left: '50%',
+            top: '15%',
+            right: '0.1%',
             transform: 'translate(-50%, -50%)',
             backgroundColor: 'rgb(0,0,0,0.2)',
             color: 'gold',

@@ -66,11 +66,8 @@ const HomeAboutComponent = () => {
 export default HomeAboutComponent;
  */
 
-import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import Lottie from 'lottie-react';
-import animationData from '../../animation/AboutAnimation.json'; // your local file or use URL
-
+import { useRef } from 'react';
 import '../Styles/SubComponentsStyles/homeAboutComponent.css';
 
 const data = [
@@ -79,16 +76,16 @@ const data = [
     items: ['சிலம்பம்', 'மல்லர்க்கம்பம்', 'மல்யுத்தம்', 'கரலாக்கட்டை', 'வளரி', 'ஊதுகொல்லி', 'வர்மம்'],
   },
   {
+    title: ' யோகக்கலை:',
+    items: ['மனவளக்கலை', 'யோகா'],
+  },
+  {
     title: 'கிராமியக்கலை:',
     items: ['பறையாட்டம்', 'கோலாட்டம்', 'ஒயிலாட்டம்', 'மரக்கால் ஆட்டம்', 'கரகாட்டம்'],
   },
   {
     title: 'மருத்துவக்கலை:',
     items: ['வர்மம்', 'அக்குபஞ்சர்'],
-  },
-  {
-    title: 'யோகக்கலை:',
-    items: ['மனவளக்கலை யோகா'],
   },
 ];
 
@@ -101,51 +98,60 @@ const HomeAboutComponent = () => {
       id="container"
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-      transition={{ duration: 0.8 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
       className="home-about-container"
     >
-      <div className="content-wrapper">
-        {/* Lottie Animation */}
-        <div className="lottie-box">
-          <Lottie animationData={animationData} loop={true} />
-        </div>
-
-        {/* Text Content */}
-        <div className="text-section">
-          <div className="heading-group">
-            <h3>தமிழர் மரபுக் கலையகம்</h3>
-            <p className="subheading">மரபு மீட்சி மற்றும் மரபுக் கலைகள் பயிற்சிக்கான ஒருங்கிணைந்த இடம்</p>
-          </div>
-
-          <dl className="about-list">
-            {data.map((section, index) => (
-              <motion.div
-                key={index}
-                className="section"
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 * index }}
-              >
-                <dt className="title">{section.title}</dt>
-                <dd className="items">
-                  <ul>
-                    {section.items.map((item, idx) => (
-                      <li key={idx}>
-                        🌳 {item}
-                        
-                      </li>
-                    ))}
-                  </ul>
-                </dd>
-              </motion.div>
-            ))}
-          </dl>
-        </div>
+      <div className="heading-group">
+        <h3>தமிழர் மரபுக் கலையகம்</h3>
+        <p className="subheading">மரபு மீட்சி மற்றும் மரபுக் கலைகள் பயிற்சிக்கான ஒருங்கிணைந்த இடம்</p>
       </div>
+
+      <dl className="about-list">
+        <div className="column">
+          {[data[0], data[3]].map((section, index) => (
+            <motion.div
+              key={index}
+              className="section"
+              initial={{ opacity: 0, x: -20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 * index }}
+            >
+              <dt className="title">{section.title}</dt>
+              <dd className="items">
+                <ul>
+                  {section.items.map((item, idx) => (
+                    <li key={idx}>🌳{item}</li>
+                  ))}
+                </ul>
+              </dd>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="column">
+          {[data[2], data[1]].map((section, index) => (
+            <motion.div
+              key={index + 2}
+              className="section"
+              initial={{ opacity: 0, x: 20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 * (index + 2) }}
+            >
+              <dt className="title">{section.title}</dt>
+              <dd className="items">
+                <ul>
+                  {section.items.map((item, idx) => (
+                    <li key={idx}>🌳{item}</li>
+                  ))}
+                </ul>
+              </dd>
+            </motion.div>
+          ))}
+        </div>
+      </dl>
     </motion.div>
   );
 };
 
 export default HomeAboutComponent;
-
