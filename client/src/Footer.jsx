@@ -49,10 +49,7 @@ const Footer = () => {
               மேலும் தகவலுக்கு
             </h3>
             <div id="Contact">
-                  <li><a href="mailto:tamilarmarabukalaiyagam@gamil.com" target="_blank">
-                        <FaEnvelope className='fa'/>
-                        tamilarmarabukalaiyagam@gmail.com</a>
-                  </li>
+                  
                   <li><a href="tel:+919159318285">
                       <FaMobileAlt className='fa'/> 
                         +91 91593 18285</a>
@@ -60,20 +57,17 @@ const Footer = () => {
                   <li><a href="https://www.instagram.com/tamilar_marabu_kalaiyagam" target="_blank">
                       <FaInstagram className='fa'/>tamilar_marabu_kalaiyagam</a>
                   </li>
-                  <li><a href="https://www.instagram.com/venky_silambam" target="_blank">
-                      <FaInstagram className='fa'/>venky_silambam</a>
-                  </li>
+                  
                   <li><a href="https://www.youtube.com/@TamilarMarabuKalaiyagam" target="_blank">
                       <FaYoutube className='fa'/>Tamilar Marabu Kalaiyagam</a>
                   </li>
-                  <li><a href="https://www.youtube.com/@Venky_Silambam" target="_blank">
-                      <FaYoutube className='fa'/>Venky Silambam</a>
-                  </li>
+                  
                   <li><a href="https://www.facebook.com/profile.php?id=61571714846047&mibextid=ZbWKwL" target="_blank">
                       <FaFacebook className='fa'/>Tamilar Marabu Kalaiyagam</a>
                   </li>
-                  <li><a href="https://www.facebook.com/share/183M4wz7eH" target="_blank">
-                      <FaFacebook className='fa'/>Venky Silambam</a>
+                  <li><a href="mailto:tamilarmarabukalaiyagam@gamil.com" target="_blank">
+                        <FaEnvelope className='fa'/>
+                        tamilarmarabukalaiyagam@gmail.com</a>
                   </li>
                   
                   {/* <li>
