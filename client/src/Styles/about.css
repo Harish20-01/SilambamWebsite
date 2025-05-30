@@ -153,6 +153,21 @@
   font-weight: bold;
   cursor: pointer;
 }
+.course-description p.indented,
+.course-full-description p.indented {
+  text-indent: 2em;
+  margin: 0 0 1em 0;
+  text-align: justify;
+}
+
+.course-description p.no-indent,
+.course-full-description p.no-indent {
+  text-indent: 0;
+  margin: 0 0 1em 0;
+  font-weight: bold;
+  text-align: justify;
+}
+
 
 .close-btn:hover {
   background-color: #c53030;

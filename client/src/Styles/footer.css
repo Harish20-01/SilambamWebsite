@@ -107,14 +107,17 @@ li a{
     word-break: break-word; /* Allow long email/URL to wrap */
     white-space: normal;     /* Prevent overflow */
     overflow-wrap: anywhere; /* Wrap anywhere if needed */
-    font-size: 0.9rem;        /* Slightly smaller font for fit */
+    font-size: 1rem;        /* Slightly smaller font for fit */
+  }
+  #Contact li a ,#Quick-Links div li a,#About-Footer div p{
+    font-size: 1rem;
   }
 
   #Contact li {
     margin-bottom: 10px;
   }
 
-  #Contact-details h3 {
-    font-size: 1rem; /* Slightly reduce heading size for better spacing */
+   #About-Footer h3,#Quick-Links h3,#Contact-details h3 {
+    font-size: 1.1rem; /* Slightly reduce heading size for better spacing */
   }
 }

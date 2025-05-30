@@ -19,7 +19,7 @@ const Processing = ({content=''}) => {
           borderRadius: '50%', // ✅ corrected from border-radius
           width: '80px',
           height: '80px',
-          animation: 'spin 1s linear infinite',
+          animation: 'spin 0.8s linear infinite',
           margin: '0 auto 15px' // ✅ cleaner centering and spacing
         }}
       ></div>

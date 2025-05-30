@@ -51,7 +51,7 @@ const AboutDataUpdateComponent = () => {
         showSuccess('Updated Successfully');
         setFormData({ title: '', description: '', imageUrl: '', file: null });
         setSelectedId('');
-        const res = await axios.get('${url}/about');/* ${url} */
+        const res = await axios.get(`${url}/about`);/* ${url} */
         setAboutList(res.data);
       } else {
         showError('Update failed');

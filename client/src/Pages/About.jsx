@@ -138,20 +138,29 @@ const Courses = () => {
   };
 
   const renderWithBold = (text) => {
-    return text.split('\n').map((line, index) => {
-      const parts = line.split(/(<b>.*?<\/b>)/g);
-      return (
-        <p key={index}>
-          {parts.map((part, i) => {
-            if (part.startsWith('<b>') && part.endsWith('</b>')) {
-              return <strong key={i}>{part.slice(3, -4)}</strong>;
-            }
-            return <span key={i}>{part}</span>;
-          })}
-        </p>
-      );
+  return text.split('\n').map((line, index) => {
+    const parts = line.split(/(<b>.*?<\/b>)/g);
+    
+    return parts.map((part, i) => {
+      if (part.startsWith('<b>') && part.endsWith('</b>')) {
+        return (
+          <p key={`${index}-${i}`} className="no-indent">
+            <strong>{part.slice(3, -4)}</strong>
+          </p>
+        );
+      } else if (part.trim()) {
+        return (
+          <p key={`${index}-${i}`} className="indented">
+            {part}
+          </p>
+        );
+      } else {
+        return null;
+      }
     });
-  };
+  });
+};
+
 
   if(loading){
     return <Processing/>
