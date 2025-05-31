@@ -67,7 +67,7 @@ const Footer = () => {
                   </li>
                   <li><a href="mailto:tamilarmarabukalaiyagam@gamil.com" target="_blank">
                         <FaEnvelope className='fa'/>
-                        tamilarmarabukalaiyagam@gmail.com</a>
+                        tamilarmarabukalaiyagam</a>
                   </li>
                   
                   {/* <li>
@@ -76,6 +76,10 @@ const Footer = () => {
             </div>
         </div>
       </div>
+      <div class="footer-copyright">
+         © 2025 Tamilar Marabu Kalaikagam. All rights reserved.
+      </div>
+
     </div>
   )
 }

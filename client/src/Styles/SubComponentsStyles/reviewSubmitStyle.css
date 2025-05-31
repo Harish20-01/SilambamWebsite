@@ -69,7 +69,7 @@
     .review-submit-container-wrapper{
       flex-direction: column;
     }
-    .review-submit-container-wrapper.animation-div{
+    .review-submit-container-wrapper .animation-div{
       width: 200px;
       height: 200px;
     }

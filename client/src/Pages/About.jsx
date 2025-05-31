@@ -138,29 +138,36 @@ const Courses = () => {
   };
 
   const renderWithBold = (text) => {
-  return text.split('\n').map((line, index) => {
-    const parts = line.split(/(<b>.*?<\/b>)/g);
-    
-    return parts.map((part, i) => {
-      if (part.startsWith('<b>') && part.endsWith('</b>')) {
-        return (
-          <p key={`${index}-${i}`} className="no-indent">
-            <strong>{part.slice(3, -4)}</strong>
-          </p>
-        );
-      } else if (part.trim()) {
-        return (
-          <p key={`${index}-${i}`} className="indented">
-            {part}
-          </p>
-        );
-      } else {
-        return null;
-      }
-    });
-  });
-};
+    return text.split('\n').map((line, index) => {
+        const trimmedLine = line.trim();
+        const parts = trimmedLine.split(/(<b>.*?<\/b>)/g);
 
+        const isTitle = trimmedLine.startsWith('☯️') || 
+                        trimmedLine.startsWith('☀️')|| 
+                        trimmedLine.startsWith('💥')|| 
+                        trimmedLine.startsWith('🥁')||
+                        trimmedLine.startsWith('🔆')||
+                        trimmedLine.startsWith('🧘🏻‍♂️')||
+                        trimmedLine.startsWith('🌳')||
+                        trimmedLine.startsWith('🪵')||
+                        trimmedLine.startsWith('🌺')||
+                        trimmedLine.startsWith('🌼')||
+                        /^<b>.*<\/b>$/.test(trimmedLine);
+
+        const paragraphClass = isTitle ? 'no-indent' : 'indented';
+
+      return (
+        <p key={index} className={paragraphClass}>
+          {parts.map((part, i) => {
+            if (part.startsWith('<b>') && part.endsWith('</b>')) {
+              return <strong key={i} >{part.slice(3, -4)}</strong>;
+            }
+            return <span key={i} >{part}</span>;
+          })}
+        </p>
+      );
+    });
+  };
 
   if(loading){
     return <Processing/>

@@ -188,20 +188,22 @@
 .column {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* 🔄 Change from center to stretch for uniform alignment */
   justify-content: center;
   gap: 20px;
   flex: 1 1 45%;
   min-width: 280px;
   max-width: 500px;
+  box-sizing: border-box; /* Ensure padding/margin is counted properly */
 }
 
 .section {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%; 
+  margin-left: 25%;/* 🔄 Ensure section fills the full width of column */
 }
-
 .title {
   font-weight: bold;
   color: #fa2e2e;
@@ -225,8 +227,10 @@
 @media (max-width: 768px) {
   .about-list {
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
+    justify-content: center;
     gap: 30px;
+    margin-left: 10%;
   }
 
   .column {
@@ -241,6 +245,12 @@
 
   .heading-group h3 {
     font-size: 1.5rem;
+  }
+  .section{
+    margin-left: 0%;
+  }
+  .column{
+    flex: 0;
   }
 
   .subheading {

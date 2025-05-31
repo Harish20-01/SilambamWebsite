@@ -119,9 +119,12 @@
     .message-container-wrapper .animation-div,.contact-location-container-wrapper .animation-div{
       width: 200px;
       height: 200px;
+      margin-bottom: 0px;
     }
      .contact-location-container-wrapper .animation-div{
       margin-bottom: none;
+      width: 200px;
+      height: 200px;
      }
    
 }

@@ -9,7 +9,15 @@
 #HomeNewsUpdate-ul li{
     list-style-type: none;
 }
+#HomeNewsUpdate-ul li a{
+    font-size: 1.5rem;
+}
 .HomeNewsUpdate-Title{
     text-align: center;
     margin: 1%;
+}
+@media(max-width:768px){
+    #HomeNewsUpdate-ul li a{
+        font-size: 1rem;
+    }
 }

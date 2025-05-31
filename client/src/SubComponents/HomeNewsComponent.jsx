@@ -73,16 +73,25 @@ const HomeNewsComponent = () => {
             Paused
           </div>
         )}
-      <h3 className="blinking-title">செய்திகளும்,நிகழ்வுகளும்</h3>
+      <h3 className="blinking-title">செய்திகளும், நிகழ்வுகளும்</h3>
       {!loading && (
         <>
           <div className="news-ticker">
             <div className="news-ticker-content">
               {news.map((item, index) => (
-                <span key={index} className="news-item">
-                  {item.title} &nbsp;&nbsp;|&nbsp;&nbsp;
-                </span>
-              ))}
+                  <span 
+                    key={index} 
+                    className="news-item"
+                    onClick={(e) => {
+                      e.stopPropagation(); // prevent pausing toggle
+                      setCurrentIndex(index);
+                      setIsPaused(true);
+                    }}
+                    
+                  >
+                    {item.title} &nbsp;&nbsp;|&nbsp;&nbsp;
+                  </span>
+                ))}
             </div>
           </div>
 

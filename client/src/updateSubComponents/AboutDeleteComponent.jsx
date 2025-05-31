@@ -71,7 +71,7 @@ const AboutDeleteComponent = () => {
     isProcessing?(<Processing content='Deleting Data..'/>):(
       <div id="AboutDelete-Container">
         <h2>About Section</h2>
-        <h3>Select Images to Delete</h3>
+        <h3>Select Courses to Delete</h3>
         <form>
           {images.map((image) => (
             <div key={image.public_id} htmlFor={image.public_id} className='AboutDelete-Element' onClick={() => handleCheckboxChange(item.place)}>

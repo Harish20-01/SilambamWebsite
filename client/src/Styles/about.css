@@ -109,6 +109,7 @@
   justify-content: center;
   align-items: center;
   animation: fadeIn 0.4s ease-in-out;
+  user-select: none;
 }
 
 .course-expanded-content {
@@ -122,6 +123,7 @@
   align-items: center;
   gap: 20px;
   text-align: center;
+  /* user-select: none; */
 }
 @keyframes fadeIn {
   from {
@@ -159,18 +161,18 @@
 }
 .course-description p.indented,
 .course-full-description p.indented {
-  text-indent: 2em;
+  text-indent: 3em;
   margin: 0 0 1em 0;
   text-align: justify;
 }
 
 .course-description p.no-indent,
 .course-full-description p.no-indent {
-  text-indent: 0;
+  text-indent: 0em;
   margin: 0 0 1em 0;
-  font-weight: bold;
   text-align: justify;
 }
+
 
 
 .close-btn:hover {
@@ -192,4 +194,8 @@
   .course-expanded-content {
     padding: 5px;
   }
+  .course-description p.indented,
+.course-full-description p.indented{
+  text-indent: 2rem;
+}
 }

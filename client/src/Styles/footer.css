@@ -2,6 +2,7 @@
     display: flex;
     background-color: black;
     color: white;
+    padding-bottom: 20px;
 }
 #Footer-Container li{
     line-height: 4vh;
@@ -120,4 +121,16 @@ li a{
    #About-Footer h3,#Quick-Links h3,#Contact-details h3 {
     font-size: 1.1rem; /* Slightly reduce heading size for better spacing */
   }
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  padding: 15px 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #2d2525; /* optional light background */
+  font-family: 'Noto Sans Tamil', sans-serif;
+  
 }
