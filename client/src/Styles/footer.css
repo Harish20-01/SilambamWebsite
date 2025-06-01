@@ -96,6 +96,9 @@ li a{
         padding:5px;
         width: 100%;
     }
+    #Contact-details h3{
+        margin-top: 10px;
+    }
     #Contact{
         
         margin-left: 5%;

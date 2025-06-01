@@ -8,8 +8,10 @@ import HomeClassDetails from '../SubComponents/HomeClassDetails';
 import HomeYouTubeVideo from '../SubComponents/HomeYouTubeVideo';
 import HomeReviewComponent from '../SubComponents/HomeReviewComponent';
 const Home = () => {
+   
+
   return (
-    <div > 
+    <div style={{overflowX:"hidden"}}> 
       <HomeSlideShow/>
       <HomeAboutComponent/>
       <HomeNewsComponent/>

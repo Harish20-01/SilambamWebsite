@@ -52,10 +52,8 @@ const ClassDetails = () => {
         <ul>
           <li><span>நாள்:</span>&nbsp;&nbsp;{item.day || 'N/A'}</li>
           <li><span>நேரம்:</span>&nbsp;&nbsp;{item.timing || 'N/A'}</li>
-          <li><dl>
-            <dt><span>விவரம்:</span>&nbsp;&nbsp;</dt>
-            <dd>&nbsp;{item.description || 'முடிவடையவில்லை'}</dd>
-          </dl>
+          <li>
+            <span>விவரம்:</span>&nbsp;&nbsp;{item.description || 'முடிவடையவில்லை'}
           </li> 
         </ul>
         < a
