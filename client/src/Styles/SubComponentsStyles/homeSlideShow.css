@@ -113,6 +113,7 @@
       width: 100%;
       align-items: center;
       justify-content: center;
+      display: none;
     }
   
     #homeSlide .slide-caption h2 {

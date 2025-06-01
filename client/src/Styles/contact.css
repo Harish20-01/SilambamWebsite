@@ -112,6 +112,10 @@
   #Contact-Location h2,#Message-Container h2{
     font-size: 1rem;
   }
+  #Contact-Location{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 
   .message-container-wrapper,.contact-location-container-wrapper{
       flex-direction: column;

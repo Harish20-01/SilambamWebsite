@@ -77,7 +77,7 @@ const Footer = () => {
         </div>
       </div>
       <div class="footer-copyright">
-         © 2025 Tamilar Marabu Kalaikagam. All rights reserved.
+         © 2025 Tamilar Marabu Kalaiyagam. All rights reserved.
       </div>
 
     </div>

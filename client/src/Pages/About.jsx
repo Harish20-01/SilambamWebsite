@@ -151,8 +151,8 @@ const Courses = () => {
                         trimmedLine.startsWith('🌳')||
                         trimmedLine.startsWith('🪵')||
                         trimmedLine.startsWith('🌺')||
-                        trimmedLine.startsWith('🌼')||
-                        /^<b>.*<\/b>$/.test(trimmedLine);
+                        trimmedLine.startsWith('🌼')/* ||
+                        /^<b>.*<\/b>$/.test(trimmedLine); */
 
         const paragraphClass = isTitle ? 'no-indent' : 'indented';
 

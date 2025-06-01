@@ -33,7 +33,10 @@
     width: 100%;
 }
 #Quick-Links h3{
-    margin-left: 20%;
+    margin-left: 40%;
+}
+#Quick-Links .links{
+    margin-left: 0px;
 }
 li a{
     list-style-type: none;
@@ -75,13 +78,17 @@ li a{
     #Quick-Links h3{
         text-align: left;
         margin-left: 0%;
+        margin-top: 10px;
     }
     #QuicK-Links div{
         display: none;
     }
+    #Quick-Links .links{
+        margin-left: 4%;
+    }
     #Footer-Container{
         flex-direction: column;
-        padding: 10px;
+        padding: 5px;
     }
     #About-Footer h3,#Quick-Links h3,#Contact-details h3{
         text-align: left;
