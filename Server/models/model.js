@@ -77,6 +77,13 @@ const UserReview=new mongoose.Schema({
   rating:Number
 })
 
+const VisitorCount=new mongoose.Schema({
+  visitCount: {
+    type: Number,
+    default: 0,
+  },
+})
+
 const news=mongoose.model('news',newsSchema);
 
 const HomeSlideImage = mongoose.model('HomeSlideImage', imageSchema);
@@ -97,6 +104,8 @@ const YoutubeId=mongoose.model('YoutubeId',YoutubeVideoId);
 
 const Reviews=mongoose.model("Reviews",UserReview);
 
-module.exports ={HomeSlideImage,news,About,galleryImage,userMessage,admin,ClassVenue,Products,YoutubeId,Reviews};
+const VisitCount=mongoose.model("VisitCount",VisitorCount);
+
+module.exports ={HomeSlideImage,news,About,galleryImage,userMessage,admin,ClassVenue,Products,YoutubeId,Reviews,VisitCount};
 
 

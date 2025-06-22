@@ -33,6 +33,7 @@ const SilambamProducts=require('./controllers/productController');
 const YoutubeId=require('./controllers/youtubeVideoControllers');
 const Review=require('./controllers/reviewControllers');
 const userCommnet=require('./controllers/userMessageController');
+const visitCount=require('./controllers/visitControllers');
 
 app.use('/homeSlide', homeSlideRoutes);
 app.use('/news', newsRoutes);
@@ -44,6 +45,7 @@ app.use('/silambam-products',SilambamProducts);
 app.use('/youtube-video',YoutubeId);
 app.use('/reviews',Review);
 app.use('/message-form',userCommnet);
+app.use('/visitCount',visitCount);
 
 
 const admin = { username: 'admin', password: 'admin123' };
