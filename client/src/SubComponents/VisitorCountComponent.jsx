@@ -3,14 +3,16 @@ import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import { useState, useEffect } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 const VisitorCountComponent = () => {
-  const visitCount = parseInt(sessionStorage.getItem("visitCount")) || 0;
+  
   const [displayCount, setDisplayCount] = useState(0);
   const [close, setClose] = useState(false);
   const [cur,setCur]=useState(true);
+  let visitCount;
 
   useEffect(() => {
       const timer = setTimeout(() => {
       let start = 0;
+       visitCount = parseInt(sessionStorage.getItem("visitCount")) || 0;
       const end = visitCount;
       const duration = 6000;
       const increment = Math.ceil(end / (duration / 5));
