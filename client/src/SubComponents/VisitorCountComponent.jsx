@@ -3,7 +3,7 @@ import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import { useState, useEffect } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 const VisitorCountComponent = () => {
-  const visitCount = parseInt(sessionStorage.getItem("visitCount")) || 50;
+  const visitCount = parseInt(sessionStorage.getItem("visitCount")) || 0;
   const [displayCount, setDisplayCount] = useState(0);
   const [close, setClose] = useState(false);
   const [cur,setCur]=useState(true);
