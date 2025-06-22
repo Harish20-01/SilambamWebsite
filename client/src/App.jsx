@@ -47,24 +47,29 @@ import VisitorCountComponent from "./SubComponents/VisitorCountComponent";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(sessionStorage.getItem('isLoggedIn') === 'true');
   const [isLoading, setIsLoading] = useState(true);
+  const [count,setCount]=useState(null);
   useEffect(() => {
     const url = import.meta.env.VITE_SERVER_URL;
-    const fetchcount = async() => {
+    const fetchCount = async() => {
       try {  
         if (sessionStorage.getItem('visitCount')==null) {
-          const response = await axios.get(`${url}/visitCount`);
-          sessionStorage.setItem("visitCount", response.data.count);
-          const countResponse = await axios.post(`${url}/visitCount/increment`);
-          if (countResponse.status !== 200) {
-            alert("Something went wrong ...please refresh the page");
+          const res = await axios.get(`${url}/visitCount`);
+          const count = res.data.count;
+          sessionStorage.setItem('visitCount', count);
+          setCount(count); 
+          const inc = await axios.post(`${url}/visitCount/increment`);
+          if (inc.status !== 200) {
+            alert("Something went wrong... please refresh.");
           }
+        } else {
+          setCount(sessionStorage.getItem('visitCount'));  
         }
+      } catch (err) {
+        console.error(err);
       }
-      catch (err) {
-        console.dir(err);
-      }
-    }
-    fetchcount();
+    };
+
+    fetchCount();
 
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -140,7 +145,7 @@ function App() {
         <Route path="/updateComponenet" element={isLoggedIn ? <UpdateComponent /> : <UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/passwordUpdateComponent" element={isLoggedIn ? <PasswordUpdate /> : <UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn} />} />
       </Routes>
-      <Footer />
+      <Footer count={count}/>
       <VisitorCountComponent/>
     </>
 

@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 import {FaAngleDoubleRight, FaMapMarkerAlt,FaEnvelope,FaInstagram,FaMobileAlt,FaYoutube, FaFacebook} from 'react-icons/fa';
 import './Styles/footer.css'
 import FooterVisitCount from './SubComponents/FooterVisitCount';
-const Footer = () => {
+const Footer = ({count}) => {
   return (
     <div>
       <div id="Footer-Container">
@@ -77,7 +77,7 @@ const Footer = () => {
             </div>
         </div>
       </div>
-      <FooterVisitCount/>
+      <FooterVisitCount count={count}/>
       <div class="footer-copyright">
          © 2025 Tamilar Marabu Kalaiyagam. All rights reserved.
       </div>
