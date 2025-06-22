@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../Styles/SubComponentsStyles/imageGalleryStyle.css';
 import Processing from '../../assets/Processing';
+import { FaTimes } from 'react-icons/fa';
 
 const ImageGallery = () => {
   const [Images, setImages] = useState([]);
@@ -125,7 +126,7 @@ const ImageGallery = () => {
             onClick={closeFullScreen}
             title="Close the Window"
           >
-            X
+            <FaTimes/>
           </button>
 
           <button

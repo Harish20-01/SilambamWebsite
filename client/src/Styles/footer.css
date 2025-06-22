@@ -144,3 +144,16 @@ li a{
   font-family: 'Noto Sans Tamil', sans-serif;
   
 }
+
+.footer-visitCount div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-visitCount div span{
+    color:rgb(199, 184, 184);
+    display: flex;
+    align-items: center;
+    gap:3px;
+    padding-left: 10px;
+}
