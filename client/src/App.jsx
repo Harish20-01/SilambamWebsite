@@ -52,9 +52,9 @@ function App() {
     const fetchcount = async() => {
       try {  
         if (sessionStorage.getItem('visitCount')==null) {
-          const response = await axios.get(`http://localhost:3000/visitCount`);
+          const response = await axios.get(`${url}/visitCount`);
           sessionStorage.setItem("visitCount", response.data.count);
-          const countResponse = await axios.post(`http://localhost:3000/visitCount/increment`);
+          const countResponse = await axios.post(`${url}/visitCount/increment`);
           if (countResponse.status !== 200) {
             alert("Something went wrong ...please refresh the page");
           }
