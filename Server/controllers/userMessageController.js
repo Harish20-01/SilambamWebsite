@@ -15,7 +15,7 @@ router.post('/',async(req,res)=>{
     try{
       await messageInstance.save();
       const sub="Submitting a Comment on a site";
-      const info=`name: ${name} \n email: ${email} \n mobileNo: ${mobileNo} \n message: ${message}`;
+      const info=`Name: ${name} \n Email: ${email} \n MobileNo: ${mobileNo} \n Message: ${message}`;
       sendMail(sub,info);
       res.status(200).send({
         message:"data Saved Successfuly",

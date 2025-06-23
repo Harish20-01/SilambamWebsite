@@ -51,7 +51,7 @@ const HomeNewsInsert = () => {
     return(
         isProcessing?(<Processing content='Inserting News'/>):(
             <div id="HomeNewsInsert-Container">
-                <h3>Update New News Here..</h3>
+                <h3>Update New News Here...</h3>
                 <form>
                     <label>Title</label>
                     <input 

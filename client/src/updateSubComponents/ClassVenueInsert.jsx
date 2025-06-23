@@ -55,9 +55,9 @@ const ClassVenueInsert = () => {
     return(
         isProcessing?(<Processing content='Inserting Venues....'/>):(
             <div id="HomeNewsInsert-Container">
-                <h3>Update New Venues Here..</h3>
+                <h3>Insert New Venues Here</h3>
                 <form>
-                    <label>place(இடம்)</label>
+                    <label>Place(இடம்)</label>
                     <input 
                         type='text'
                         value={place}

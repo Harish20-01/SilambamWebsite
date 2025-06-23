@@ -58,8 +58,7 @@ const handleImageUpload = async () => {
     isProcessing?(<Processing content='Inserting Images into the Gallery...'/>):(
         <div id="ImageInsert-Container">
           <h2>Gallery Image Insert Section</h2>
-          <h3>Submit the Image </h3>
-          <h3>You Can Submit Multiple Image at a time</h3>
+          <h3>You Can Submit Multiple Images at a time</h3>
           <div>
               <input type="file" multiple onChange={handleFileChange} />
               <button onClick={handleImageUpload} disabled={isProcessing}>

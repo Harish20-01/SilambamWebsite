@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../Styles/SubComponentsStyles/imageGalleryStyle.css';
 import Processing from '../../assets/Processing';
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes , FaAngleDoubleLeft, FaAngleDoubleRight,} from 'react-icons/fa';
 
 const ImageGallery = () => {
   const [Images, setImages] = useState([]);
@@ -36,10 +36,22 @@ const ImageGallery = () => {
       [index]: true,
     }));
   };
+  useEffect(()=>{
+    const handleBack=()=>{
+      if(isFullScreen){
+        setIsFullScreen(false);
+        setCurrentImageIndex(null);
+      }
+    }
+    window.addEventListener('popstate',handleBack);
+    return ()=> window.removeEventListener('popstate',handleBack);
+
+  },[isFullScreen])
 
   const openFullScreen = (index) => {
     setCurrentImageIndex(index);
     setIsFullScreen(true);
+    window.history.pushState({isFullScreen:true},'');
   };
 
   const closeFullScreen = () => {
@@ -134,7 +146,7 @@ const ImageGallery = () => {
             onClick={prevImage}
             title="left"
           >
-            &#60;
+            <FaAngleDoubleLeft/>
           </button>
 
           {Images[currentImageIndex] && (
@@ -150,7 +162,7 @@ const ImageGallery = () => {
             onClick={nextImage}
             title="right"
           >
-            &#62;
+            <FaAngleDoubleRight/>
           </button>
         </div>
       )}

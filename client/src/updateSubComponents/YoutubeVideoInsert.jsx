@@ -49,7 +49,7 @@ const YoutubeVideoInsert = () => {
     return(
         isProcessing?(<Processing content='Inserting Youtube Id..'/>):(
             <div id="HomeNewsInsert-Container">
-                <h3>Update Youtube ID Here..</h3>
+                <h3>Update Youtube ID Here...</h3>
                 <form>
                     <label>Title</label>
                     <input 

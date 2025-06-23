@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../Styles/SubComponentsStyles/passwordUpdateStyle.css';
-import{useToast} from '../../public/MessageToastContent';
+import { useToast } from '../../public/MessageToastContent';
+import { FaArrowLeft } from 'react-icons/fa';
 const PasswordUpdate = () => {
-  const{showError,showSuccess}=useToast();
+  const { showError, showSuccess } = useToast();
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-  const[oldPassword,setOldPassword]=useState('');
-  const[username,setUsername]=useState('')
+  const [oldPassword, setOldPassword] = useState('');
+  const [username, setUsername] = useState('')
   const [successMessage, setSuccessMessage] = useState('');
-  const url=import.meta.env.VITE_SERVER_URL;
+  const navigate=useNavigate();
+  const url = import.meta.env.VITE_SERVER_URL;
+
   
+  function handleBackFuction(){
+      navigate('/updateComponenet');
+  }
   const handlePasswordChange = async (e) => {
     e.preventDefault();
 
@@ -54,55 +61,62 @@ const PasswordUpdate = () => {
   };
 
   return (
-    <div id="PasswordUpdate-Container">
-      <h2>Admin Update Page</h2>
-      <p>This page is only accessible by logged-in admins. Here you can change your password.</p>
-      {/* Password Change Form */}
-      <div>
-        <h3>Change Password</h3>
-        <form onSubmit={handlePasswordChange}>
-        <div>
-            <label>User Name</label>
-            <input
-              type='text'
-              value={username}
-              onChange={(e)=>setUsername(e.target.value)}
-              required
-            ></input>
-          </div>
-          <div>
-            <label>Old Password</label>
-            <input
-              type='password'
-              value={oldPassword}
-              onChange={(e)=>setOldPassword(e.target.value)}
-              required
-            ></input>
-          </div>
-          <div>
-            <label>New Password</label>
-            <input
-              type="password"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label>Confirm Password</label>
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          </div>
-          {error && <p style={{ color: 'red' }}>{error}</p>}
-          {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
-          <button type="submit" id="Password-Update-Submit-Button">Change Password</button>
-        </form>
+    <>
+      <div onClick={handleBackFuction} className='backward-button'>
+        <button>
+          < FaArrowLeft style={{ verticalAlign: "middle", margin: '2px' }} />
+        </button>
       </div>
-    </div>
+      <div id="PasswordUpdate-Container">
+        <h2>Admin Update Page</h2>
+        <p>This page is only accessible by logged-in admins. Here you can change your password.</p>
+        {/* Password Change Form */}
+        <div>
+          <h3>Change Password</h3>
+          <form onSubmit={handlePasswordChange}>
+            <div>
+              <label>User Name</label>
+              <input
+                type='text'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              ></input>
+            </div>
+            <div>
+              <label>Old Password</label>
+              <input
+                type='password'
+                value={oldPassword}
+                onChange={(e) => setOldPassword(e.target.value)}
+                required
+              ></input>
+            </div>
+            <div>
+              <label>New Password</label>
+              <input
+                type="password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div>
+              <label>Confirm Password</label>
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </div>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+            <button type="submit" id="Password-Update-Submit-Button">Change Password</button>
+          </form>
+        </div>
+      </div>
+    </>
   );
 };
 

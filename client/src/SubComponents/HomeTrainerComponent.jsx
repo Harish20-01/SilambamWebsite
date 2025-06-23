@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState,useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import image from '../../TrainerProfile/Profile.jpg';
 import '../Styles/SubComponentsStyles/trainerProfile.css';
@@ -8,11 +8,25 @@ const TrainerProfile = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [showMore, setShowMore] = useState(false);
   const handleToggle = () => {
-    if (showMore && ref.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (!showMore) {
+    window.history.pushState({ showMore: true }, '');
+  } else if (ref.current) {
+    ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  setShowMore(!showMore);
+};
+  useEffect(() => {
+  const handlePopState = () => {
+    if (showMore) {
+      setShowMore(false);
     }
-    setShowMore(!showMore);
   };
+  window.addEventListener('popstate', handlePopState);
+  return () => {
+    window.removeEventListener('popstate', handlePopState);
+  };
+}, [showMore]);
 
   const containerStyle = {
     width: showMore ? '96%' : '',

@@ -21,7 +21,7 @@ const ReviewSubmitComponent = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    if (!name.trim() || !text.trim()||!reviewerType.trim()) {
+    if (!name.trim() || !text.trim()||!reviewerType.trim()||rating==0) {
       showError('Please fill in both fields.');
       setIsSubmitting(false);
       return;
