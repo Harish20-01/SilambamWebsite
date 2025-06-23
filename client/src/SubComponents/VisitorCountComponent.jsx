@@ -2,6 +2,7 @@ import React from 'react'
 import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import { useState, useEffect } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
+import { FaTimes } from 'react-icons/fa';
 const VisitorCountComponent = () => {
   
   const [displayCount, setDisplayCount] = useState(0);
@@ -51,7 +52,7 @@ const VisitorCountComponent = () => {
           whiteSpace: "nowrap",
         }}
       >
-        <div>
+        <div style={{display:"flex",alignItems:"center"}}>
           <Typewriter
             words={["Visitor's Count"]}
             cursor={cur}
@@ -66,14 +67,11 @@ const VisitorCountComponent = () => {
             title="close"
             style={{
               cursor: "pointer",
-              color: "black",
+              color: "white",
               marginLeft:"5px",
-              backgroundColor:"white",
-              padding:"1px 2px",
               borderRadius:"50%",
-              lineHeight:"8px"
             }}
-          >X</span>
+          ><FaTimes style={{marginTop:"2px",verticalAlign:"center"}}/></span>
         </div>
         <div
           style={{
