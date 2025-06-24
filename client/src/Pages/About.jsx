@@ -93,7 +93,10 @@ const Courses = () => {
     return (
       <div className="course-expanded-view" onClick={() => navigate(-1)}>
         <div className="course-expanded-content" onClick={(e) => e.stopPropagation()}>
-          <img src={selectedCourse.imageUrl} alt={selectedCourse.title} />
+          <img src={selectedCourse.imageUrl} alt={selectedCourse.title}
+            onLoad={(e) => e.target.classList.add('loaded')}
+            loading='lazy'
+          />
           <div>
             <h3>{selectedCourse.title}</h3>
             <div className="course-full-description">{renderWithBold(selectedCourse.description)}</div>

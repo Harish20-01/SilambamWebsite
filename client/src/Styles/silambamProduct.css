@@ -6,8 +6,11 @@
   font-size: 2rem;
   font-weight: 600;
   font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
 }
-
+.loaded {
+  opacity: 1;
+}
 
 .product-grid {
   display: grid;

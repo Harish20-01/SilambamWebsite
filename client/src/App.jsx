@@ -146,7 +146,7 @@ function App() {
         <Route path="/passwordUpdateComponent" element={isLoggedIn ? <PasswordUpdate /> : <UnAuthorisedRoute setIsLoggedIn={setIsLoggedIn} />} />
       </Routes>
       <Footer count={count}/>
-      <VisitorCountComponent/>
+      <VisitorCountComponent count={count}/>
     </>
 
   );

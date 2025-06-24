@@ -54,6 +54,7 @@ const Silambam = () => {
             <img 
               src={item.imageUrl} 
               alt="Product" 
+              onLoad={(e) => e.target.classList.add('loaded')}
               className={`product-img ${expandedCards[item.id] ? 'imageExtension' : ''}`} 
             />
             <div className="product-info">

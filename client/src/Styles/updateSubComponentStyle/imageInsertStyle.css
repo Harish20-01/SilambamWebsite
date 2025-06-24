@@ -8,6 +8,10 @@
     color:red;
     margin: 1%;
 }
+#ImageInsert-Container h3{
+    text-align: center;
+    margin:  2%;
+}
 #ImageInsert-Container div{
     display: flex;
     flex-direction: column;

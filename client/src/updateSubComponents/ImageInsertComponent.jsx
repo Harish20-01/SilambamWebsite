@@ -12,8 +12,6 @@ const [selectedImages, setSelectedImages] = useState([]);
 const [isProcessing, setIsProcessing] = useState(false);
 const{showSuccess,showError}=useToast();
 const url=import.meta.env.VITE_SERVER_URL;
-/* const [uploadSuccess, setUploadSuccess] = useState(false);
-const [uploadedImages, setUploadedImages] = useState([]); */
 
 const handleFileChange = (e) => {
   setSelectedImages(e.target.files);
