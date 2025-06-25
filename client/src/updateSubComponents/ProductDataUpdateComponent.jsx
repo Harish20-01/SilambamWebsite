@@ -7,10 +7,18 @@ import '../Styles/updateSubComponentStyle/aboutDataUpdateStyle.css';
 const ProductDataUpdateComponent = () => {
   const [productList, setProductList] = useState([]);
   const [selectedId, setSelectedId] = useState('');
-  const [formData, setFormData] = useState({ name: '', price: '', description: '', imageUrl: '', file: null });
+  const [formData, setFormData] = useState({
+    name: '',
+    price: '',
+    description: '',
+    imageUrl: '',
+    additionalImages: [],
+    file: null,
+    additionalFiles: [],
+  });
   const [isProcessing, setIsProcessing] = useState(false);
   const { showError, showSuccess } = useToast();
-  const url=import.meta.env.VITE_SERVER_URL;
+  const url = import.meta.env.VITE_SERVER_URL;
 
   useEffect(() => {
     axios.get(`${url}/silambam-products`)
@@ -27,6 +35,7 @@ const ProductDataUpdateComponent = () => {
         description: selected.description,
         imageUrl: selected.imageUrl,
         file: null,
+        additionalImages:selected.additionalImages
       });
     }
   }, [selectedId]);
@@ -40,10 +49,12 @@ const ProductDataUpdateComponent = () => {
     data.append('price', formData.price);
     data.append('description', formData.description);
     if (formData.file) data.append('image', formData.file);
-
+    formData.additionalFiles.forEach((file) => {
+      data.append('additionalImages', file);
+    });
     try {
       const response = await axios.put(
-        `${url}/silambam-products/${selectedId}`,
+        `${url}/${selectedId}`,
         data,
         {
           headers: {
@@ -69,7 +80,9 @@ const ProductDataUpdateComponent = () => {
     }
   };
 
-  return isProcessing ? <Processing content='Updating Product Details'/> : (
+  
+
+  return isProcessing ? <Processing content='Updating Product Details' /> : (
     <div id="ProductDataUpdate-Container">
       <h2>Update Product</h2>
       <select value={selectedId} onChange={e => setSelectedId(e.target.value)}>
@@ -95,7 +108,19 @@ const ProductDataUpdateComponent = () => {
 
           <label>Change Image (optional)</label>
           <input type="file" onChange={e => setFormData({ ...formData, file: e.target.files[0] })} />
-
+          <label>Change Additional Images (optional)</label>
+          <input type="file" multiple accept="image/*"
+            onChange={(e) => setFormData({ ...formData, additionalFiles: [...e.target.files] })} />
+          {formData.additionalImages?.length > 0 && (
+            <div className="preview-additional-images">
+              <label>Existing Additional Images</label>
+              <div style={{ display: 'flex', gap: '5px', flexWrap: 'wrap',margin:"10px " }}>
+                {formData.additionalImages.map((imgUrl, idx) => (
+                  <img key={idx} src={imgUrl} alt={`additional-${idx}`} width={100} />
+                ))}
+              </div>
+            </div>
+          )}
           <div id="ProductUpdate-Submit-Button">
             <button type="submit">Save Changes</button>
           </div>

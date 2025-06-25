@@ -62,7 +62,8 @@ const SilambamProducts=new mongoose.Schema({
     imageUrl:String,
     name:String,
     price:Number,
-    description:String
+    description:String,
+    additionalImages:[String], 
 })
 
 const YoutubeVideoId=new mongoose.Schema({
