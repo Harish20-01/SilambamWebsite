@@ -39,7 +39,7 @@ const VisitorCountComponent = ({count}) => {
           flexDirection: "column",
           position: "fixed",
           bottom: "10px",
-          right: "10px",
+          left: "10px",
           backdropFilter: "blur(10px)",
           borderRadius: "10px",
           color: "red",

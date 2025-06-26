@@ -35,7 +35,8 @@ const ProductDataUpdateComponent = () => {
         description: selected.description,
         imageUrl: selected.imageUrl,
         file: null,
-        additionalImages:selected.additionalImages
+        additionalImages:selected.additionalImages,
+        discount:selected.discount,
       });
     }
   }, [selectedId]);
@@ -48,13 +49,14 @@ const ProductDataUpdateComponent = () => {
     data.append('name', formData.name);
     data.append('price', formData.price);
     data.append('description', formData.description);
+    data.append('discount',formData.discount);
     if (formData.file) data.append('image', formData.file);
-    formData.additionalFiles.forEach((file) => {
+    formData.additionalFiles?.forEach((file) => {
       data.append('additionalImages', file);
     });
     try {
       const response = await axios.put(
-        `${url}/${selectedId}`,
+        `${url}/silambam-products/${selectedId}`,
         data,
         {
           headers: {
@@ -99,6 +101,9 @@ const ProductDataUpdateComponent = () => {
 
           <label>Price</label>
           <input type="number" value={formData.price} onChange={e => setFormData({ ...formData, price: e.target.value })} required />
+
+          <label>Discount</label>
+          <input type="number" value={formData.discount} onChange={e => setFormData({ ...formData, discount: e.target.value })} required />
 
           <label>Description</label>
           <textarea value={formData.description} onChange={e => setFormData({ ...formData, description: e.target.value })} />

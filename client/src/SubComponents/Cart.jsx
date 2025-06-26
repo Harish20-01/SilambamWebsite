@@ -6,7 +6,7 @@ const Cart = ({ cart, increaseQuantity, decreaseQuantity, openWhatsAppOrder, bac
   const isEmpty = items.length === 0;
 
   const total = items.reduce(
-    (sum, { product, quantity }) => sum + product.price * quantity,
+    (sum, { product, quantity }) => sum + product.discountPrice * quantity,
     0
   );
 
@@ -26,7 +26,7 @@ const Cart = ({ cart, increaseQuantity, decreaseQuantity, openWhatsAppOrder, bac
             <img src={product.imageUrl} alt={product.name} className="cart-img" />
             <div>
               <h4>{product.name}</h4>
-              <p>₹{product.price} x {quantity}</p>
+              <p>₹{product.discountPrice} x {quantity}</p>
               <div className="qty-selector">
                 <button onClick={() => decreaseQuantity(product)}>-</button>
                 <span>{quantity}</span>

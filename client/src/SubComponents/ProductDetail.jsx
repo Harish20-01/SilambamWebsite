@@ -47,21 +47,22 @@ const ProductDetail = ({
 
       <h2>{product.name}</h2>
       <p>{product.description}</p>
-      <h3>Price: ₹{product.price}</h3>
-
+      <h3>Price:<span className={product.discount>0? "original-price":"original-price hide-class"}>₹{product.price}</span>
+          <span>₹{product.discountPrice}</span>
+      </h3>
       <div className="qty-selector">
         <button onClick={() => decreaseQuantity(product)}>-</button>
         <span>{cart[product._id]?.quantity || 0}</span>
         <button onClick={() => increaseQuantity(product)}>+</button>
       </div>
 
-      <button
+      <button style={{padding:"10px",borderRadius:"10px",color:"black",backdropFilter:"blur(10px)",backgroundColor:"white"}}
         className="add-to-cart-btn"
         onClick={() => {handleClick(product)}}
         title={`${cart[product._id]?.quantity > 0 ? "Product already in the cart":"Add to cart "}`}
         disabled={cart[product._id]?.quantity > 0}
       >
-        <FaCartPlus/>
+        <FaCartPlus size={"20px"} />
       </button>
     </div>
   );

@@ -28,7 +28,7 @@ router.post('/', upload.fields([
   }
 
   try {
-    const { price, description, name } = req.body;
+    const { price, description, name,discount=0 } = req.body;
 
     const mainImageResult = await new Promise((resolve, reject) => {
       cloudinary.uploader.upload_stream({ resource_type: 'auto' }, (err, result) => {
@@ -49,13 +49,16 @@ router.post('/', upload.fields([
       });
       additionalImageUrls = await Promise.all(uploadPromises);
     }
+    let dPrice=price-(discount*price/100);
     const ProductInstance = new Products({
       price,
       description,
       imageUrl: mainImageResult.secure_url,
       public_id: mainImageResult.public_id,
       name,
-      additionalImages: additionalImageUrls
+      additionalImages: additionalImageUrls,
+      discount,
+      discountPrice:dPrice
     });
 
     await ProductInstance.save();
@@ -102,9 +105,10 @@ router.put('/:id', upload.fields([
   { name: 'additionalImages', maxCount: 5 } 
 ]), validateRoute, async (req, res) => {
   try {
-    const { name, price, description } = req.body;
+    const { name, price, description,discount=0 } = req.body;
     const { id } = req.params;
     const product = await Products.findById(id);
+    console.log("....");
 
     if (!product) return res.status(404).json({ message: 'Product not found' });
 
@@ -142,6 +146,8 @@ router.put('/:id', upload.fields([
     product.name = name;
     product.price = price;
     product.description = description;
+    product.discount=discount;
+    product.discountPrice=price-(discount*price/100);
 
     await product.save();
     res.status(200).json({ message: 'Product updated successfully' });

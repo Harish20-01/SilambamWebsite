@@ -62,6 +62,8 @@ const SilambamProducts=new mongoose.Schema({
     imageUrl:String,
     name:String,
     price:Number,
+    discount:Number,
+    discountPrice:Number,
     description:String,
     additionalImages:[String], 
 })

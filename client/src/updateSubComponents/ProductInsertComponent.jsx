@@ -9,6 +9,7 @@ const ProductInsertComponent = () => {
     const [file, setFile] = useState();
     const [description, setDescription] = useState('');
     const [additionalFiles, setAdditionalFiles] = useState([]);
+    const [discout,setDiscount]=useState(0);
     const { showError, showSuccess } = useToast();
     const [isProcessing, setIsPreocessing] = useState(false);
     const url = import.meta.env.VITE_SERVER_URL;
@@ -19,6 +20,7 @@ const ProductInsertComponent = () => {
         const data = new FormData();
         data.append("name", name);
         data.append("price", price);
+        data.append("discount",discout);
         data.append("description", description);
         data.append("image", file);
         if(additionalFiles.length==0)
@@ -46,6 +48,7 @@ const ProductInsertComponent = () => {
                 setDescription('');
                 setFile(null);
                 setPrice('');
+                setDiscount(0);
                 setName('');
                 setAdditionalFiles([]);
                 setIsPreocessing(false);
@@ -64,14 +67,14 @@ const ProductInsertComponent = () => {
 
     return (
         isProcessing ? (<Processing content='Inserting new Products..' />) : (
-            <div id="AboutInsert-Container">
+            <div id="AboutInsert-Container" >
                 <h2>
                     Product Insert Section
                 </h2>
                 <h3>
                     Insert the data
                 </h3>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} style={{height:"auto"}}>
                     <label>Name</label>
                     <input
                         type="text"
@@ -85,6 +88,13 @@ const ProductInsertComponent = () => {
                         required
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}
+                    ></input>
+                    <label>Discount</label>
+                    <input
+                        type="number"
+                        required
+                        value={discout}
+                        onChange={(e) => setDiscount(e.target.value)}
                     ></input>
                     <label>Description</label>
                     <textarea
