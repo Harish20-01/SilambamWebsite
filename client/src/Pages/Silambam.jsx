@@ -29,8 +29,6 @@ const Silambam = () => {
 
   const url = import.meta.env.VITE_SERVER_URL;
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
-  console.log(whatsappNumber, url)
-
   // Handle browser back/forward
   useEffect(() => {
     window.history.replaceState({ view: 'list' }, '');
@@ -119,7 +117,12 @@ const Silambam = () => {
       alert('Something went wrong while placing the order.');
     }
   };
-
+  const scrolltoTop=()=>{
+    window.scrollTo({
+      top:40,
+      behavior:"smooth",
+    })
+  }
 
   const onProductClick = (product) => {
     setSelectedProduct(product);
@@ -140,7 +143,7 @@ const Silambam = () => {
           cart={cart}
           onProductClick={onProductClick}
           increaseQuantity={increaseQuantity}
-          goToCart={() => navigateTo('cart')}
+          goToCart={() => {scrolltoTop(),navigateTo('cart')}}
         />
       )}
 
@@ -152,6 +155,7 @@ const Silambam = () => {
           decreaseQuantity={decreaseQuantity}
           openWhatsAppOrder={openWhatsAppOrder}
           backToList={() => navigateTo('list')}
+          goToCart={() => {scrolltoTop(),navigateTo('cart')}}
         />
       )}
 

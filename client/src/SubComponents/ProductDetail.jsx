@@ -7,6 +7,7 @@ const ProductDetail = ({
   increaseQuantity,
   decreaseQuantity,
   backToList,
+  goToCart
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const allImages = [product.imageUrl, ...(product.additionalImages || [])];
@@ -56,7 +57,7 @@ const ProductDetail = ({
         <button onClick={() => increaseQuantity(product)}>+</button>
       </div>
 
-      <button style={{padding:"10px",borderRadius:"10px",color:"black",backdropFilter:"blur(10px)",backgroundColor:"white"}}
+      <button style={{borderRadius:"10px",color:"black",backdropFilter:"blur(10px)",backgroundColor:"white"}}
         className="add-to-cart-btn"
         onClick={() => {handleClick(product)}}
         title={`${cart[product._id]?.quantity > 0 ? "Product already in the cart":"Add to cart "}`}
@@ -64,7 +65,13 @@ const ProductDetail = ({
       >
         <FaCartPlus size={"20px"} />
       </button>
+      {Object.keys(cart).length > 0 && (
+            <button className="view-cart-btn" onClick={goToCart}>
+              View Cart <span><FaCartPlus/>({Object.values(cart).reduce((a, b) => a + b.quantity, 0)})</span>
+            </button>
+          )}
     </div>
+    
   );
 };
 

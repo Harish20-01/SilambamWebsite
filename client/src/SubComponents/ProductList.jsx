@@ -19,6 +19,7 @@ const ProductList = ({ data, cart, onProductClick, increaseQuantity, goToCart })
               <h2 className="product-price">
                 <span className={item.discount>0? "original-price":"original-price hide-class"}>₹{item.price}</span>
                 <span>₹{item.discountPrice}</span>
+                <span className='buy-now-button'>Buy Now</span>
               </h2>
               <h3>{item.name}</h3>
               <p className="product-desc">{item.description}</p>
@@ -39,7 +40,7 @@ const ProductList = ({ data, cart, onProductClick, increaseQuantity, goToCart })
 
       {Object.keys(cart).length > 0 && (
         <button className="view-cart-btn" onClick={goToCart}>
-          View Cart <FaCartPlus/>({Object.values(cart).reduce((a, b) => a + b.quantity, 0)})
+          View Cart<span><FaCartPlus/>({Object.values(cart).reduce((a, b) => a + b.quantity, 0)})</span>
         </button>
       )}
     </>
