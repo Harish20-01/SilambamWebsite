@@ -72,4 +72,8 @@
     #AboutInsert-Container form{
         width: 90vw;
     }
+    #AboutInsert-Container form textarea{
+        height: 25vh;
+        border:1px solid ;
+    }
 }

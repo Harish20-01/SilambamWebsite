@@ -1,4 +1,4 @@
-#AboutDataInsert-Container{
+#AboutDataInsert-Container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,26 +7,31 @@
     width: 100%;
     box-sizing: border-box;
 }
-#AboutDataInsert-Container select{
+
+#AboutDataInsert-Container select {
     padding: 10px;
     border-radius: 5px;
     margin-top: 1%;
 }
 
-#AboutDataInsert-Container textarea{
+#AboutDataInsert-Container textarea {
     height: 40vh;
 }
-#AboutDataInsert-Container form{
+
+#AboutDataInsert-Container form {
     padding: 10px;
-    box-shadow:0px 5px 10px var(--primary-color);
+    box-shadow: 0px 5px 10px var(--primary-color);
     max-width: 800px;
     width: 100%;
     margin-top: 2%;
     border-radius: 10px;
 }
 
-@media(max-width:768px){
-    #AboutDataInsert-Container form{
+@media(max-width:768px) {
+    #AboutDataInsert-Container form {
         width: 95vw;
+    }
+    #ProductDataUpdate-Container textarea{
+        height: 25vh;
     }
 }

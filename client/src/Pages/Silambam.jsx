@@ -119,7 +119,7 @@ const Silambam = () => {
   };
   const scrolltoTop=()=>{
     window.scrollTo({
-      top:40,
+      top:0,
       behavior:"smooth",
     })
   }

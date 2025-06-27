@@ -16,7 +16,10 @@ const ProductInsertComponent = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsPreocessing(true);
-
+        window.scrollTo({
+        top:0,
+        behavior:"smooth"
+        })
         const data = new FormData();
         data.append("name", name);
         data.append("price", price);

@@ -48,7 +48,8 @@ const ProductDetail = ({
 
       <h2>{product.name}</h2>
       <p>{product.description}</p>
-      <h3>Price:<span className={product.discount>0? "original-price":"original-price hide-class"}>₹{product.price}</span>
+      <h3 style={{marginTop:"15px"}}
+      >Price:<span className={product.discount>0? "original-price":"original-price hide-class"}>₹{product.price}</span>
           <span>₹{product.discountPrice}</span>
       </h3>
       <div className="qty-selector">

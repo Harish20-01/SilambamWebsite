@@ -414,6 +414,21 @@
   width: 100px;
   height: 100px;
 }
+.buy-now-button{
+  right:2px;
+  font-weight: lighter;
+  line-height: 12px;
+  color: white;
+  padding: 10px 10px;
+  position: absolute;
+  font-size: 18px;
+}
+.product-price, .original-price {
+  line-height: 18px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
 }
 
 .product-detail .add-to-cart-btn {
