@@ -47,6 +47,7 @@ const ImageDeleteComponent = () => {
       return;
     }
     setIsProcessing(true);
+    window.scrollTo({top:0,behavior:"instant"})
     try {
       const data = { public_ids: selectedImages};
       console.log(data);

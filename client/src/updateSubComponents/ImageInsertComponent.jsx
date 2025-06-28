@@ -24,7 +24,7 @@ const handleImageUpload = async () => {
   }
 
   setIsProcessing(true);
-  
+  window.scrollTo({top:0,behavior:"instant"})
 
   try {
     const formData = new FormData();

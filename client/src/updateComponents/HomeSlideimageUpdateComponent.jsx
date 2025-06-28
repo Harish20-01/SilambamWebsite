@@ -23,7 +23,7 @@ const HomeSlideimageUpdateComponent = () => {
             </button>
         </div>
         <div className='homeSlideimage-header'>
-            <h3>Home Slideshow Image Upadate Section</h3>
+            <h3>Home Slideshow Image Update Section</h3>
         </div>
     <div id="HomeSlideImage-update"> 
         <ul>

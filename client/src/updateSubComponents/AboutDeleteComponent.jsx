@@ -34,7 +34,7 @@ const AboutDeleteComponent = () => {
   };
 
   const handleDelete = async () => {
-    
+    window.scrollTo({top:0,behavior:"instant"})
     if (selectedImages.length === 0) {
       showError('No Image Selected to Delete');
       return;

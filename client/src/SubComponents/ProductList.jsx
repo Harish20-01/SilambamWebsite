@@ -9,7 +9,7 @@ const ProductList = ({ data, cart, onProductClick, increaseQuantity, goToCart })
           <div
             className="product-card"
             key={item._id}
-            onClick={() => onProductClick(item)}
+            onClick={() => {window.scrollTo({top:0,behavior:"instant"}),onProductClick(item)}}
           >
             <img src={item.imageUrl} alt="Product" className="product-img" />
             <div className={item.discount>0?"discount-container":"discount-container hide-class"}>

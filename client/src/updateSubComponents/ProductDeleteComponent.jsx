@@ -41,6 +41,7 @@ const ProductDeleteComponent = () => {
       return;
     }
     setIsPreocessing(true);
+    window.scrollTo({top:0,behavior:"instant"})
     try {
         const data={public_ids:selectedImages};
         const response=await axios.delete(`${url}/silambam-products`,{

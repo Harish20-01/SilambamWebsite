@@ -38,7 +38,7 @@ const ClassVenueDataUpdate = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     setIsProcessing(true);
-
+    window.scrollTo({top:0,behavior:"instant"})
     try {
       const response = await axios.put(`${url}/class-venue/${selectedId}`, formData, {
         headers: {

@@ -416,7 +416,7 @@
 }
 .buy-now-button{
   right:2px;
-  font-weight: lighter;
+  font-weight: 400;
   line-height: 12px;
   color: white;
   padding: 10px 10px;
@@ -427,7 +427,10 @@
   line-height: 18px;
   padding-bottom: 5px;
   margin-bottom: 10px;
-  font-weight: lighter;
+  font-weight:500;
+}
+.original-price{
+  font-weight: 100;
 }
 }
 

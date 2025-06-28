@@ -1,4 +1,4 @@
-import React, { useState,useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import image from '../../TrainerProfile/Profile.jpg';
 import '../Styles/SubComponentsStyles/trainerProfile.css';
@@ -8,25 +8,35 @@ const TrainerProfile = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [showMore, setShowMore] = useState(false);
   const handleToggle = () => {
-  if (!showMore) {
-    window.history.pushState({ showMore: true }, '');
-  } else if (ref.current) {
-    ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  setShowMore(!showMore);
-};
-  useEffect(() => {
-  const handlePopState = () => {
-    if (showMore) {
-      setShowMore(false);
+    const element = ref.current;
+    const offset = 125;
+    const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
+    if (!showMore) {
+      window.history.pushState({ showMore: true }, '');
+      window.scrollTo({
+        top,
+        behavior: 'smooth'
+      });
+    } else if (ref.current) {
+      window.scrollTo({
+        top,
+        behavior: 'smooth'
+      });
     }
+
+    setShowMore(!showMore);
   };
-  window.addEventListener('popstate', handlePopState);
-  return () => {
-    window.removeEventListener('popstate', handlePopState);
-  };
-}, [showMore]);
+  useEffect(() => {
+    const handlePopState = () => {
+      if (showMore) {
+        setShowMore(false);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [showMore]);
 
   const containerStyle = {
     width: showMore ? '96%' : '',
@@ -55,7 +65,7 @@ const TrainerProfile = () => {
           src={image}
           alt="Trainer"
           className={`trainer-image ${showMore ? 'expanded-image' : ''}`}
-          whileHover={{ scale: 1.1, rotate: 10 ,border:"5px solid red"}}
+          whileHover={{ scale: 1.1, rotate: 10, border: "5px solid red" }}
           transition={{ type: 'spring', stiffness: 300 }}
         />
 

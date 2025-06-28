@@ -15,7 +15,7 @@ const ClassVenueInsert = () => {
     const url=import.meta.env.VITE_SERVER_URL;
    async  function handleSubmit(e){
         e.preventDefault();
-        
+        window.scrollTo({top:0,behavior:"instant"})
         if(place==''||description==''||timing==''){
             showError('Fill all the field');
             return;

@@ -39,6 +39,7 @@ const YoutubeVideoDelete = () => {
     }
 
     setIsProcessing(true);
+    window.scrollTo({top:0,behavior:"instant"})
     try {
       const response = await axios.delete(`${url}/youtube-video`, {
         headers: {

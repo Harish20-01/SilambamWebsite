@@ -40,6 +40,7 @@ const ClassVenueDelete = () => {
       return;
     }
     setIsPreocessing(true);
+    window.scrollTo({top:0,behavior:"instant"})
     try {
       const response = await axios.delete(`${url}/class-venue`, {
         headers: {

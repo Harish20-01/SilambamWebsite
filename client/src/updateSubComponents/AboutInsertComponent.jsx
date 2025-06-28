@@ -13,6 +13,7 @@ const AboutInsertComponent = () => {
      async function handleSubmit(e){
         e.preventDefault();
         setIsPreocessing(true);
+        window.scrollTo({top:0,behavior:"instant"})
             const data=new FormData();
             data.append("title",title);
             data.append("description",description);

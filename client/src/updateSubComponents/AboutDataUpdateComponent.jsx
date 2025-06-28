@@ -33,7 +33,7 @@ const AboutDataUpdateComponent = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     setIsProcessing(true);
-
+    window.scrollTo({top:0,behavior:"instant"});
     const data = new FormData();
     data.append('title', formData.title);
     data.append('description', formData.description);

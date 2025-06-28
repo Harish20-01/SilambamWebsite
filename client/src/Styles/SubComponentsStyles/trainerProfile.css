@@ -11,8 +11,8 @@
   align-items: center;
   text-align: center;
   transition: all 0.4s ease-in-out;
-  opacity: 0;  /* Initially hidden */
-  transform: translateY(60px);  /* Start from below */
+  opacity: 0;  
+  transform: translateY(60px);  
 }
 .trainer-profile  h2{
   color:red;
@@ -94,6 +94,13 @@
   .trainer-details.expanded {
     flex-direction: column; /* Stack vertically on mobile */
     width: 90%; /* Make the details container full width on mobile */
+  }
+  .trainer-profile{
+    margin-bottom: 15px;
+    padding-top: 10px;
+  }
+  .trainer-profile h2{
+    margin: 10px 0px;
   }
 
   .trainer-image {

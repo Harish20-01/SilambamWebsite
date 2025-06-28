@@ -8,18 +8,19 @@ import '../Styles/updateSubComponentStyle/homeNewsInsertStyle.css';
 const HomeNewsInsert = () => {
     const[title,setTitle]=useState('');
     const[description,setDescription]=useState('');
-    const[image,setImage]=useState();
+    const[image,setImage]=useState(null);
     const{showError,showSuccess}=useToast();
     const url=import.meta.env.VITE_SERVER_URL;
     const[isProcessing,setIsPreocessing]=useState(false);
    async  function handleSubmit(e){
         e.preventDefault();
         const data=new FormData();
-        if(title==''||description==''||image==''){
+        if(title==''||description==''|| !image){
             showError('Fill all the field');
             return;
         }
         setIsPreocessing(true);
+        window.scrollTo({top:0,behavior:"instant"})
         data.append('title',title);
         data.append('description',description);
         data.append('image',image);

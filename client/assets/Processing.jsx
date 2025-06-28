@@ -10,7 +10,7 @@ const Processing = ({content=''}) => {
        justifyContent:"center",
        height:"85vh",
        flexDirection:"column"
-      }}>
+      }} className='div'>
       <div
         className="spinner"
         style={{

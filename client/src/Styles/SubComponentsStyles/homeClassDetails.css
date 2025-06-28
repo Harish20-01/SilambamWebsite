@@ -105,7 +105,10 @@
       margin-bottom: 20px;
       
     }
-  
+    .class-details-container{
+      padding: 20px;
+      margin-bottom: 20px;
+    }
     .contact-btn {
       width: 100%;
       padding: 12px 0;

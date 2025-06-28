@@ -14,6 +14,7 @@ const HomeSlideImageInsert = () => {
   async function handleSubmit(e){
     e.preventDefault();
     setIsProcessing(true);
+    window.scrollTo({top:0,behavior:"instant"})
     try{
       const data=new FormData()
       data.append("image",file);

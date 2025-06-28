@@ -49,6 +49,7 @@ const HomeNewsDelete = () => {
       return;
     }
     setIsPreocessing(true);
+    window.scrollTo({top:0,behavior:"instant"})
     try {
       const dataa={public_ids:selectedImages};
       console.log(dataa);
