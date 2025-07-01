@@ -8,7 +8,7 @@ const Processing = ({content=''}) => {
        display:"flex",
        alignItems:"center",
        justifyContent:"center",
-       height:"85vh",
+       height:"80vh",
        flexDirection:"column"
       }} className='div'>
       <div
@@ -20,6 +20,8 @@ const Processing = ({content=''}) => {
           width: '80px',
           height: '80px',
           animation: 'spin 0.8s linear infinite',
+          position:"relative",
+          top:'-15%',
           margin: '0 auto 15px' // ✅ cleaner centering and spacing
         }}
       ></div>

@@ -9,7 +9,7 @@ const TrainerProfile = () => {
   const [showMore, setShowMore] = useState(false);
   const handleToggle = () => {
     const element = ref.current;
-    const offset = 125;
+    const offset = 155;
     const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
     if (!showMore) {
       window.history.pushState({ showMore: true }, '');

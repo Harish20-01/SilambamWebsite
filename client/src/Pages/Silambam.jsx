@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import ProductList from '../SubComponents/ProductList';
 import ProductDetail from '../SubComponents/ProductDetail';
@@ -117,10 +117,10 @@ const Silambam = () => {
       alert('Something went wrong while placing the order.');
     }
   };
-  const scrolltoTop=()=>{
+  const scrolltoTop = () => {
     window.scrollTo({
-      top:0,
-      behavior:"smooth",
+      top: 0,
+      behavior: "smooth",
     })
   }
 
@@ -154,8 +154,8 @@ const Silambam = () => {
           increaseQuantity={increaseQuantity}
           decreaseQuantity={decreaseQuantity}
           openWhatsAppOrder={openWhatsAppOrder}
-          backToList={() => navigateTo('list')}
-          goToCart={() => {scrolltoTop(),navigateTo('cart')}}
+          backToList={()=>navigateTo('list')}
+          goToCart={() => { scrolltoTop(), navigateTo('cart') }}
         />
       )}
 
@@ -165,7 +165,7 @@ const Silambam = () => {
           increaseQuantity={increaseQuantity}
           decreaseQuantity={decreaseQuantity}
           openWhatsAppOrder={openWhatsAppOrder}
-          backToList={() => navigateTo('list')}
+          backToList={()=>navigateTo('list')}
         />
       )}
     </>

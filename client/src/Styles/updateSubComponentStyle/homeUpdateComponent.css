@@ -119,4 +119,8 @@
   .home-update-card p {
     font-size: 0.95rem;
   }
+  .home-update-container{
+    padding:20px 15px;
+    margin: 2px auto;
+  }
 }

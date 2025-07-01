@@ -130,3 +130,9 @@
   background-color: var(--primary-color);
   transform: scale(1.05);
 }
+@media(max-width:768px){
+  .admin-home-container{
+    padding:20px 15px;
+    margin: 2px auto;
+  }
+}
