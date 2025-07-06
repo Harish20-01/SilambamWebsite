@@ -1,73 +1,90 @@
-#Footer-Container{
+#Footer-Container {
     display: flex;
     background-color: black;
     color: white;
     padding-bottom: 20px;
 }
-#Footer-Container li{
+
+#Footer-Container li {
     line-height: 4vh;
     list-style-type: none;
 }
 
-#About-Footer div{
-    text-align:justify;
+#About-Footer div {
+    text-align: justify;
     margin-left: 2%;
 }
 
-#About-Footer,#Quick-Links,#Contact-details{
+#About-Footer,
+#Quick-Links,
+#Contact-details {
     width: 33%;
 }
 
-#Quick-Links{
-        align-items: center;
+#Quick-Links {
+    align-items: center;
 }
 
-#About-Footer,#Quick-Links,#Contact-details div{
+#About-Footer,
+#Quick-Links,
+#Contact-details div {
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
 }
-#About-Footer h3,#Quick-Links h3,#Contact-details h3{
+
+#About-Footer h3,
+#Quick-Links h3,
+#Contact-details h3 {
     text-align: left;
     margin-bottom: 10px;
-    padding:10px;
+    padding: 10px;
     width: 100%;
 }
-#Quick-Links h3{
+
+#Quick-Links h3 {
     margin-left: 40%;
 }
-#Quick-Links .links{
+
+#Quick-Links .links {
     margin-left: 0px;
 }
-li a{
+
+li a {
     list-style-type: none;
     font-weight: bolder;
     text-decoration: none;
 }
-#Footer-Container .fa{
+
+#Footer-Container .fa {
     vertical-align: middle;
     margin-right: 5px;
     color: aquamarine;
 }
-#Footer-Container h3{
+
+#Footer-Container h3 {
     color: rgb(227, 30, 30);
 }
 
-#Contact{
+#Contact {
     display: flex;
     align-items: self-start;
     margin-left: 10%;
 }
 
-#Contact li a ,#Quick-Links div li a{
-    color:white;
+#Contact li a,
+#Quick-Links div li a {
+    color: white;
 }
-@media (max-width:768px){
 
-    #About-Footer,#Contact-details{
+@media (max-width:768px) {
+
+    #About-Footer,
+    #Contact-details {
         width: 100%;
         text-align: center;
     }
-    #Quick-Links{
+
+    #Quick-Links {
         display: flex;
         flex-wrap: nowrap;
         justify-content: center;
@@ -75,85 +92,116 @@ li a{
         width: 90vw;
         margin-left: 2%;
     }
-    #Quick-Links h3{
+
+    #Quick-Links h3 {
         text-align: left;
         margin-left: 0%;
         margin-top: 10px;
     }
-    #QuicK-Links div{
+
+    #QuicK-Links div {
         display: none;
     }
-    #Quick-Links .links{
+
+    #Quick-Links .links {
         margin-left: 4%;
     }
-    #Footer-Container{
+
+    #Footer-Container {
         flex-direction: column;
         padding: 5px;
     }
-    #About-Footer h3,#Quick-Links h3,#Contact-details h3{
+
+    #About-Footer h3,
+    #Quick-Links h3,
+    #Contact-details h3 {
         text-align: left;
         margin-bottom: 5px;
-        padding:5px;
+        padding: 5px;
         width: 100%;
     }
-    #Contact-details h3{
+
+    #Contact-details h3 {
         margin-top: 10px;
     }
-    #Contact{
-        
+
+    #Contact {
+
         margin-left: 5%;
     }
 
 }
 
 @media (max-width: 400px) {
-  #Contact {
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start;
-    margin-left: 5%;
-    width: 90%;
-  }
+    #Contact {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: flex-start;
+        margin-left: 5%;
+        width: 90%;
+    }
 
-  #Contact li a {
-    word-break: break-word; /* Allow long email/URL to wrap */
-    white-space: normal;     /* Prevent overflow */
-    overflow-wrap: anywhere; /* Wrap anywhere if needed */
-    font-size: 1rem;        /* Slightly smaller font for fit */
-  }
-  #Contact li a ,#Quick-Links div li a,#About-Footer div p{
-    font-size: 1rem;
-  }
+    #Contact li a {
+        word-break: break-word;
+        /* Allow long email/URL to wrap */
+        white-space: normal;
+        /* Prevent overflow */
+        overflow-wrap: anywhere;
+        /* Wrap anywhere if needed */
+        font-size: 1rem;
+        /* Slightly smaller font for fit */
+    }
 
-  #Contact li {
-    margin-bottom: 10px;
-  }
+    #Contact li a,
+    #Quick-Links div li a,
+    #About-Footer div p {
+        font-size: 1rem;
+    }
 
-   #About-Footer h3,#Quick-Links h3,#Contact-details h3 {
-    font-size: 1.1rem; /* Slightly reduce heading size for better spacing */
-  }
+    #Contact li {
+        margin-bottom: 10px;
+    }
+
+    #About-Footer h3,
+    #Quick-Links h3,
+    #Contact-details h3 {
+        font-size: 1.1rem;
+        /* Slightly reduce heading size for better spacing */
+    }
 }
 
 .footer-copyright {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #888;
-  padding: 15px 10px;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  background-color: #2d2525; /* optional light background */
-  font-family: 'Noto Sans Tamil', sans-serif;
-  
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    padding: 15px 10px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #2d2525;
+    /* optional light background */
+    font-family: 'Noto Sans Tamil', sans-serif;
+
 }
 
-.footer-visitCount div{
+.footer-visitCount div {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.footer-visitCount div span{
-    color:rgb(199, 184, 184);
+
+.footer-visitCount div span {
+    color: rgb(199, 184, 184);
     display: flex;
     align-items: center;
-    gap:3px;
+    gap: 3px;
     padding-left: 10px;
+}
+
+@media only screen and (max-height:500px) and (orientation:landscape) {
+    #Contact {
+        gap: 10px;
+    }
+    #Quick-Links .links li{
+        margin-bottom: 10px;
+    }
 }

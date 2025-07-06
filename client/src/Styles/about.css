@@ -199,3 +199,8 @@
   text-indent: 2rem;
 }
 }
+@media only screen and (max-height:500px) and (orientation: landscape){
+  .course-full-description p {
+    font-size: 1rem;
+  }
+}

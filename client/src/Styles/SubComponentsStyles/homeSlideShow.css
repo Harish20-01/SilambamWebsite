@@ -129,4 +129,8 @@
     }
    
   }
-  
+  @media only screen and (max-height: 500px) and (orientation: landscape){
+    #homeSlide.slideshow-container{
+      height: 100vh;
+    }
+  }

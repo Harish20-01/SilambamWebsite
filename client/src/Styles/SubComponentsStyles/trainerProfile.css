@@ -1,7 +1,7 @@
 /* Main Profile Container */
 .trainer-profile {
   width: 98%; /* Default width */
-  margin: 1% auto;
+  margin: 1% ;
   padding: 40px;
   background-color: #fff;
   border-radius: 10px;
@@ -16,6 +16,7 @@
 }
 .trainer-profile  h2{
   color:red;
+  margin-bottom: 1%;
 }
 
 /* When the profile is in view, we slide it in */

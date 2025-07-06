@@ -4,7 +4,7 @@
   background-color: #333;
   color: white;
   padding: 10px 0;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   height: 40px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -51,7 +51,7 @@
   
   #SlideShow-Container .slide {
     background: transparent;
-    padding: 1rem;
+    padding: 0rem 1rem;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -74,8 +74,7 @@
   }
   
   #SlideShow-Container .slide img {
-    max-width: 1000px;
-    width: 100%;
+    width: 80%;
     margin-top: 30px;
     object-fit: contain cover;
     border-radius: 8px;
@@ -181,4 +180,17 @@
     0% { opacity: 1; color:red;}
     50% { opacity: 0.3;}
     100% { opacity: 0.8; }
+  }
+  @media only screen and (max-height: 500px) and (orientation: landscape){
+    #SlideShow-Container{
+      font-size: 1rem;
+      height: auto;
+    }
+    #SlideShow-Container .slide-image{
+      height: 30vh;
+    }
+    #SlideShow-Container .slide img{
+      height: 60vh;
+      width: 80vw;
+    }
   }

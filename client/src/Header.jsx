@@ -9,6 +9,7 @@ import axios from 'axios';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [courses, setCourses] = useState([]);
+  const [navVisible, setNavVisible] = useState(true);
   const [showCourses, setShowCourses] = useState(false);
   const url = import.meta.env.VITE_SERVER_URL;
   const navigate = useNavigate();
@@ -25,6 +26,45 @@ const Header = () => {
     setMenuOpen(false);
     setShowCourses(false);
   };
+
+  useEffect(() => {
+  let lastScrollY = window.scrollY;
+
+  const isLandscapeMobile = () => {
+    return window.innerWidth > window.innerHeight && window.innerHeight <= 500;
+  };
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    const nav = document.querySelector('nav');
+
+    if (isLandscapeMobile()) {
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setNavVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up
+        setNavVisible(true);
+      }
+    } else {
+      // On other devices, always show
+      setNavVisible(true);
+    }
+
+    lastScrollY = currentScrollY;
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('resize', handleScroll);
+  window.addEventListener('load', handleScroll);
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+    window.removeEventListener('resize', handleScroll);
+    window.removeEventListener('load', handleScroll);
+  };
+}, []);
+
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -74,7 +114,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className={menuOpen ? 'border-radius' : ''}>
+      <nav className={`${menuOpen ? 'border-radius' : ''} ${navVisible ? 'nav-visible' : 'nav-hidden'}`}>
         <div id="Logo">
           <img src={logo} alt="logo" />
           <h3>தமிழர்&nbsp;மரபுக்&nbsp;கலையகம்</h3>

@@ -59,7 +59,7 @@ const HomeNewsComponent = () => {
           {isPaused && (
           <div style={{
             position: 'absolute',
-            top: '16%',
+            top: '10%',
             right: '0.1%',
             transform: 'translate(-50%, -50%)',
             backgroundColor: 'rgb(0,0,0,0.2)',
@@ -68,7 +68,8 @@ const HomeNewsComponent = () => {
             padding: '5px 10px',
             borderRadius: '5px',
             fontWeight:"bolder",
-            zIndex: 10
+            zIndex: 10,
+            backdropFilter:"blur(10px)"
           }}>
             Paused
           </div>

@@ -200,3 +200,13 @@
     left: 150%;
   }
 }
+@media only screen and (max-height:500px) and (orientation: landscape){
+  #heading-image {
+    padding: 10px;
+    height: 20vh;
+  }
+  .gallery-container{
+    margin: 0px 3px
+  }
+  
+}

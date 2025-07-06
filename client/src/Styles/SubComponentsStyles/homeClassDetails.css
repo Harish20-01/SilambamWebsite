@@ -2,7 +2,7 @@
 
 .class-details-container {
     width: 98%;
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 40px;
     background-color: rgba(0, 0, 0, 0.2);
@@ -119,4 +119,19 @@
       white-space:none;
     }
   }
-  
+  @media only screen and (max-height: 500px) and (orientation: landscape)  {
+    .venue-container{
+      justify-content: center;
+    }
+    .venue{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-self: center;
+      padding: 10px;
+    }
+     .contact-btn{
+      width: 50vw;
+
+     }
+  }

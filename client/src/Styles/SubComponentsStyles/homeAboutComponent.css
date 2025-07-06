@@ -120,7 +120,7 @@
   padding: 30px;
   border-radius: 10px;
   max-width: 1500px;
-  margin: 40px auto;
+  margin: 40px 1%;
   font-family: 'Noto Sans Tamil', sans-serif;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   display: flex;
@@ -256,4 +256,9 @@
   }
 }
 
+@media only screen and (max-height: 500px) and (orientation: landscape)  {
+  #container{
+    font-size: 0.5rem;
+  }
+}
 

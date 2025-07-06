@@ -32,6 +32,7 @@ const HomeYouTubeVideo = () => {
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 1, ease: 'easeOut' }}
     >
+      <h1 style={{textAlign:"center",color:"red"}}>காணொளிகள்</h1>
      { data.map((item,index)=>(
           <iframe
           id={index}

@@ -1,5 +1,5 @@
 .review-slider-container {
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
   padding: 20px;
   text-align: center;
@@ -47,6 +47,7 @@
 
 .review-card p {
   color: #555;
+  font-size: 0.9rem;
 }
 
 .nav-button {
